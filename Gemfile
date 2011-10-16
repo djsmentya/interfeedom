@@ -19,6 +19,26 @@ end
 
 gem 'jquery-rails'
 
+
+gem 'haml-rails'
+gem 'therubyracer'
+
+gem 'declarative_authorization'
+gem 'devise'
+group :test, :development do
+  gem 'cucumber-rails'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'webrat'
+end
+
+group :development do
+  gem 'nifty-generators'
+  gem 'ruby-debug'
+  gem 'ruby_parser'
+end
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
