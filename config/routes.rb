@@ -1,4 +1,8 @@
 Interfreedom::Application.routes.draw do
+  resources :videos
+
+  resources :products
+
   #get "home/index"
 
   devise_for :users
