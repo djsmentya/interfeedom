@@ -1,0 +1,28 @@
+#header.container.prepend-top
+  .span-24
+    #user_header
+      .span-10
+        Welcome, (
+        - if current_user
+          = link_to 'sign out', destroy_user_session_path, :method => :delete
+        -else
+          = link_to 'sign in', new_user_session_path
+          )
+      #user_cart.span-7
+        -#TODO create card  menu
+        cart
+      #language.span-1
+        -#TODO create language menu
+        lang
+    %nav.span-24
+      #logo.span-12
+        %h1.title
+          = link_to image_tag('logo.png'), root_path
+      #menue.span-12.last.right
+        %ul
+          %li hello
+          %li hello
+          %li hello
+  #flasher.column.last.prepend-11.prepend-top
+    - flash.each do |key, value|
+      =content_tag(:div,value,:class => key)

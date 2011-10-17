@@ -9,9 +9,14 @@
     <![endif]-->
     = csrf_meta_tags
   %body
-    .container
-      .span-24
-        - flash.each do |key, value|
-          =content_tag(:div,value,:class => key)
-      .span-24
-        = yield
+    = render :partial => 'shared/header'
+    .main
+      #content.container
+        .column.span-7
+          siderbar
+        .column.span-17.last
+          = yield
+    #footer.container
+      %hr
+      %p{:style =>'color:#6B6B6B;'}
+        &copy;2011 Powered by Jack Smentyna

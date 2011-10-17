@@ -5,3 +5,44 @@
  *= require_self
  *= require ./screen
 */
+
+nav {
+    background: url("bg_header.png") no-repeat;
+    width: 950px;
+    height: 89px;
+}
+
+#logo {
+    height: 36px;
+}
+
+#menue {
+    height: 36px;
+
+}
+
+#logo .title {
+    padding-left: 10px;
+    padding-top: 2px;
+}
+
+#user_header {
+    margin-bottom: 25px;
+}
+
+/*nav*/
+
+#menue ul {
+    list-style: none outside;
+}
+
+#menue li {
+    border-left: 1px solid #9ebe3c;
+    float: right;
+    padding: 0 1px;
+}
+
+#menue {
+    height: 47px;
+    padding: 13px 0 0;
+}
