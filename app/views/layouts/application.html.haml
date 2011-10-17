@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %title Interfreedom
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    <!--[if IE]>
+    = stylesheet_link_tag "ie"
+    <![endif]-->
+    = csrf_meta_tags
+  %body
+    .container
+      .span-24
+        - flash.each do |key, value|
+          =content_tag(:div,value,:class => key)
+      .span-24
+        = yield
