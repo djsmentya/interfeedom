@@ -6,6 +6,16 @@
  *= require ./screen
 */
 
+/*#content {*/
+    /*background-color: #ffffff;*/
+/*}*/
+
+#main {
+    background-color: #ffffff;
+    border: #ffffff solid 15px;
+    margin-top: 15px;
+}
+
 nav {
     background: url("bg_header.png") no-repeat;
     width: 950px;

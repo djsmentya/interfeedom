@@ -9,14 +9,14 @@
     <![endif]-->
     = csrf_meta_tags
   %body
-    = render :partial => 'shared/header'
-    .main
+    #main.container
+      = render :partial => 'shared/header'
       #content.container
         .column.span-7
           siderbar
         .column.span-17.last
           = yield
-    #footer.container
-      %hr
-      %p{:style =>'color:#6B6B6B;'}
-        &copy;2011 Powered by Jack Smentyna
+      #footer.container
+        %hr
+        %p{:style =>'color:#6B6B6B;'}
+          &copy;2011 Powered by Jack Smentyna
