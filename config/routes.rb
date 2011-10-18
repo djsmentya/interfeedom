@@ -3,13 +3,15 @@ Interfreedom::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  resources :videos
+  devise_for :users
+
+  scope ':category_type' do
+    resources :products, :as => 'categoried_products'
+  end
 
   resources :products
 
-  #get "home/index"
-
-  devise_for :users
+  resources :videos
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

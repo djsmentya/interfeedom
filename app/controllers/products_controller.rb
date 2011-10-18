@@ -2,10 +2,18 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    if params[:category_type].present?
+      @products = case params[:category_type].to_s
+                    when 'videos' then
+                      Product.videos
+                  end
+    else
+      @products = Product.all
+
+    end
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.haml
       format.json { render :json => @products }
     end
   end
