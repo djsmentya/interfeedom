@@ -18,8 +18,11 @@
   .field
     = f.label :count_on_hand
     = f.number_field :count_on_hand
+  -#.field
+  -#  = f.label :category
+  -#  = f.text_field :category
   .field
-    = f.label :category
-    = f.text_field :category
+    = f.label :image
+    = f.file_field :image
   .actions
     = f.submit 'Save'

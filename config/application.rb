@@ -23,6 +23,9 @@ module Interfreedom
     #declarative authorization
     config.gem "declarative_authorization", :source => "http://gemcutter.org"
 
+    #piperclip
+    config.gem "paperclip"
+
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
 

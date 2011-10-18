@@ -7,7 +7,7 @@
 */
 
 /*#content {*/
-    /*background-color: #ffffff;*/
+/*background-color: #ffffff;*/
 /*}*/
 
 #main {
@@ -55,4 +55,32 @@ nav {
 #menue {
     height: 47px;
     padding: 13px 0 0;
+}
+
+.product {
+    height: 150px;
+    border-top: 1px solid #F2F2F2;
+    padding-top: 10px;
+
+}
+
+.product h4 {
+    text-transform: uppercase;
+    font: 'Arial';
+}
+
+#sider {
+    height: 100%
+}
+
+.state {
+    display: block;
+    margin: 0 10px 0 0;
+    background: none repeat scroll 0 0 #EEEEEE;
+    padding: 6px 10px 0;
+    float: left;
+}
+
+#states {
+
 }

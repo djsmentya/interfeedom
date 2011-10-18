@@ -9,7 +9,6 @@ class ProductsController < ApplicationController
                   end
     else
       @products = Product.all
-
     end
 
     respond_to do |format|

@@ -1,27 +1,50 @@
 %h1 Listing products
+-#
+-#%table
+-#  %tr
+-#    %th Name
+-#    %th Description
+-#    %th Avalible on
+-#    %th Count on hand
+-#    %th Category
+-#    %th
+-#    %th
+-#    %th
+- @products.each do |product|
+  .product.column
+    .span-4
+      = link_to image_tag(product.image.url(:thumb)), product_path(product)
+    .span-13
+      .span-9
+        #states.span-9
+          -if product.created_at >= 2.weeks.ago
+            .state
+              %b NEW
+          -if product.available?
+            .state
+              %b AVAILABLE
+          - else
+            .state
+              %b  NOT AVAILABLE
+        .span-9.prepend-top
+          %h4
+            = link_to product.name, product_path(product)
+        .span-9.last
+          = product.description
+      .span-3  dfa
 
-%table
-  %tr
-    %th Name
-    %th Description
-    %th Avalible on
-    %th Count on hand
-    %th Category
-    %th
-    %th
-    %th
 
-  - @products.each do |product|
-    %tr
-      %td= product.name
-      %td= product.description
-      %td= product.avalible_on
-      %td= product.count_on_hand
-      %td= product.category
-      %td= link_to 'Show', product
-      %td= link_to 'Edit', edit_product_path(product)
-      %td= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete
-
-%br
-
-= link_to 'New Product', new_product_path
+-#    %tr
+-#      %td= image_tag product.image.url(:thumb)
+-#      %td= product.name
+-#      %td= product.description
+-#      %td= product.avalible_on
+-#      %td= product.count_on_hand
+-#      -#%td= product.category
+-#      %td= link_to 'Show', product
+-#      %td= link_to 'Edit', edit_product_path(product)
+-#      %td= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete
+-#
+-#%br
+-#
+-#= link_to 'New Product', new_product_path
