@@ -22,7 +22,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem 'routing-filter'
 
 gem 'haml-rails'
 gem 'therubyracer'
