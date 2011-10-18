@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   def index
     if params[:category_type].present?
       @products = case params[:category_type].to_s
-                    when 'videos' then
+                    when 'video' then
                       Product.videos
                   end
     else
