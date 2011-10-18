@@ -1,0 +1,5 @@
+ru:
+  shared:
+    header:
+      welcome: 'Здраствуйте, '
+      sign_in: 'войти'

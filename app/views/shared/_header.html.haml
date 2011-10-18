@@ -2,11 +2,12 @@
   .span-24
     #user_header
       .span-10
-        Welcome, (
+        = t('shared.header.welcome')
+        (
         - if current_user
           = link_to 'sign out', destroy_user_session_path, :method => :delete
         -else
-          = link_to 'sign in', new_user_session_path
+          = link_to t('.sign_in'), new_user_session_path
         )
       #user_cart.span-7
         -#TODO create card  menu
