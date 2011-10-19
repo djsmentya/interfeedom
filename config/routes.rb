@@ -1,19 +1,21 @@
 Interfreedom::Application.routes.draw do
   filter :locale
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   devise_for :users
 
-  #scope ':category_type' do
-  #  resources :products, :as => 'categoried_products'
-  #end
-
+  resources :cart do
+      collection do
+        get 'add_item'
+      end
+  end
   resources :products
-  match '/:category_type' => 'products#index', :category_type => 'video'
   resources :videos
 
+  match '/:category_type' => 'products#index', :category_type => /video/
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

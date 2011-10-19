@@ -1,0 +1,20 @@
+%h1 Cart
+
+%table
+  %thead
+    %th Product
+    %th Description
+    %th Available
+    %th Quantity
+    %th Total
+  - @products.each do |product|
+    %tbody
+      %td= image_tag product.image.url(:thumb)
+      %td= product.name
+      %td
+        -if product.available?
+          1
+        -else
+          0
+      %td= current_cart.item_quantity product.id
+      %td= product.price

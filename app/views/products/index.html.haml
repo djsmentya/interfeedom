@@ -8,7 +8,7 @@
 -#    %th Count on hand
 -#    %th Category
 -#    %th
--#    %th
+-'add'#    %th
 -#    %th
 - @products.each do |product|
   .product.column
@@ -31,7 +31,8 @@
             = link_to product.name, product_path(product)
         .span-9.last
           = product.description
-      .span-3  dfa
+      .span-3
+        = link_to 'add',add_item_cart_index_path(:product_id => product)
 
 
 -#    %tr

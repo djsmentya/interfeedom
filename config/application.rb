@@ -26,6 +26,8 @@ module Interfreedom
     #piperclip
     config.gem "paperclip"
 
+    config.session_store = :active_record_store
+
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
 
