@@ -19,11 +19,7 @@
       #logo.span-12
         %h1.title
           = link_to image_tag('logo.png'), root_path
-      #menue.span-12.last.right
-        %ul
-          %li button
-          %li button
-          %li button
+      = render :partial => 'shared/menu'
   #flasher.column.last.prepend-11.prepend-top
     - flash.each do |key, value|
       =content_tag(:div,value,:class => key)
