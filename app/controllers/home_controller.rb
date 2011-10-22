@@ -4,4 +4,7 @@ class HomeController < ApplicationController
   def index
   end
 
+  def change_locale
+    I18n.locale = params[]#TODO add params
+  end
 end
