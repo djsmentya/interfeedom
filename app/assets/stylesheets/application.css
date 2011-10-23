@@ -4,6 +4,7 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
  *= require ./screen
+ *= require ./south-street/jquery-ui
 */
 
 /*#content {*/
@@ -54,7 +55,7 @@ nav {
     text-decoration: none;
     color: #ffff00;
     text-transform: uppercase;
-    font:bold normal 'Arial';
+    font: bold normal 'Arial';
 }
 
 #menu li:hover {

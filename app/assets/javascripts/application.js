@@ -6,4 +6,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//=require jquery-ui
+
+$(function() {
+		$( "#product_avalible_on" ).datepicker();
+	});
