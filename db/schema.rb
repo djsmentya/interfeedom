@@ -57,8 +57,8 @@ ActiveRecord::Schema.define(:version => 20111019201018) do
     t.string   "description"
     t.datetime "avalible_on"
     t.integer  "count_on_hand",      :default => 0,   :null => false
-    t.integer  "category_id"
-    t.string   "category_type"
+    t.integer  "properties_id"
+    t.string   "properties_type"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(:version => 20111019201018) do
     t.float    "price",              :default => 0.0, :null => false
   end
 
-  add_index "products", ["category_id"], :name => "index_products_on_category_id"
+  add_index "products", ["properties_id"], :name => "index_products_on_properties_id"
 
   create_table "roles", :force => true do |t|
     t.string   "title"

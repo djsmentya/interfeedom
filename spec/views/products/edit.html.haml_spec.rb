@@ -6,7 +6,7 @@ describe "products/edit.html.haml" do
       :name => "MyString",
       :description => "MyString",
       :count_on_hand => 1,
-      :category => nil
+      :properties => nil
     ))
   end
 

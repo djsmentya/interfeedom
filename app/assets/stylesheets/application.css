@@ -88,6 +88,8 @@ nav {
     background: none repeat scroll 0 0 #EEEEEE;
     padding: 6px 10px 0;
     float: left;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 #language ul {

@@ -1,15 +1,17 @@
-%p#notice= notice
-
-%p
-  %b Genre:
-  = @video.genre
-%p
-  %b Producers:
-  = @video.producers
-%p
-  %b Completion year:
-  = @video.completion_year
-
-= link_to 'Edit', edit_video_path(@video)
-\|
-= link_to 'Back', videos_path
+.span-7{:style => 'text-align:center;'}
+  =image_tag @video.image.url(:large)
+%h1= @video.name
+.span-11.last
+  = product_states(@video)
+  .right
+    %label
+      Price:
+    = @video.price
+  .span-10.prepend-top
+    %label
+      Genre:
+    = @video.properties.genre
+    %br
+    %label
+      Description:
+    = @video.description

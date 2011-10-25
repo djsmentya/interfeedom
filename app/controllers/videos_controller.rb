@@ -2,7 +2,7 @@ class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
   def index
-    @videos = Video.all
+    @videos = Product.videos
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class VideosController < ApplicationController
   # GET /videos/1
   # GET /videos/1.json
   def show
-    @video = Video.find(params[:id])
+    @video = Product.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

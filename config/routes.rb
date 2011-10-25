@@ -17,7 +17,7 @@ Interfreedom::Application.routes.draw do
   resources :products
   resources :videos
 
-  match '/:category_type' => 'products#index', :category_type => /video/
+  #match '/:category_type' => 'products#index', :category_type => /video/
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

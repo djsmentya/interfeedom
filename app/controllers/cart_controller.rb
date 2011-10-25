@@ -19,6 +19,11 @@ class CartController < ApplicationController
     redirect_to :back, :notice => 'Added to cart'
   end
 
+  def destroy
+    @cart.items.delete(params[:id].to_i)
+    redirect_to :controller => :cart, :action => :index
+  end
+
   private
   def find_cart
     @cart = current_cart

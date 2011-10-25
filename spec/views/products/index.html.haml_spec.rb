@@ -7,13 +7,13 @@ describe "products/index.html.haml" do
         :name => "Name",
         :description => "Description",
         :count_on_hand => 1,
-        :category => nil
+        :properties => nil
       ),
       stub_model(Product,
         :name => "Name",
         :description => "Description",
         :count_on_hand => 1,
-        :category => nil
+        :properties => nil
       )
     ])
   end

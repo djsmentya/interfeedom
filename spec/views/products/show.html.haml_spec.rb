@@ -6,7 +6,7 @@ describe "products/show.html.haml" do
       :name => "Name",
       :description => "Description",
       :count_on_hand => 1,
-      :category => nil
+      :properties => nil
     ))
   end
 

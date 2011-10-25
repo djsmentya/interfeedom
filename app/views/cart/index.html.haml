@@ -7,6 +7,7 @@
     %th Available
     %th Quantity
     %th Total
+    %th Action
   - @products.each do |product|
     %tbody
       %td= image_tag product.image.url(:thumb)
@@ -18,3 +19,4 @@
           0
       %td= current_cart.item_quantity product.id
       %td= product.price
+      %td= link_to 'Destroy',cart_path(product), :method => :delete

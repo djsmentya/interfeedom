@@ -5,10 +5,10 @@ class CreateProducts < ActiveRecord::Migration
       t.string :description
       t.datetime :avalible_on
       t.integer :count_on_hand, :default => 0, :null => false
-      t.references :category, :polymorphic => true
+      t.references :properties, :polymorphic => true
 
       t.timestamps
     end
-    add_index :products, :category_id
+    add_index :products, :properties_id
   end
 end
