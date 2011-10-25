@@ -1,4 +1,6 @@
 Interfreedom::Application.routes.draw do
+  get "locales/change_locale"
+
   filter :locale
 
   ActiveAdmin.routes(self)
@@ -8,9 +10,9 @@ Interfreedom::Application.routes.draw do
   devise_for :users
 
   resources :cart do
-      collection do
-        get 'add_item'
-      end
+    collection do
+      get 'add_item'
+    end
   end
   resources :products
   resources :videos
@@ -65,12 +67,10 @@ Interfreedom::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'home#index' do
-    collection do
-      get 'change_locale'
-    end
+  root :to => 'home#index'
 
-  end
+
+  resources :home
 
   # See how all your routes lay out with "rake routes"
 

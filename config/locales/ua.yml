@@ -1,0 +1,5 @@
+ua:
+  shared:
+    header:
+      welcome: 'Вітаємо, '
+      sign_in: 'вхід'

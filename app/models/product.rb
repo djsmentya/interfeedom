@@ -5,7 +5,7 @@ class Product < ActiveRecord::Base
 
   scope :videos, :conditions => {:category_type => 'Video'}
 
-  has_attached_file :image, :styles => {:medium => "300x300>", :thumb => "150x150>"}, :default_url => '/system/images/thumb/missing.png'
+  has_attached_file :image, :styles => {:large => "300x300>", :medium => '150x150', :thumb => "50x50>"}, :default_url => '/system/images/thumb/missing.png'
 
 
   def available?

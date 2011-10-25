@@ -90,6 +90,29 @@ nav {
     float: left;
 }
 
-#states {
+#language ul {
+    list-style: none outside;
+    float: right;
+}
+
+#language ul li {
+    float: left;
+}
+
+#language ul li a {
+    padding: 3px;
+    border: 1px solid #D9D9D9;
+    opacity: 0.4;
+    filter: alpha(opacity = 40); /* For IE8 and earlier */
+}
+
+#language ul li a:hover {
+    opacity: 0.6;
+    filter: alpha(opacity = 40); /* For IE8 and earlier */
+}
+
+#language .active {
+    opacity: 1;
+    filter: alpha(opacity = 100); /* For IE8 and earlier */
 
 }

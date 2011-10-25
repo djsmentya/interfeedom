@@ -6,8 +6,16 @@
 //
 //= require jquery
 //= require jquery_ujs
-//=require jquery-ui
+//= require jquery-ui
 
 $(function() {
-		$( "#product_avalible_on" ).datepicker();
-	});
+    $("#product_avalible_on").datepicker();
+});
+
+
+$(document).ready(function() {
+    $("#languages").change(function() {
+        var lan = $("#languages option:selected").attr('value');
+        $.get('/home/change_locale','language=' +lan);
+    })
+});
