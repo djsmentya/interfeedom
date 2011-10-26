@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111019201018) do
+ActiveRecord::Schema.define(:version => 20111026002840) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -69,6 +69,15 @@ ActiveRecord::Schema.define(:version => 20111019201018) do
   end
 
   add_index "products", ["properties_id"], :name => "index_products_on_properties_id"
+
+  create_table "profiles", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "title"

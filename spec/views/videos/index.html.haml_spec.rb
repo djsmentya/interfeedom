@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "videos/index.html.haml" do
+describe "videos/info.html.haml" do
   before(:each) do
     assign(:videos, [
       stub_model(Video,

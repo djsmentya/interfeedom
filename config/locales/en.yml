@@ -6,11 +6,13 @@ en:
     header:
       welcome: 'Welcome, '
       sign_in: 'sign in'
-    users:
-      sessions:
-        new:
-          password: 'Password'
-          remember_me: 'Remember me'
-
+      sign_out: 'sign out'
+  users:
+    sessions:
+      new:
+        password: 'Password'
+        remember_me: 'Remember me'
+  ua: 'Українська'
+  en: 'English'
   sign_in: 'Sign In'
   sign_up: 'Sign Up'

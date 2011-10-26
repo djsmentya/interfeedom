@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
 
   has_many :assignments
   has_many :roles, :through => :assignments
+  has_one :profile
 
   #select roles for Authorization
   def role_symbols

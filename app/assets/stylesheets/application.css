@@ -118,3 +118,16 @@ nav {
     filter: alpha(opacity = 100); /* For IE8 and earlier */
 
 }
+
+#flash {
+    margin: 0 auto;
+    width: 270px;
+    text-align: center;
+}
+
+#flash_area {
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}

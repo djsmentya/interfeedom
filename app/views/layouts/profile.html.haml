@@ -9,15 +9,6 @@
     <![endif]-->
     = csrf_meta_tags
   %body
-    #flash_area
-      - flash.each do |key, value|
-        #flash{:style=> 'display:none'}
-          = content_tag(:div,value,:class => key)
-          :javascript
-            $(document).ready(function() {
-              $("#flash").slideDown('slow');
-              $("#flash").slideUp('slow');
-            });
     #main.container
       = render :partial => 'shared/header'
       #content.container
@@ -37,5 +28,3 @@
       $.submit("#{locales_change_locale_path}",'language' + lan);
     })
   });
-
-

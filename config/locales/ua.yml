@@ -3,10 +3,13 @@ ua:
     header:
       welcome: 'Вітаємо, '
       sign_in: 'вхід'
+      sign_out: 'вихід'
   users:
     sessions:
       new:
         password: 'Пароль'
         remember_me: 'Запам’ятайте мене'
+  ua: 'Українська'
+  en: 'English'
   sign_in: 'Вхід'
   sign_up: 'Реєстрація'

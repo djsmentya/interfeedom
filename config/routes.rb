@@ -16,6 +16,11 @@ Interfreedom::Application.routes.draw do
   end
   resources :products
   resources :videos
+  resources :profile do
+    collection do
+      get 'info'
+    end
+  end
 
   #match '/:category_type' => 'products#index', :category_type => /video/
   # The priority is based upon order of creation:
