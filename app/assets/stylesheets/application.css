@@ -17,6 +17,12 @@
     margin-top: 15px;
 }
 
+#header a {
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
 nav {
     background: url("bg_header.png") no-repeat;
     width: 950px;
@@ -130,4 +136,8 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
+}
+
+.row {
+    display: block;
 }

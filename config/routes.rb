@@ -16,6 +16,7 @@ Interfreedom::Application.routes.draw do
   end
   resources :products
   resources :videos
+
   resources :profile do
     collection do
       get 'info'

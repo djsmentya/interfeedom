@@ -1,1 +1,23 @@
 %h1 Profile
+- @profile = current_user.profile
+
+
+.span-18
+  .span-5
+    .row
+      %label
+        Your name:
+      = @profile.person
+    .row
+      %label
+        Your Email:
+      = current_user.email
+    .row
+      %label
+        Your phone:
+      = @profile.phone
+    .row
+    -if @profile.shipping_address.present?
+      %label
+        Shipping Address:
+      = @profile.shipping_address.full_address

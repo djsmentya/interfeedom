@@ -4,6 +4,7 @@ ua:
       welcome: 'Вітаємо, '
       sign_in: 'вхід'
       sign_out: 'вихід'
+      profile_link: 'Профайл'
   users:
     sessions:
       new:

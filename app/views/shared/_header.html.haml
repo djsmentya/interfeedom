@@ -10,6 +10,8 @@
         -else
           = link_to t('.sign_in'), new_user_session_path
         )
+        %span{:style =>'float:right;'}
+          =link_to t('.profile_link'), profile_index_path
       #user_cart.span-7
         = image_tag 'icons/header_cart.png'
         = link_to t('.cart'), cart_index_path

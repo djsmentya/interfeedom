@@ -15,8 +15,10 @@
           = content_tag(:div,value,:class => key)
           :javascript
             $(document).ready(function() {
-              $("#flash").slideDown('slow');
-              $("#flash").slideUp('slow');
+              $("#flash").slideDown(2000);
+              setTimeout(
+                  function(){$("#flash").slideUp(1000);}
+              ,5000);
             });
     #main.container
       = render :partial => 'shared/header'
