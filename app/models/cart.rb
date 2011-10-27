@@ -6,10 +6,14 @@ class Cart
   end
 
   def << (product_id, quantity = 1)
-    @items.[]= product_id, quantity
+    if @items[product_id].present?
+      @items[product_id] += 1
+    else
+      @items.[]= product_id, quantity
+    end
   end
 
   def item_quantity(product_id)
-      @items[product_id]
+    @items[product_id]
   end
 end

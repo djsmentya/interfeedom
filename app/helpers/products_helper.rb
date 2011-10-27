@@ -11,4 +11,11 @@ module ProductsHelper
     end
     raw new + available
   end
+
+  def categoried_product_path(product)
+    case                    #TODO watch for metaprogramming way of path selection
+      when product.properties_type.eql?('Video')
+        video_path(product)
+    end
+  end
 end

@@ -4,7 +4,7 @@ class CartController < ApplicationController
   def index
     product_ids =[]
     items = @cart.items
-    items.each do |product_id|
+    items.each do |product_id, q|
       product_ids << product_id
     end
     unless product_ids.nil?

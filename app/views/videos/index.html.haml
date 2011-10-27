@@ -1,6 +1,16 @@
-- @videos.each do |video|
-  .span-4{:style => 'text-align:center;'}
-    =image_tag video.image.url(:medium)
-    .span-4.last
-      %h6
+.column.last{:style =>'width:600px;'}
+  - @videos.each do |video|
+    .span-5{:style => 'padding-top:5px;border-bottom: 1px solid #f0f0f0; text-align:center;'}
+      %h6{:style => 'height: 3em;'}
         = link_to video.name, video_path(video)
+      =link_to image_tag(video.image.url(:medium)), video_path(video)
+      .span-5.last
+        %label
+          = t('.price')
+          =video.price
+        .span{:style => 'padding:5px;border: 1px solid #e1e1e1; text-align:center;'}
+          = link_to_add_product(video, :class =>:button)
+.column.span-3.last
+  = will_paginate @videos
+
+

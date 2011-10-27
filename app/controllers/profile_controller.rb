@@ -1,5 +1,5 @@
 class ProfileController < ApplicationController
-  filter_resource_access :collection=> [:info]
+  filter_access_to :all
   def index
     render :controller => 'profile', :action => :info
   end

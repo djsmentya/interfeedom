@@ -8,12 +8,19 @@ en:
       sign_in: 'sign in'
       sign_out: 'sign out'
       profile_link: 'Profile'
+    menu:
+      home: 'Home'
+      video: 'Video'
   users:
     sessions:
       new:
         password: 'Password'
         remember_me: 'Remember me'
+  videos:
+    index:
+      price: 'Price '
   ua: 'Українська'
   en: 'English'
   sign_in: 'Sign In'
   sign_up: 'Sign Up'
+  to_cart: 'To Cart'

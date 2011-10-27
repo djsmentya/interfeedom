@@ -5,12 +5,19 @@ ua:
       sign_in: 'вхід'
       sign_out: 'вихід'
       profile_link: 'Профайл'
+    menu:
+      home: 'Головна'
+      video: 'Відео'
   users:
     sessions:
       new:
         password: 'Пароль'
         remember_me: 'Запам’ятайте мене'
+  videos:
+    index:
+      price: 'Ціна '
   ua: 'Українська'
   en: 'English'
   sign_in: 'Вхід'
   sign_up: 'Реєстрація'
+  to_cart: 'В корзину'

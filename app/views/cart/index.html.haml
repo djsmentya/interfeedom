@@ -6,17 +6,20 @@
     %th Description
     %th Available
     %th Quantity
+    %th Price
     %th Total
     %th Action
   - @products.each do |product|
     %tbody
-      %td= image_tag product.image.url(:thumb)
+      %td= link_to image_tag(product.image.url(:thumb)), categoried_product_path(product)
       %td= product.name
       %td
         -if product.available?
           1
         -else
           0
-      %td= current_cart.item_quantity product.id
+      - quantity = current_cart.item_quantity(product.id)
+      %td= quantity
       %td= product.price
+      %td= product.price * quantity
       %td= link_to 'Destroy',cart_path(product), :method => :delete
