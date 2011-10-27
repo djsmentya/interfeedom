@@ -5,6 +5,11 @@ ua:
       sign_in: 'вхід'
       sign_out: 'вихід'
       profile_link: 'Профайл'
+      cart: 'Кошик: '
+      product:
+        one: "%{count} Товар"
+        few: "%{count} Товари"
+        other: "%{count} Товарів"
     menu:
       home: 'Головна'
       video: 'Відео'
@@ -12,7 +17,11 @@ ua:
     sessions:
       new:
         password: 'Пароль'
+        password_confirmation: 'Повторити пароль'
         remember_me: 'Запам’ятайте мене'
+    shared:
+      links:
+        forgot_your_password: "Забули свій пароль?"
   videos:
     index:
       price: 'Ціна '

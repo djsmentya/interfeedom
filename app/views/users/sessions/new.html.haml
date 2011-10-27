@@ -1,16 +1,34 @@
-%h2= t :sign_up
-= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-  %div
-    = f.label :email
-    %br/
-    = f.email_field :email
-  %div
-    = f.label t('.password')
-    %br/
-    = f.password_field :password
-  - if devise_mapping.rememberable?
+.column.border.span-9
+  %h2= t :sign_in
+  = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
     %div
-      = f.check_box :remember_me
-      = f.label t('.remember_me')
-  %div= f.submit t :sign_in
-= render :partial => "devise/shared/links"
+      = f.label :email
+      %br/
+      = f.email_field :email
+    %div
+      = f.label t('.password')
+      %br/
+      = f.password_field :password
+    - if devise_mapping.rememberable?
+      %div
+        = f.check_box :remember_me
+        = f.label t('.remember_me')
+    %div= f.submit t :sign_in
+  = render :partial => "users/shared/links"
+.column
+  %h2=t :sign_up
+  = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    %div
+      = f.label :email
+      %br/
+      = f.email_field :email
+    %div
+      = f.label t('.password')
+      %br/
+      = f.password_field :password
+    %div
+      = f.label t('.password_confirmation')
+      %br/
+      = f.password_field :password_confirmation
+    %div= f.submit t :sign_up

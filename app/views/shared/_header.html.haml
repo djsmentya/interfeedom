@@ -15,8 +15,7 @@
       #user_cart.span-7
         = image_tag 'icons/header_cart.png'
         = link_to t('.cart'), cart_index_path
-        = current_cart.items.count
-        Products
+        = t('shared.header.product', :count=> current_cart.items.count )
       #language.span-4.right
         %ul
           %li

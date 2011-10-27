@@ -8,6 +8,10 @@ en:
       sign_in: 'sign in'
       sign_out: 'sign out'
       profile_link: 'Profile'
+      cart: 'Cart: '
+      product:
+        one: '%{count} Product'
+        other: '%{count} Products'
     menu:
       home: 'Home'
       video: 'Video'
@@ -15,7 +19,11 @@ en:
     sessions:
       new:
         password: 'Password'
+        password_confirmation: 'Password confirmation'
         remember_me: 'Remember me'
+    shared:
+      links:
+        forgot_your_password: "Forgot your password?"
   videos:
     index:
       price: 'Price '
