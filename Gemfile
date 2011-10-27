@@ -21,8 +21,6 @@ group :assets do
   gem 'uglifier'
 end
 
-gem 'will_paginate'
-
 gem 'jquery-rails'
 gem 'routing-filter'
 

@@ -32,6 +32,7 @@ class ProductsController < ApplicationController
   # GET /products/new.json
   def new
     @product = Product.new
+    @video = Video.new
 
     respond_to do |format|
       format.html # new.html.erb

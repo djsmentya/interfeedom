@@ -1,7 +1,6 @@
 class Product < ActiveRecord::Base
   belongs_to :properties, :dependent => :destroy, :polymorphic => true
-
-  validates_presence_of :properties
+  validates_presence_of :name
 
   scope :videos, :conditions => {:properties_type => 'Video'}
 
