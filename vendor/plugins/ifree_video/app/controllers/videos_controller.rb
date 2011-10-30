@@ -2,7 +2,7 @@ class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
   def index
-    @videos = Product.videos.page(:page => params[:page], :per_page => 9)
+    @videos = ProductType.video
 
     respond_to do |format|
       format.html # index.html.erb
@@ -34,13 +34,15 @@ class VideosController < ApplicationController
 
   # GET /videos/1/edit
   def edit
-    @video = Video.find(params[:id])
+    @video = Product.find(params[:id])
+    @property = Property.new
   end
 
   # POST /videos
   # POST /videos.json
   def create
     @video = Video.new(params[:video])
+
 
     respond_to do |format|
       if @video.save
@@ -56,17 +58,20 @@ class VideosController < ApplicationController
   # PUT /videos/1
   # PUT /videos/1.json
   def update
-    @video = Video.find(params[:id])
-
-    respond_to do |format|
-      if @video.update_attributes(params[:video])
-        format.html { redirect_to @video, :notice => 'Video was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.json { render :json => @video.errors, :status => :unprocessable_entity }
-      end
-    end
+    @video = Video.new(params[:video])
+    #@video.property.update_attribute :value, {:genre => params[:genre]}
+    redirect_to :back, :notice => params.inspect
+    #@video = Video.find(params[:id])
+    #
+    #respond_to do |format|
+    #  if @video.update_attributes(params[:video])
+    #    format.html { redirect_to @video, :notice => 'Video was successfully updated.' }
+    #    format.json { head :ok }
+    #  else
+    #    format.html { render :action => "edit" }
+    #    format.json { render :json => @video.errors, :status => :unprocessable_entity }
+    #  end
+    #end
   end
 
   # DELETE /videos/1

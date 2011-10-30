@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111026103434) do
+ActiveRecord::Schema.define(:version => 20111030203117) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -52,13 +52,18 @@ ActiveRecord::Schema.define(:version => 20111026103434) do
     t.datetime "updated_at"
   end
 
+  create_table "product_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "products", :force => true do |t|
     t.string   "name"
-    t.string   "description"
-    t.datetime "avalible_on"
+    t.text     "description"
+    t.datetime "available_on"
     t.integer  "count_on_hand",      :default => 0,   :null => false
-    t.integer  "properties_id"
-    t.string   "properties_type"
+    t.integer  "product_type_id",                     :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
@@ -66,9 +71,9 @@ ActiveRecord::Schema.define(:version => 20111026103434) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.float    "price",              :default => 0.0, :null => false
+    t.string   "genre"
+    t.string   "producer"
   end
-
-  add_index "products", ["properties_id"], :name => "index_products_on_properties_id"
 
   create_table "profiles", :force => true do |t|
     t.integer  "user_id"
@@ -124,13 +129,5 @@ ActiveRecord::Schema.define(:version => 20111026103434) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
-
-  create_table "videos", :force => true do |t|
-    t.string   "genre"
-    t.string   "producers"
-    t.date     "completion_year"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
 end

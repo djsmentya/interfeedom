@@ -10,7 +10,11 @@
   .span-10.prepend-top
     %label
       Genre:
-    = @video.properties.genre
+    = @video.genre
+    %br
+    %label
+      Producer:
+    = @video.producer
     %br
     %label
       Description:

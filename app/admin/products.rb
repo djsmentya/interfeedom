@@ -6,29 +6,37 @@ ActiveAdmin.register Product do
     end
     column :id
     column :name
-    column :avalible_on
+    column :available_on
     column :created_at
     column :updated_at
     default_actions
   end
+  #
+  #form do |f|
+  #  f.inputs 'Product' do
+  #    f.input :name
+  #    f.input :product_type
+  #    f.input :description
+  #    f.input :avalible_on
+  #    f.input :image, :label => 'Product image'
+  #    f.input :price
+  #  end
+  #
+  #  f.buttons
+  #end
 
-  form do |f|
-    f.inputs 'Product' do
-      f.input :name
-      f.input :description
-      #f.datepicker_input :avalible_on, :div
-      f.input :image, :label => 'Product image'
-    end
-
-    f.buttons
-  end
-  sidebar :fields do
-    ul do
-      li link_to('#')
-    end
-  end
-
-  collection_action :set_fields do
-
-  end
+  #sidebar :fields do
+  #  ul do
+  #    li link_to('#')
+  #  end
+  #end
+  #456465415
+  #member_action :prop do
+  #  if request.post?
+  #    product = Product.find params[:id]
+  #    Property.create(:product => product, :product_type_id => product.product_type_id, :value => params[:value])
+  #    redirect :index
+  #  end
+  #end
+  #collection_action
 end
