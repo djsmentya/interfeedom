@@ -5,8 +5,10 @@
   = product_states(@video)
   .right
     %label
-      Price:
+      = t('videos.index.price')
     = @video.price
+    %span.prepend-1
+      =link_to_add_product(@video, :class =>'button')
   .span-10.prepend-top
     %label
       Genre:

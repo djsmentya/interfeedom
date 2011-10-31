@@ -12,19 +12,27 @@ ActiveAdmin.register Product do
     default_actions
   end
   #
-  #form do |f|
-  #  f.inputs 'Product' do
-  #    f.input :name
-  #    f.input :product_type
-  #    f.input :description
-  #    f.input :avalible_on
-  #    f.input :image, :label => 'Product image'
-  #    f.input :price
-  #  end
-  #
-  #  f.buttons
-  #end
+  form do |f|
+    f.inputs 'Product' do
+      #    f.input :name
+      f.input :product_type
+      #f.input :description
+      #    f.input :avalible_on
+      #    f.input :image, :label => 'Product image'
+      #    f.input :price
+    end
+    #
 
+  end
+
+  collection_action :new_product do
+    @product = Product.new(params[:product])
+    if params[:product_type].empty?
+      redirect_to :action=> :new
+    else
+      render :partial => "#{params[:product_type]}", :locals => {:product => @product}
+    end
+  end
   #sidebar :fields do
   #  ul do
   #    li link_to('#')
