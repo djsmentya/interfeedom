@@ -14,7 +14,7 @@ module ProductsHelper
 
   def categoried_product_path(product)
     case                    #TODO watch for metaprogramming way of path selection
-      when product.properties_type.eql?('Video')
+      when product.product_type.name.eql?('Video')
         video_path(product)
     end
   end

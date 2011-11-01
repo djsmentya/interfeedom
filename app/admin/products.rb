@@ -1,4 +1,5 @@
 ActiveAdmin.register Product do
+
   index do
     column 'Product' do |product|
       image_tag(product.image.url(:thumb))

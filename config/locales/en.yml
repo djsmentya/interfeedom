@@ -2,6 +2,9 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  active_record:
+    model:
+      profile: 'Profile'
   shared:
     header:
       welcome: 'Welcome, '
@@ -15,6 +18,21 @@ en:
     menu:
       home: 'Home'
       video: 'Video'
+  cart:
+    index:
+      product: 'Product'
+      description: 'Description'
+      available: 'Available'
+      quantity: 'Quantity'
+      total: 'Total'
+      action: 'Action'
+  profile:
+    info:
+       your_name: 'Your name: '
+       your_email: 'Your Email: '
+       your_phone: 'Your Phone: '
+       shipping_address: 'Shipping Address: '
+       edit_profile: 'Edit Profile'
   users:
     sessions:
       new:
@@ -32,3 +50,4 @@ en:
   sign_in: 'Sign In'
   sign_up: 'Sign Up'
   to_cart: 'To Cart'
+  price: 'Price'

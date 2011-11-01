@@ -1,4 +1,7 @@
 ua:
+  active_record:
+    model:
+      profile: 'Profile'
   shared:
     header:
       welcome: 'Вітаємо, '
@@ -13,6 +16,21 @@ ua:
     menu:
       home: 'Головна'
       video: 'Відео'
+  cart:
+    index:
+      product: 'Товар'
+      description: 'Опис'
+      available: 'Доступно'
+      quantity: 'Кількість'
+      total: 'Загально'
+      action: 'Дії'
+  profile:
+    info:
+       your_name: 'Ваше ім’я: '
+       your_email: 'Ваш Email: '
+       your_phone: 'Ваш телефон: '
+       shipping_address: 'Адреса доставки: '
+       edit_profile: 'Змінити данні профілю'
   users:
     sessions:
       new:
@@ -30,3 +48,4 @@ ua:
   sign_in: 'Вхід'
   sign_up: 'Реєстрація'
   to_cart: 'В корзину'
+  price: 'Ціна'

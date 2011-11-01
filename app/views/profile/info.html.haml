@@ -1,27 +1,27 @@
 %h1 Profile
 - if @profile = current_user.profile
   .span-18
-    .span-5
+    .span-7.prepend-5
       .row
         %label
-          Your name:
+          =t('.your_name')
         = @profile.person
       .row
         %label
-          Your Email:
+          =t('.your_email')
         = current_user.email
       .row
         %label
-          Your phone:
+          =t('.your_phone')
         = @profile.phone
       .row
       -if @profile.shipping_address.present?
         %label
           Shipping Address:
         = @profile.shipping_address.full_address
-  = link_to 'Edit Profile', edit_profile_path(@profile)
+  = link_to t('.edit_profile'), edit_profile_path(@profile)
 - else
   .row
     %h5
       No information
-= link_to 'Edit Profile', new_profile_path
+  = link_to t('.edit_profile'), new_profile_path

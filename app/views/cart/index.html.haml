@@ -2,22 +2,22 @@
 
 %table
   %thead
-    %th Product
-    %th Description
-    %th Available
-    %th Quantity
-    %th Price
-    %th Total
-    %th Action
+    %th= t('.product')
+    %th= t('.description')
+    %th= t('.available')
+    %th= t('.quantity')
+    %th= t(:price)
+    %th= t('.total')
+    %th= t('.action')
   - @products.each do |product|
     %tbody
       %td= link_to image_tag(product.image.url(:thumb)), categoried_product_path(product)
       %td= product.name
       %td
         -if product.available?
-          1
+          yes
         -else
-          0
+          no
       - quantity = current_cart.item_quantity(product.id)
       %td= quantity
       %td= product.price
