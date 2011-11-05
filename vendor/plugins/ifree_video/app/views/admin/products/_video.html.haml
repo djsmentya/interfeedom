@@ -1,13 +1,14 @@
 = semantic_form_for :product, :url => {:controller => 'admin/products',:action => :create} do |f|
   = f.inputs 'Video Product' do
-    = f.input :product_type_id, :collection => ProductType.all
+    = f.input :product_type_id, :collection => ProductType.all, :selected => ProductType.video.id
     = f.input :name
     = f.input :description, :as =>:text
     = f.input :genre
     = f.input :producer
     = f.input :image, :as => :file
   = f.buttons
--#:javascript
+-#  TODO get this script out
+:javascript
   $(document).ready(function() {
     $('#product_product_type_id').change(loadProductEdit);
   });
