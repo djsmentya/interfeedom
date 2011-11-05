@@ -1,4 +1,6 @@
 class Product < ActiveRecord::Base
+
+  include ExtensionInitializer
   #belongs_to :properties, :dependent => :destroy, :polymorphic => true
   belongs_to :product_type
   validates_presence_of :name
