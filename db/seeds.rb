@@ -8,5 +8,5 @@
 
 
 # Product types
-
-ProductProductType.create!(:name =>'Video', :property_types => [:genre,:producer,:completion_year] )
+Role.create(:title => 'costumer')
+#ProductProductType.create!(:name =>'Video', :property_types => [:genre,:producer,:completion_year] )
