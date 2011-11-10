@@ -19,7 +19,8 @@
       #language.span-4.right
         %ul
           %li
-            - I18n.available_locales.each do |locale|
+            -#- I18n.available_locales.each do |locale|
+            - [:en,:ua].each do |locale|
               - if I18n.locale.eql?(locale)
                 -active_locale = :active
               = link_to image_tag("flags/#{locale}.png"), locales_change_locale_path(:locale => locale), :class => active_locale, :title => t(locale)
