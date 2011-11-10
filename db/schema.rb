@@ -97,8 +97,8 @@ ActiveRecord::Schema.define(:version => 20111108175133) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.float    "price",              :default => 0.0, :null => false
-    t.string   "producer"
     t.integer  "genre_id"
+    t.string   "producer"
   end
 
   create_table "profiles", :force => true do |t|
