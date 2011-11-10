@@ -5,6 +5,6 @@ class CreateRoles < ActiveRecord::Migration
 
       t.timestamps
     end
-    Role.create(:title=>'customer')
+    #Role.create(:title=>'customer')
   end
 end
