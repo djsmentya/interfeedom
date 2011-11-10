@@ -6,6 +6,7 @@ class Product < ActiveRecord::Base
   validates_presence_of :name
 
   has_attached_file :image, :styles => {:large => "300x300>", :medium => '150x150', :thumb => "50x50"}, :default_url => '/system/images/:style/missing.png'
+  #,:url => '/system/:class/:attachment/:id/:style/:filename'
   attr_reader :video_product_type_id
 
   def available?

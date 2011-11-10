@@ -2,11 +2,7 @@ class CartController < ApplicationController
   before_filter :find_cart
 
   def index
-    product_ids =[]
-    items = @cart.items
-    items.each do |product_id, q|
-      product_ids << product_id
-    end
+    product_ids = cart_product_ids
     unless product_ids.nil?
       @products = Product.find(product_ids)
     else

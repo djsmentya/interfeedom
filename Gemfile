@@ -16,7 +16,6 @@ gem 'paperclip'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', "  ~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
 end
@@ -26,6 +25,7 @@ gem 'routing-filter'
 
 gem 'haml-rails'
 gem 'therubyracer'
+gem 'sass-rails', "  ~> 3.1.0"
 
 gem 'declarative_authorization'
 gem 'devise'
@@ -41,13 +41,14 @@ group :development do
   gem 'nifty-generators'
   gem 'ruby-debug'
   gem 'ruby_parser'
+
+# Deploy with Capistrano
+ gem 'capistrano'
 end
 
 # Use unicorn as the web server
-# gem 'unicorn'
+ gem 'unicorn'
 
-# Deploy with Capistrano
-# gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug'

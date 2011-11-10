@@ -12,7 +12,7 @@
   .span-10.prepend-top
     %label
       Genre:
-    = @video.genre.name
+    = @video.try(:genre).try(:name)
     %br
     %label
       Producer:

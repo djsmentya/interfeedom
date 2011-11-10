@@ -3,7 +3,7 @@
     = f.input :product_type_id, :collection => ProductType.all, :selected => ProductType.video.id
     = f.input :name
     = f.input :description, :as =>:text
-    = f.input :genre
+    = f.input :genre_id, :collection => Genre.all
     = f.input :producer
     = f.input :image, :as => :file
   = f.buttons

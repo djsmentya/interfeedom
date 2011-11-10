@@ -3,11 +3,11 @@ Interfreedom::Application.routes.draw do
 
   filter :locale
 
+  #Devise
   ActiveAdmin.routes(self)
-
   devise_for :admin_users, ActiveAdmin::Devise.config
-
   devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
 
   resources :cart do
     collection do
@@ -16,7 +16,11 @@ Interfreedom::Application.routes.draw do
   end
   resources :products
   resources :videos
-
+  resources :orders do
+    collection do
+      get 'authorization'
+    end
+  end
   resources :profile do
     collection do
       get 'info'

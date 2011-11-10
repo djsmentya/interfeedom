@@ -23,3 +23,5 @@
       %td= product.price
       %td= product.price * quantity
       %td= link_to 'Destroy',cart_path(product), :method => :delete
+.column.right
+  = link_to t('order'), new_order_path, :class => 'button'
