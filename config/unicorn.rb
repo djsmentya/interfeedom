@@ -1,5 +1,5 @@
 deploy_to  = "/usr/share/nginx/interfreedom"
-rails_root = "#{deploy_to}/current"
+rails_root = "#{deploy_to}"
 pid_file   = "#{deploy_to}/tmp/pids/unicorn.pid"
 socket_file= "#{deploy_to}/tmp/unicorn.sock"
 log_file   = "#{rails_root}/log/unicorn.log"
