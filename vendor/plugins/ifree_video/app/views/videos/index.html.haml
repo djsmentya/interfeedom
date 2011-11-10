@@ -1,4 +1,8 @@
 .column.last{:style =>'width:600px;'}
+- if @videos.nil?
+  %h1
+    No products yet
+-else
   - @videos.each do |video|
     .span-5{:style => 'padding-top:5px;border-bottom: 1px solid #f0f0f0; text-align:center;'}
       %h6{:style => 'height: 3em;'}
