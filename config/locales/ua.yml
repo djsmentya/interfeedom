@@ -3,6 +3,8 @@ ua:
     model:
       profile: 'Profile'
   shared:
+    cart_widget:
+      cart: 'Кошик'
     header:
       welcome: 'Вітаємо, '
       sign_in: 'вхід'

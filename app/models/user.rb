@@ -18,7 +18,12 @@ class User < ActiveRecord::Base
   def role_symbols
     (roles || []).map { |r| r.title.to_sym }
   end
-
+  
+  def self.authenticate(email, password)
+    user = User.find_for_authentication(:email => email)
+    user.valid_password?(password) ? user : nil
+  end
+  
   protected
   def set_user_role
     Assignment.create(:user_id =>self.id, :role_id => Role.customer)

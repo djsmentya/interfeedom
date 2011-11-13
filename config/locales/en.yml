@@ -6,6 +6,8 @@ en:
     model:
       profile: 'Profile'
   shared:
+    cart_widget:
+      cart: 'Cart'
     header:
       welcome: 'Welcome, '
       sign_in: 'sign in'

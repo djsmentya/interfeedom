@@ -22,8 +22,7 @@
           %h4
             = link_to product.name, product_path(product)
         .span-9.last
-          - desc = product.description.to_s
-          = desc[0..250]
+          = truncate product.description, :length=> 210
       .span-3
         = link_to 'add',add_item_cart_index_path(:product_id => product)
 

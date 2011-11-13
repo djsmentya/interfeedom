@@ -17,7 +17,11 @@ class CartController < ApplicationController
 
   def destroy
     @cart.items.delete(params[:id].to_i)
-    redirect_to :controller => :cart, :action => :index
+    if request.xhr?
+       render :text => :deletet, :notice=>'Deleted'
+    else
+      redirect_to :controller => :cart, :action => :index
+    end
   end
 
   private

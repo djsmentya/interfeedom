@@ -157,3 +157,24 @@ a:hover.button{
     cursor: pointer;
 
 }
+
+/*sidebar*/
+
+.sbar_head{
+    background: url("/assets/site/sidebar_head.png") no-repeat #6fad07;
+    height: 30px;
+    color: wheat;
+    text-align:right;
+  }
+.sbar_head #title {
+    padding-right:15px;
+    padding-top:3px;
+    font: bold normal 'Arial';
+    font-weight: bolder;
+    font-size: medium;
+  }
+.sbar_content{
+    border: 1px solid #DDDDDD;
+    margin-bottom: 25px;
+    padding: 00px 5px 5px 10px;
+  }

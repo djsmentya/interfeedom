@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_locale, :current_cart
 
-  helper_method :current_cart
+  helper_method :current_cart, :cart_products
 
   protected
 
@@ -17,13 +17,9 @@ class ApplicationController < ActionController::Base
     end
     product_ids
   end
-
-  def after_sign_in_path_for(resource)
-    path = $after_sign_in_path || stored_location_for(resource) || super # || welcome_path
-    $after_sign_in_path =nil #TODO do not use global variable
-    path
+  def cart_products
+    @cart_products ||= Product.find(cart_product_ids)
   end
-
 
   def current_cart
     session[:cart] ||= Cart.new

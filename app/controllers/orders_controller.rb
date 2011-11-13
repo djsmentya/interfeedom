@@ -16,11 +16,11 @@ class OrdersController < ApplicationController
     @order = Order.new(params[:order])
     @order.user_id = current_user.id
     @order.save
-    cart_product_ids do |product_id|
-      @order.order_items.create(:product_id => product_id, :quantity => current_cart[product_id])
+    cart_product_ids.each do |product_id| #TODO make saving with one request
+      @order.order_items.create!(:product_id => product_id, :quantity => current_cart.item_quantity(product_id))
     end
     session[:cart] = nil
-                               # idi nahui
+    
     if @order.errors.present?
       render :new
     else
@@ -29,7 +29,25 @@ class OrdersController < ApplicationController
   end
 
   def authorization
-    $after_sign_in_path = new_order_path #TODO do not use global variable see application_controller
+    @user = User.new
+  end
+
+  def login
+    user = User.authenticate(params[:user][:email], 
+                              params[:user][:password])
+    if user.present?
+      sign_in :user, user
+      redirect_to :action=> :new
+    end
+  end
+
+  def register #TODO not work yet
+    user = User.authorization(:email =>params[:user][:email], 
+                              :password => params[:user][:password])
+    if user.present?
+      sign_in_and_redirect(user,{:controller => :orders, 
+                        :action => :index, :notice => 'Signed in'})   
+    end
   end
 
 end

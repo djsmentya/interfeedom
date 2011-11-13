@@ -1,5 +1,5 @@
 # MySQL.  Versions 4.1 and 5.0 are recommended.
-# 
+#
 # Install the MYSQL driver
 #   gem install mysql2
 #
@@ -16,8 +16,7 @@ development:
   pool: 5
   username: root
   password:
-  socket: /var/lib/mysql/mysql.sock
-
+  socket: /var/run/mysqld/mysqld.sock
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
@@ -29,14 +28,14 @@ test: &test
   pool: 5
   username: root
   password:
-  socket: /var/lib/mysql/mysql.sock
+  socket: /var/run/mysql/mysql.sock
 
 production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
   database: interfreedom_production
-  pool: 10	
+  pool: 10
   username: root
   password:
   socket: /var/lib/mysql/mysql.sock

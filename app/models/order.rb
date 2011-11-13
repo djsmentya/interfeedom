@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  has_many :order_items
+  has_many :order_items, :dependent =>:destroy
   belongs_to :user
   validates_presence_of :recipient, :phone
   before_create :set_new_state

@@ -9,6 +9,8 @@ Interfreedom::Application.routes.draw do
   devise_for :users
   devise_for :users, :controllers => {:registrations => "registrations"}
 
+  #match '/user' => 'orders#new', :as => :user_root
+
   resources :cart do
     collection do
       get 'add_item'
@@ -19,6 +21,8 @@ Interfreedom::Application.routes.draw do
   resources :orders do
     collection do
       get 'authorization'
+      post 'login'
+      post 'register'
     end
   end
   resources :profile do
