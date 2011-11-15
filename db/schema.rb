@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111108175133) do
+ActiveRecord::Schema.define(:version => 20111115165458) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -97,8 +97,8 @@ ActiveRecord::Schema.define(:version => 20111108175133) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.float    "price",              :default => 0.0, :null => false
-    t.integer  "genre_id"
     t.string   "producer"
+    t.integer  "genre_id"
   end
 
   create_table "profiles", :force => true do |t|
@@ -134,6 +134,14 @@ ActiveRecord::Schema.define(:version => 20111108175133) do
     t.integer  "house_number"
     t.integer  "flat"
     t.text     "additional_info"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "supports", :force => true do |t|
+    t.string   "subject"
+    t.string   "email"
+    t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

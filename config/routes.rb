@@ -1,4 +1,6 @@
 Interfreedom::Application.routes.draw do
+  resources :supports
+
   get "locales/change_locale"
 
   filter :locale

@@ -18,6 +18,7 @@ ua:
     menu:
       home: 'Головна'
       video: 'Відео'
+      support: 'Зв’язок'
   cart:
     index:
       product: 'Товар'
