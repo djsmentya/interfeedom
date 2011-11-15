@@ -34,11 +34,11 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: interfreedom_production
+  database: interfreedom_development
   pool: 10
   username: root
   password:
-  socket: /var/lib/mysql/mysql.sock
+  socket: /var/run/mysqld/mysqld.sock
 
 cucumber:
   <<: *test

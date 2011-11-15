@@ -2,6 +2,7 @@ require File.expand_path('../boot', __FILE__)
 
 require "app/models/extension_initializer"
 require 'rails/all'
+require 'sprockets/railtie'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -25,7 +26,7 @@ module Interfreedom
 
     #declarative authorization
     config.gem "declarative_authorization", :source => "http://gemcutter.org"
-
+    config.gem "paperclip"
     config.session_store = :active_record_store
 
     # Custom directories with classes and modules you want to be autoloadable.
