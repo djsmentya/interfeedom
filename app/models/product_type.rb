@@ -6,4 +6,8 @@ class ProductType < ActiveRecord::Base
   def self.video
     ProductType.find_by_name('Video')
   end
+
+  def self.audio
+    ProductType.find_by_name('Audio')
+  end
 end

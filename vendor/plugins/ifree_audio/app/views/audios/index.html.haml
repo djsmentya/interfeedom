@@ -1,0 +1,20 @@
+.column.last.border{:style =>'width:600px;'}
+  - if @audios.nil?
+    %h1
+      No products
+  -else
+    - @audios.each do |audio|
+      .span-5{:style => 'padding-top:5px;border-bottom: 1px solid #f0f0f0; text-align:center;'}
+        %h6{:style => 'height: 3em;'}
+          = link_to audio.name, audio_path(audio)
+        =link_to image_tag(audio.image.url(:medium)), audio_path(audio)
+        .span-5.last
+          %label
+            = t('.price')
+            =audio.price
+          .span{:style => 'padding:5px;border: 1px solid #e1e1e1; text-align:center;'}
+            = link_to_add_product(audio, :class =>:button)
+.column.span-3.last.right
+  - unless @audios.nil?
+    = paginate @audios, :window => 2
+ 

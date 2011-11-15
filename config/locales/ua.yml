@@ -19,6 +19,7 @@ ua:
       home: 'Головна'
       video: 'Відео'
       support: 'Зв’язок'
+      audio: 'Аудіо'
   cart:
     index:
       product: 'Товар'

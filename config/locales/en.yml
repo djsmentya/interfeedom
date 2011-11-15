@@ -21,6 +21,7 @@ en:
       home: 'Home'
       video: 'Video'
       support: 'Support'
+      audio: 'Audio'
   cart:
     index:
       product: 'Product'

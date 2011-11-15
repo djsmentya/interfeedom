@@ -1,0 +1,45 @@
+!!!
+%html
+  %head
+    %title Interfreedom
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    <!--[if IE]>
+    = stylesheet_link_tag "ie"
+    <![endif]-->
+    = csrf_meta_tags
+  %body
+    #flash_area
+      - flash.each do |key, value|
+        #flash{:style=> 'display:none'}
+          = content_tag(:div,value,:class => key)
+          :javascript
+            $(document).ready(function() {
+              $("#flash").slideDown(2000);
+              setTimeout(
+                  function(){$("#flash").slideUp(1000);}
+              ,5000);
+            });
+    #main.container{:style =>'background-color:Azure;'}
+      = render :partial => 'shared/header'
+      #content.container
+        .column.span-18.prepend-top
+          = yield
+        .column.span-5.last
+          = yield :sidebar
+          -#  unless controller.eql?('sessions')
+          = render :partial => 'shared/cart_widget' 
+      #footer.container
+        %hr
+        %p{:style =>'color:#6B6B6B;'}
+          &copy;2011 Powered by Eugene Smentyna
+
+:javascript
+  $(document).ready(function() {
+    $("#languages").change(function() {
+      var lan = $("#languages option:selected").attr('value');
+      $.submit("#{locales_change_locale_path}",'language' + lan);
+    })
+  });
+
+

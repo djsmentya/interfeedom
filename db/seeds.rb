@@ -10,3 +10,4 @@
 # Product types
 Role.create(:title => 'customer')
 ProductType.create(:name=>'Video')
+ProductType.create(:name=>'Audio')
