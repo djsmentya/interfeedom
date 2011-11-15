@@ -1,6 +1,4 @@
 Interfreedom::Application.routes.draw do
-  resources :supports
-
   get "locales/change_locale"
 
   filter :locale
@@ -18,8 +16,11 @@ Interfreedom::Application.routes.draw do
       get 'add_item'
     end
   end
-  resources :products
-  resources :videos
+  
+  resources :products do
+    resources :comments
+  end
+  #resources :videos
   resources :orders do
     collection do
       get 'authorization'
@@ -33,6 +34,9 @@ Interfreedom::Application.routes.draw do
     end
   end
 
+  resources :comments
+
+  resources :supports
   #match '/:category_type' => 'products#index', :category_type => /video/
   # The priority is based upon order of creation:
   # first created -> highest priority.

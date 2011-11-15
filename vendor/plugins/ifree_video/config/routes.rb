@@ -1,5 +1,7 @@
 Interfreedom::Application.routes.draw do
 
-  resources :videos
+  resources :videos do
+    resources :comments
+  end
 
 end

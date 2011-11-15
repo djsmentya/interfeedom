@@ -2,7 +2,8 @@ class Product < ActiveRecord::Base
   paginates_per 9
   include ExtensionInitializer
   #belongs_to :properties, :dependent => :destroy, :polymorphic => true
-  belongs_to :product_type
+  belongs_to :product_type    
+  has_many :comments, :as => :commentable
   validates_presence_of :name
 
   has_attached_file :image, :styles => {:large => "300x300>", :medium => '150x150', :thumb => "50x50"}, :default_url => '/system/images/:style/missing.png', :url  => "system/images/:id/:style/:basename.:extension", :path => ":rails_root/public/assets/system/images/:id/:style/:basename.:extension"
