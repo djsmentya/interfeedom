@@ -29,6 +29,6 @@
    $(this).parents('.cart_item').hide('slow', function(){
       $(this).remove();
    });   
-   $.post("#{url_for(:controller=> :cart , :action=>'index')}/" + product_id, {_method:'delete'},null,'script');
+   $.post("#{cart_index_url}/" + product_id, {_method:'delete'},null,'script');
     });
    

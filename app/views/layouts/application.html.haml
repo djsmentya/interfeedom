@@ -28,7 +28,7 @@
         .column.span-5.last
           = yield :sidebar
           -#  unless controller.eql?('sessions')
-            -# render :partial => 'shared/cart_widget' 
+          = render :partial => 'shared/cart_widget' 
       #footer.container
         %hr
         %p{:style =>'color:#6B6B6B;'}
