@@ -2,7 +2,7 @@ class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
   def index
-    @videos = ProductType.video.try :products
+    @videos = ProductType.video.try(:products).try(:page, 9)
 
     respond_to do |format|
       format.html # index.html.erb
