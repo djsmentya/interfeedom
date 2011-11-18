@@ -16,4 +16,5 @@
           = link_to_add_product(video, :class =>:button)
 .column.span-3.last.right
   = paginate @videos, :window => 2
-
+=content_for :sidebar do
+  =render :partial => 'sidebar' 

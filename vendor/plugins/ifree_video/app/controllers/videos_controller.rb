@@ -2,8 +2,16 @@ class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
   def index
-    @videos = ProductType.video.try(:products).page(params[:page])
-
+    scope_keys = []
+    scope_values = []
+      params.each do |key, value|
+        if  key =~ /video_*/ and !value.blank?
+         field =  key.sub /video_/, ''
+          scope_keys << (field + ' = ?')
+          scope_values <<(value)
+        end
+      end
+    @videos = ProductType.video.try(:products).where(scope_keys + scope_values).page(params[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @videos }

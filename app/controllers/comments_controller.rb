@@ -1,29 +1,26 @@
 class CommentsController < ApplicationController
   def index
-  @commentable = find_commentable
-  @comments = @commentable.comments
-end
-
-def create
-  @commentable = find_commentable
-  @comment = @commentable.comments.build(params[:comment])
-  if @comment.save
-    flash[:notice] = "Successfully created comment."
-    redirect_to :id => nil
-  else
-    render :action => 'new'
+    @commentable = find_commentable
+    @comments = @commentable.comments
   end
-end
 
-private
-
-def find_commentable
-  params.each do |name, value|
-    if name =~ /(.+)_id$/
-      value = 'product_id'
-      return $1.classify.constantize.find(value)
+  def create
+    commentable = Product.find(params[:pr_id])
+   if commentable.comments.create(params[:comment])     
+      flash[:notice] = "Successfully created comment."
+      redirect_to :back
+    else
+      render :action => 'new'
     end
   end
-  nil
-end
+
+  private
+
+  def find_commentable
+    params.each do |name, value|
+      if name =~ /(.+)_id|id/
+        return  Product.find(value)
+      end
+    end
+  end
 end

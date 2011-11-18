@@ -39,6 +39,7 @@ GEM
       activesupport (= 3.1.0)
     activesupport (3.1.0)
       multi_json (~> 1.0)
+    acts_as_commentable (3.0.1)
     arel (2.2.1)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
@@ -253,6 +254,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  acts_as_commentable
   capistrano
   coffee-rails (~> 3.1.0)
   cucumber-rails

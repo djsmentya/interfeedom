@@ -10,7 +10,7 @@
         .row.cart_item{:id=> product.id}
           = current_cart.item_quantity(product.id)
           x
-          = link_to truncate(product.name, :length => 25),video_path(product), :title => product.name
+          = link_to truncate(product.name, :length => 25),categoried_product_path(product), :title => product.name
           %span{:style=>'float:right;'}
             = product.price
             = link_to image_tag('site/webicons/x-red.gif'), '#'

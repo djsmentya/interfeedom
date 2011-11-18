@@ -1,4 +1,4 @@
-class SupportsController < ApplicationController
+  lass SupportsController < ApplicationController
   def index
  
   end

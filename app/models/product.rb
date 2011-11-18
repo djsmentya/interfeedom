@@ -3,9 +3,9 @@ class Product < ActiveRecord::Base
   include ExtensionInitializer
   #belongs_to :properties, :dependent => :destroy, :polymorphic => true
   belongs_to :product_type    
-  has_many :comments, :as => :commentable
+  #has_many :comments, :as => :commentable
   validates_presence_of :name
-
+  acts_as_commentable
   has_attached_file :image, :styles => {:large => "300x300>", :medium => '150x150', :thumb => "50x50"}, :default_url => '/system/images/:style/missing.png', :url  => "system/images/:id/:style/:basename.:extension", :path => ":rails_root/public/assets/system/images/:id/:style/:basename.:extension"
 attr_accessible :image, :name, :description, :product_type_id
   validates_attachment_content_type :image, :content_type => ['image/jpeg', 'image/png']

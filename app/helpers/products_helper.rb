@@ -9,13 +9,21 @@ module ProductsHelper
     else
       available = "<div class='state'>NOT AVAILABLE </div>"
     end
-    raw new + available
+    if new.nil?
+      raw available
+    else
+      raw new + available
+    end
   end
 
   def categoried_product_path(product)
-    case                    #TODO watch for metaprogramming way of path selection
-      when product.product_type.name.eql?('Video')
-        video_path(product)
-    end
+    instance_eval (product.product_type.name.downcase + '_path product')
+
+    #case                    #TODO watch for metaprogramming way of path selection
+      #when product.product_type.name.eql?('Video')
+        #video_path(product)
+      #when product.product_type.name.eql?('Video')
+        #audio_path(product)
+    #end
   end
 end

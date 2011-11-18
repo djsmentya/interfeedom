@@ -21,3 +21,4 @@
     %label
       Description:
     = @video.description
+  = render :template => 'comments/index', :locals=>{:comments => @video.comments}   
