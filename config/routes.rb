@@ -35,6 +35,8 @@ Interfreedom::Application.routes.draw do
   end
 
   resources :comments
+  resources :searches
+  match '/search' => 'searches#index'
 
   resources :supports
   #match '/:category_type' => 'products#index', :category_type => /video/

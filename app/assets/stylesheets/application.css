@@ -178,3 +178,7 @@ a:hover.button{
     margin-bottom: 25px;
     padding: 00px 5px 5px 10px;
   }
+#search-bar{
+padding-top: 8px;
+padding-left: 10px;
+}  

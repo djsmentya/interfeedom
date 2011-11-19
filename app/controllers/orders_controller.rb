@@ -37,8 +37,8 @@ class OrdersController < ApplicationController
                               params[:user][:password])
     if user.present?
       sign_in :user, user
-      redirect_to :action=> :new
     end
+    redirect_to :action=> :new
   end
 
   def register #TODO not work yet

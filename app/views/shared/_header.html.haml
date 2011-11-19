@@ -29,3 +29,7 @@
         %h1.title
           = link_to image_tag('logo.png'), root_path
       = render :partial => 'shared/menu'
+      #search-bar.span-10
+        = form_tag '/search'
+        = text_field_tag :search
+        = submit_tag 'Search'
