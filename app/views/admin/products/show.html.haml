@@ -1,0 +1,4 @@
+= semantic_form_for :product, :url => {:controller => 'admin/products',:action => :create} do |f|
+  = f.inputs 'Audio Product' do
+    = f.input :product_type_id, :collection => ProductType.all, :selected => ProductType.audio.id
+    = f.input :name

@@ -1,0 +1,17 @@
+.span-7{:style => 'text-align:center;'}
+  =image_tag @audio.image.url(:large)
+%h1= @audio.name
+.span-11.last
+  = product_states(@audio)
+  .right
+    %label
+      = t('videos.index.price')
+    = @audio.price
+    %span.prepend-1
+      =link_to_add_product(@audio, :class =>'button')
+  .span-10.prepend-top
+    %br
+    %label
+      Description:
+    = @audio.description
+  = render :template => 'comments/index', :locals=>{:comments => @audio.comments}   
