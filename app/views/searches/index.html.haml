@@ -1,4 +1,9 @@
-#search_content.span-18{:style=>'padding-buttom:30px;'}
+.span-18{:style=>'text-align:center;'}
+  = form_tag search_url :locale => params[:locale]
+  = text_field_tag 'search[value]', @search, :style => 'width:500px;'
+  -#= submit_tag 'Search'
+  = submit_tag 'search', :method =>:get
+#search_content.span-18{:style => 'padding-bottom:30px;'}
   - @searches.each do |product|
     .product.column
       .span-4{:style=>'text-align:center;'}
@@ -11,6 +16,6 @@
             %h4
               = link_to product.name, categoried_product_path(product)
           .span-9.last
-            = truncate product.description, :length=> 210
+            = truncate product.description, :length=> 150
         %div
           = link_to t(:to_cart),add_item_cart_index_path(:product_id => product), :class => :button

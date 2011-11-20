@@ -17,6 +17,6 @@ module ProductsHelper
   end
 
   def categoried_product_path(product)
-    instance_eval (product.product_type.name.downcase + '_path product')
+    instance_eval (product.product_type.downcase + '_path product')
   end
 end

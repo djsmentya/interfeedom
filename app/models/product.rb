@@ -2,7 +2,7 @@ class Product < ActiveRecord::Base
   paginates_per 9
   include ExtensionInitializer
   #belongs_to :properties, :dependent => :destroy, :polymorphic => true
-  belongs_to :product_type    
+  #belongs_to :product_type    
   #has_many :comments, :as => :commentable
   validates_presence_of :name
   acts_as_commentable
