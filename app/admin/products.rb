@@ -1,5 +1,5 @@
 ActiveAdmin.register Product do
-
+form :partial => "form"
   index do
     column 'Product' do |product|
       image_tag(product.image.url(:thumb))
@@ -11,17 +11,6 @@ ActiveAdmin.register Product do
     column :created_at
     column :updated_at
     default_actions
-  end
-  #
-  form do |f|
-    f.inputs 'Product' do
-  #    f.input :name
-      f.input :product_type, :collection_action => ProductType.all
-      #f.input :description
-      #    f.input :avalible_on
-      #    f.input :image, :label => 'Product image'
-      #    f.input :price
-    end
   end
 
   collection_action :new_product do

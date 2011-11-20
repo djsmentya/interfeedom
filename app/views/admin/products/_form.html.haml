@@ -1,0 +1,19 @@
+- if controller.action_name == 'new'
+  =semantic_form_for [:admin, @product] do |f|
+    =f.inputs "Product" do
+      =f.input :name
+      =f.input :description
+      =f.input :image, :as =>:file
+      =f.input :product_type_id
+    = f.inputs "Properties" do
+      = f.input :product_type, :collection => ["Video","Audio"]
+    = f.buttons
+-else
+  =semantic_form_for [:admin, @product] do |f|
+    =f.inputs do
+      =f.input :image, :as => :file
+      =f.input :style
+      =f.input :group
+      =f.input :album
+      
+    =f.buttons

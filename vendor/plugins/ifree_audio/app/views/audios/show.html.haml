@@ -1,5 +1,22 @@
-.span-7{:style => 'text-align:center;'}
-  =image_tag @audio.image.url(:large)
+.span-7
+  %span{:style => 'text-align:center;'}
+    =image_tag @audio.image.url(:large)
+  .span-6
+    %hr
+    %h5
+      Short info
+    %label
+      Style:
+    =@audio.style
+    %br
+    %label
+      Group:
+    =@audio.group
+    %br
+    %label
+      Album:
+    =@audio.album
+
 %h1= @audio.name
 .span-11.last
   = product_states(@audio)
@@ -11,7 +28,8 @@
       =link_to_add_product(@audio, :class =>'button')
   .span-10.prepend-top
     %br
-    %label
-      Description:
+    %h4
+      Play List:
+      %br
     = @audio.description
   = render :template => 'comments/index', :locals=>{:comments => @audio.comments}   
