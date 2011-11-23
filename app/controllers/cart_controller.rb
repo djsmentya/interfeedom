@@ -12,7 +12,7 @@ class CartController < ApplicationController
 
   def add_item
     @cart << params[:product_id].to_i
-    redirect_to :back, :notice => 'Added to cart'
+    redirect_to :back, :notice => 'Added to cart', :locals=>{:params => params}
   end
 
   def destroy
