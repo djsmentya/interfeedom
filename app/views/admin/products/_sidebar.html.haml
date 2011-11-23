@@ -1,0 +1,5 @@
+= select_tag 'product_type', options_from_collection_for_select(ProductType.all, 'name', 'name'), :prompt => '--Product Types--'
+-#= semantic_form_for :product do |f|
+  = f.inputs  do
+    = f.input :product_type_id, :collection => ProductType.all
+    = f.input :name

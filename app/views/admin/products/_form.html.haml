@@ -1,19 +1,31 @@
-- if controller.action_name == 'new'
-  =semantic_form_for [:admin, @product] do |f|
-    =f.inputs "Product" do
-      =f.input :name
-      =f.input :description
-      =f.input :image, :as =>:file
-      =f.input :product_type_id
-    = f.inputs "Properties" do
-      = f.input :product_type, :collection => ["Video","Audio"]
-    = f.buttons
--else
-  =semantic_form_for [:admin, @product] do |f|
+=semantic_form_for [:admin, @product] do |f|
+  =f.inputs "Product" do
+    =f.input :name
+    =f.input :image, :as=>:file
+    =f.input :price
+    =f.input :available_on
+    =f.input :count_on_hand
+    =f.input :description
+    =f.input :product_type, :as=> :hidden
+  #prod.hidden.optional
+    - unless controller.action_name == 'new'
+      =render :partial => @product.product_type.downcase.to_s
+  = f.buttons
+  -#=semantic_form_for [:admin, @product] do |f|
     =f.inputs do
       =f.input :image, :as => :file
       =f.input :style
       =f.input :group
       =f.input :album
-      
+      =f.input :product_type, :as=> :hidden
     =f.buttons
+:javascript
+  $(document).ready(function() {
+    $('#product_type').change(loadProductEdit);
+  });
+
+  function loadProductEdit() {
+    var type = $('#product_type option:selected').val();
+    document.getElementById('product_product_type').setAttribute('value', type);
+    $('#prod').load('new_product?product_type=' + type.toLowerCase());
+  }    

@@ -1,7 +1,11 @@
 %h1 Profile
 - if @profile = current_user.profile
   .span-18
-    .span-7.prepend-5
+    .span-5
+      = link_to t('.edit_profile'), edit_profile_path(@profile)
+      %hr
+      =link_to 'My Orders', orders_path
+    .span-7
       .row
         %label
           =t('.your_name')
@@ -19,9 +23,10 @@
         %label
           Shipping Address:
         = @profile.shipping_address.full_address
-  = link_to t('.edit_profile'), edit_profile_path(@profile)
 - else
   .row
     %h5
       No information
   = link_to t('.edit_profile'), new_profile_path
+
+  

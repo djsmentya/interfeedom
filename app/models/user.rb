@@ -13,7 +13,8 @@ class User < ActiveRecord::Base
   has_many :assignments
   has_many :roles, :through => :assignments
   has_one :profile
-
+  has_many :products, :through => :target
+  has_many :orders
   #select roles for Authorization
   def role_symbols
     (roles || []).map { |r| r.title.to_sym }

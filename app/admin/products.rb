@@ -12,11 +12,13 @@ form :partial => "form"
     column :updated_at
     default_actions
   end
+  
+  sidebar :product_types,:partial => 'sidebar', :only => :new
 
   collection_action :new_product do
     @product = Product.new(params[:product])
     if params[:product_type].empty?
-      redirect_to :action=> :new
+      render :nothing      
     else
       render :partial => "#{params[:product_type]}", :locals => {:product => @product}
     end

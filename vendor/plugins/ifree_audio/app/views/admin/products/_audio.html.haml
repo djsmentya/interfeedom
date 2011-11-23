@@ -1,17 +1,13 @@
-= semantic_form_for :product, :url => {:controller => 'admin/products',:action => :create} do |f|
-  = f.inputs 'Audio Product' do
-    = f.input :product_type_id, :collection => ProductType.all, :selected => ProductType.audio.id
-    = f.input :name
-    = f.input :description, :as =>:text
-    = f.input :image, :as => :file
-  = f.buttons
--#  TODO get this script out
-:javascript
-  $(document).ready(function() {
-    $('#product_product_type_id').change(loadProductEdit);
-  });
-
-  function loadProductEdit() {
-    var type = $('#product_product_type_id option:selected').text().toLowerCase();
-    $('#main_content').load('new_product?product_type=' + type);
-  }
+%fieldset.inputs{:name => "audio"}
+  %legend
+    %span Audio
+  %ol
+    %li#product_style.string.required
+      %label{:for => "product_style"} Style
+      =text_field_tag 'product[style]'
+    %li#product_group.string.required
+      %label{:for => "product_group"} Group
+      =text_field_tag 'product[group]'
+    %li#product_album.string.required
+      %label{:for => "product_album"} Album
+      =text_field_tag 'product[album]'

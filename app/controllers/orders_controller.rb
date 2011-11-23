@@ -1,4 +1,9 @@
 class OrdersController < ApplicationController
+  def index
+    @orders = current_user.orders
+  end
+
+
   def new
     if user_signed_in?
       @order = Order.new

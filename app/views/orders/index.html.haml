@@ -1,0 +1,14 @@
+%h1
+  Order List
+%table
+  %thead
+    %th State
+    %th Created
+    %th Email
+    %th Comment
+  - @orders.each do |order|
+    %tbody
+      %td= order.state
+      %td= order.created_at
+      %td= order.email
+      %td= order.comment
