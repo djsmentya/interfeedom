@@ -34,5 +34,18 @@ ActiveAdmin::Dashboards.build do
   #   section "Recent User", :priority => 1
   #
   # Will render the "Recent Users" then the "Recent Posts" sections on the dashboard.
-
+  section "Recent Users", :priority => 2 do
+    table_for User.all(:order => 'id DESC', :limit => 10) do
+      column("User") {|user| link_to(user.email, admin_user_path(user)) }
+      column :created_at #("Created At") {|user| content_tag(:div, user.created_at) }
+    end
+  end
+  
+  section "Recent Orders", :priority => 1 do
+    table_for Order.all(:limit => 10) do
+      column("State") {|order| status_tag(order.state) }
+      column("Customer") {|order| link_to(order.user.email, admin_user_path(order.user)) }
+      #column("Total") {|order| number_to_currency order.total_price }
+    end
+  end
 end

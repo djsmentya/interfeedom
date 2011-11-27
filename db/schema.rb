@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(:version => 20111120182137) do
     t.string   "name"
     t.text     "description"
     t.datetime "available_on"
-    t.integer  "count_on_hand",      :default => 0,   :null => false
+    t.integer  "count_on_hand",      :defaulnewt => 0,   :null => false
     t.integer  "product_type_id",                     :null => false
     t.datetime "created_at"
     t.datetime "updated_at"

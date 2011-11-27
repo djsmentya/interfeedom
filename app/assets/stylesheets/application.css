@@ -166,6 +166,9 @@ a:hover.button{
     color: wheat;
     text-align:right;
   }
+.sbar_head a{
+  color:wheat;
+}  
 .sbar_head #title {
     padding-right:15px;
     padding-top:3px;
@@ -182,3 +185,5 @@ a:hover.button{
 padding-top: 8px;
 padding-left: 10px;
 }  
+
+nav .n

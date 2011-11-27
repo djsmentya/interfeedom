@@ -5,6 +5,7 @@ class Product < ActiveRecord::Base
   #belongs_to :properties, :dependent => :destroy, :polymorphic => true
   #belongs_to :product_type    
   #has_many :comments, :as => :commentable
+  has_many :order_items
   validates_presence_of :name
   acts_as_commentable
   has_attached_file :image, :styles => {:large => "270x270>", :medium => '150x150', :thumb => "50x50"}, :default_url => '/system/images/:style/missing.png', :url  => "system/images/:id/:style/:basename.:extension", :path => ":rails_root/public/assets/system/images/:id/:style/:basename.:extension"

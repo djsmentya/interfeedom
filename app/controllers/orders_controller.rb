@@ -20,6 +20,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(params[:order])
     @order.user_id = current_user.id
+    @order.state = 'in_progress'
     @order.save
     cart_product_ids.each do |product_id| #TODO make saving with one request
       @order.order_items.create!(:product_id => product_id, :quantity => current_cart.item_quantity(product_id))
