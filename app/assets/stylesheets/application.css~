@@ -172,15 +172,9 @@ a:hover.button{
 }  
 
 .sbar_head a:hover {
-  color:yellow;dwwwwwwwwwwwwwwwwwwdwwad
-aS}Dd
-wdxad
-f 
-safGSDFGOJs
-'s.;acv, vma/;fl.'
-
-
-.sbAar_head #title {
+  color:yellow;
+}
+.sbar_head #title {
     padding-right:15px;
     padding-top:3px;
     font: bold normal 'Arial';
