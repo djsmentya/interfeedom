@@ -1,3 +1,4 @@
+!!!
 %html
   %head
     %title interfreedom
@@ -26,8 +27,6 @@
           = yield
         .column.span-5.last
           = yield :sidebar
-          -#  unless controller.eql?('sessions')
-          = render :partial => 'shared/cart_widget' 
       #footer.container
         %hr
         %p{:style =>'color:#6b6b6b;'}
@@ -40,5 +39,6 @@
       $.submit("#{locales_change_locale_path}",'language' + lan);
     })
   });
+
 
 

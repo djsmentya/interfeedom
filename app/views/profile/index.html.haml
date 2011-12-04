@@ -1,0 +1,8 @@
+
+= content_for :sidebar do  
+  %ul#sidebar_nav
+    - %w(Products Orders).each do |link|
+      %li.nav_item
+        = link_to link, '#'
+
+

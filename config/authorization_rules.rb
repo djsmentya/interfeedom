@@ -9,4 +9,8 @@ authorization do
       if_attribute :user_id => is {current_user.id}
     end
   end
+
+  role :saler do
+    includes :guest
+  end
 end

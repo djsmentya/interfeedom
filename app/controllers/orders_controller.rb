@@ -1,6 +1,10 @@
 class OrdersController < ApplicationController
   def index
-    @orders = current_user.orders
+    @orders_and_products= {}
+    orders = current_user.orders.all :include => :order_items
+    orders.each do |order|
+      @orders_and_products[order] = order.order_items.all :include => :product
+    end
   end
 
 

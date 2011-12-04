@@ -29,6 +29,7 @@ Interfreedom::Application.routes.draw do
     end
   end
   resources :profile do
+    resources :products
     collection do
       get 'info'
     end

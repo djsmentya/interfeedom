@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessor :person
 
-  after_save :set_user_role
+  after_create :set_user_role
 
   has_many :assignments
   has_many :roles, :through => :assignments
@@ -18,6 +18,9 @@ class User < ActiveRecord::Base
   #select roles for Authorization
   def role_symbols
     (roles || []).map { |r| r.title.to_sym }
+  end
+  def self.saler?
+    self.roles.exist?('title = Saler')
   end
   
   def self.authenticate(email, password)

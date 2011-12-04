@@ -28,6 +28,10 @@ gem 'haml-rails'
 gem 'therubyracer'
 gem 'sass-rails', "  ~> 3.1.0"
 
+#for Jruby
+#gem 'therubyrhino' 
+#gem 'jruby-openssl'
+
 gem 'declarative_authorization'
 gem 'devise'
 group :test, :development do
@@ -42,7 +46,7 @@ group :development do
   gem 'nifty-generators'
   gem 'ruby-debug'
   gem 'ruby_parser'
-
+  gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
 # Deploy with Capistrano
  gem 'capistrano'
 end
