@@ -21,19 +21,11 @@ group :assets do
   gem 'uglifier'
 end
 
-group :production do
-  gem 'therubyracer-heroku', '0.8.1.pre3'
-end
-
 gem 'jquery-rails'
 gem 'routing-filter'
 
 gem 'haml-rails'
-
-group :development do
-  gem 'therubyracer'
-end
-
+gem 'therubyracer'
 gem 'sass-rails', "  ~> 3.1.0"
 
 #for Jruby
@@ -52,7 +44,6 @@ end
 
 group :development do
   gem 'nifty-generators'
-  gem 'ruby-debug'
   gem 'ruby_parser'
   gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
 # Deploy with Capistrano
@@ -60,7 +51,7 @@ group :development do
 end
 
 # Use unicorn as the web server
- gem 'unicorn'
+ #gem 'unicorn'
 
 
 # To use debugger

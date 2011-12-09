@@ -1,3 +1,4 @@
+ #encoding: utf-8 
 ua:
   active_record:
     model:
