@@ -190,4 +190,29 @@ a:hover.button{
 #search-bar{
 padding-top: 8px;
 padding-left: 10px;
-}  
+}
+
+.title_line{
+  background: #6fad07;
+  height: 30px;
+  color: wheat;
+  padding-top:3px;
+  font: bold normal 'Arial';
+  font-weight: bolder;
+  font-size: medium;
+  text-align:center;
+}
+ .product img{
+  margin-bottom:3px;
+}
+
+ .column .span-6 .last_added_product {
+   height:50px;
+   padding:5px;
+   border-bottom: 1px solid #dddddd;
+}
+
+.shadow {
+  box-shadow: 0px 5px 4px 5px #ddd;
+}
+

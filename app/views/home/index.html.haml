@@ -3,3 +3,39 @@
 .column.right
   %div
     = link_to image_tag('site/home/movie.png'), videos_path
+
+.column.span-6.shadow{:style=>'margin-left:25px;'}
+  .title_line
+    Last products
+  - @last_added_products.each do |product|   
+    .last_added_product
+      .column.span-2#image
+        = image_tag product.image.url(:thumb)
+      .column
+        =link_to truncate(product.name, :length =>20 ) , categoried_product_path(product), :title => product.name
+ 
+=content_for :sidebar do
+  .span-6.last
+    .span-6.last.sbar_head
+      #title
+        Most popular
+    .span-6.last
+      .sbar_content
+        - @last_added_products.each do |product|   
+          .last_added_product
+            .column
+              =link_to truncate(product.name, :length =>17 ) , categoried_product_path(product), :title => product.name
+            .column.span-2#image{:style => 'text-align:right;float:right;'}
+              = image_tag product.image.url(:thumb)
+.column{:style => 'margin-top:15px;'}
+  %h1{:style =>'text-align:center;'}
+    Вітаємо
+  %p
+    Ми раді вітати вас на нашому сайті! Ви потрапили у місце, де легко відшукаєте все що вам заменеться. Будь який фільм, пісню, останні музичні альбоми. Пам’ятайте, купуючи ліцензійні версії мультимедії, ви віддячуєти їх творцям та спонукаєте їх до нових звершень! 
+  %p 
+    Нам дуже важливо знати що думають люди про кожен фільм чи аудіо альбом, тому ви можете залишати свої коментарі до них. Якщо ж ви побажаєте спілкуватися безпосередньо з нами, ласкаво просимо до відділу "Зв’язку". 
+  %p
+    Ми завжди піклуємся про наших користувачів і готові це вам довести!
+  %з
+    Welcome to our market. You have a chance to sail your products in our system and become a popular all ower the world. I hope, you'll like this place.
+    
