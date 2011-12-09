@@ -21,11 +21,19 @@ group :assets do
   gem 'uglifier'
 end
 
+group :production do
+  gem 'therubyracer-heroku', '0.8.1.pre3'
+end
+
 gem 'jquery-rails'
 gem 'routing-filter'
 
 gem 'haml-rails'
-gem 'therubyracer'
+
+group :development do
+  gem 'therubyracer'
+end
+
 gem 'sass-rails', "  ~> 3.1.0"
 
 #for Jruby
