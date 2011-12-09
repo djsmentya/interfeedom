@@ -45,7 +45,7 @@ end
 group :development do
   gem 'nifty-generators'
   gem 'ruby_parser'
-  gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
+  gem 'rails-dev-boost'
 # Deploy with Capistrano
  gem 'capistrano'
 end
