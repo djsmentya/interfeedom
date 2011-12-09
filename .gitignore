@@ -8,4 +8,4 @@ public/system/*
 config/database.yml
 public/assets/*
 *.swp
-
+config/database.yml

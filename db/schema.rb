@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(:version => 20111120182137) do
     t.string   "name"
     t.text     "description"
     t.datetime "available_on"
-    t.integer  "count_on_hand",      :defaulnewt => 0,   :null => false
+    t.integer  "count_on_hand",      :default => 0,   :null => false
     t.integer  "product_type_id",                     :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -111,8 +111,8 @@ ActiveRecord::Schema.define(:version => 20111120182137) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.float    "price",              :default => 0.0, :null => false
-    t.string   "producer"
     t.integer  "genre_id"
+    t.string   "producer"
     t.string   "product_type"
     t.string   "style"
     t.string   "group"
