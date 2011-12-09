@@ -1,4 +1,4 @@
-class Pofile::ProductsController < ApplicationController
+class ProductsController < ApplicationController
 
   def index
   end
