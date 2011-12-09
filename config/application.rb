@@ -1,6 +1,6 @@
 require File.expand_path('../boot', __FILE__)
 
-require "../app/models/extension_initializer"
+require "lib/extension_initializer"
 require 'rails/all'
 require 'sprockets/railtie'
 

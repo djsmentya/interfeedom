@@ -8,6 +8,7 @@
 
 
 # Product types
+puts 'working'
 Role.create(:title => 'customer')
 ProductType.create(:name=>'Video')
 ProductType.create(:name=>'Audio')
