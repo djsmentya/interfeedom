@@ -4,15 +4,18 @@
     #user_header
       .span-10
         = t('shared.header.welcome')
-        (
-        - if current_user
-          = link_to t('.sign_out'), destroy_user_session_path, :method => :delete
-        -else
-          = link_to t('.sign_in'), new_user_session_path
-        )
-        %span{:style =>'float:right;'}
-          - if user_signed_in?
-            =link_to t('.profile_link'), profile_index_path
+        .right
+          (
+          - if current_user
+            = link_to t('.sign_out'), destroy_user_session_path, :method => :delete
+          -else
+            = link_to t(:sign_in), new_user_session_path
+            |
+            = link_to t(:sign_up), new_user_registration_path
+          )
+          %span{:style =>'padding-left:50px;'}
+            - if user_signed_in?
+              =link_to t('.profile_link'), profile_index_path
       #user_cart.span-7
         = image_tag 'icons/header_cart.png'
         = link_to t('.cart'), cart_index_path

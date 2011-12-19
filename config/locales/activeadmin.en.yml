@@ -1,5 +1,8 @@
 en:
   active_admin:
+    resource:
+      products:
+        products: 'asdf'
     dashboard: Dashboard
     dashboard_welcome:
       welcome: "Welcome to Active Admin. This is the default dashboard page."

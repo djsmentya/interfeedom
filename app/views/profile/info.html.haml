@@ -1,28 +1,27 @@
 %h1 Profile
 - if @profile = current_user.profile
-  .span-18
-    .span-5
-      = link_to t('.edit_profile'), edit_profile_path(@profile)
-      %hr
-      =link_to 'My Orders', orders_path
-    .span-7
-      .row
-        %label
-          =t('.your_name')
-        = @profile.person
-      .row
-        %label
-          =t('.your_email')
-        = current_user.email
-      .row
-        %label
-          =t('.your_phone')
-        = @profile.phone
-      .row
-      -if @profile.shipping_address.present?
-        %label
-          Shipping Address:
-        = @profile.shipping_address.full_address
+  .span-5
+    = link_to t('.edit_profile'), edit_profile_path(@profile)
+    %hr
+    =link_to 'My Orders', orders_path
+  .span-7
+    .row
+      %label
+        =t('.your_name')
+      = @profile.person
+    .row
+      %label
+        =t('.your_email')
+      = current_user.email
+    .row
+      %label
+        =t('.your_phone')
+      = @profile.phone
+    .row
+    -if @profile.shipping_address.present?
+      %label
+        Shipping Address:
+      = @profile.shipping_address.full_address
 - else
   .row
     %h5

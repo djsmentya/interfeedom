@@ -4,10 +4,10 @@ class ProductType < ActiveRecord::Base
   #validates_presence_of :name
 
   def self.video
-    ProductType.find_by_name('Video')
+    @video ||= ProductType.find_by_name('Video')
   end
 
   def self.audio
-    ProductType.find_by_name('Audio')
+    @audio ||= ProductType.find_by_name('Audio')
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111120182137) do
+ActiveRecord::Schema.define(:version => 20111219174104) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -46,8 +46,8 @@ ActiveRecord::Schema.define(:version => 20111120182137) do
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
   create_table "assignments", :force => true do |t|
-    t.string   "user_id"
-    t.string   "role_id"
+    t.integer  "user_id"
+    t.integer  "role_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -103,7 +103,6 @@ ActiveRecord::Schema.define(:version => 20111120182137) do
     t.text     "description"
     t.datetime "available_on"
     t.integer  "count_on_hand",      :default => 0,   :null => false
-    t.integer  "product_type_id",                     :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
@@ -164,7 +163,7 @@ ActiveRecord::Schema.define(:version => 20111120182137) do
     t.datetime "updated_at"
   end
 
-  create_table "target", :force => true do |t|
+  create_table "targets", :force => true do |t|
     t.integer "user_id"
     t.integer "product_id"
   end

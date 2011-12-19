@@ -1,8 +1,15 @@
-
 = content_for :sidebar do  
+  %p
+    Products 
   %ul#sidebar_nav
-    - %w(Products Orders).each do |link|
+    - ProductType.all.each do |link|
       %li.nav_item
-        = link_to link, '#'
+        = link_to link.name, '#'
+  %p
+    Orders
+  %ul#sidebar_nav
+    - ProductType.all.each do |link|
+      %li.nav_item
+        = link_to link.name, '#'
 
 

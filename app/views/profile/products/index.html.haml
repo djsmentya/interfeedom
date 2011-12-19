@@ -1,0 +1,38 @@
+%table
+  %thead
+    %th= t('.product')
+    %th= t('.description')
+    %th= t('.available')
+    %th= t('.quantity')
+    %th= t(:price)
+    %th= t('.action')
+  - @products.each do |product|
+    %tbody
+      %td= link_to image_tag(product.image.url(:thumb)), '#'
+      %td= product.name
+      %td
+        -if product.available?
+          yes
+        -else
+          no
+      %td= product.count_on_hand
+      %td= product.price
+      %td
+        = link_to 'Destroy','#', :method => :delete
+        = link_to 'Edit', edit_profile_product_path(product)
+
+= content_for :sidebar do  
+  %p
+    Products 
+  %ul#sidebar_nav
+    - ProductType.all.each do |link|
+      %li.nav_item
+        = link_to link.name, '#'
+  %p
+    Orders
+  %ul#sidebar_nav
+    - ProductType.all.each do |link|
+      %li.nav_item
+        = link_to link.name, '#'
+
+

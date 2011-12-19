@@ -5,4 +5,4 @@ Interfreedom::Application.config.session_store :cookie_store, :key => '_interfre
 # Use the database for sessions instead of the cookie-based default,
 # which shouldn't be used to store highly confidential information
 # (create the session table with "rails generate session_migration")
-# Interfreedom::Application.config.session_store :active_record_store
+#Interfreedom::Application.config.session_store :active_record_store, :key => '_interfreedom_session'

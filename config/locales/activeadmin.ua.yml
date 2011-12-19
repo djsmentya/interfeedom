@@ -1,6 +1,6 @@
 ua:
   active_admin:
-    dashboard: Dashboard
+    dashboard: "Останні зміни"
     dashboard_welcome:
       welcome: "Добро пожаловать в Active Admin. Это стандартная страница управления сайтом."
       call_to_action: "Чтобы добавить сюда что-нибудь загляните в 'app/admin/dashboards.rb'"
@@ -26,7 +26,7 @@ ua:
     greater_than: ">"
     less_than: "<"
     main_content: "Создайте %{model}#main_content для отображения содержимого."
-    logout: "Выйти"
+    logout: "Вийти"
     sidebars:
       filters: "Фильтры"
     pagination:
@@ -36,7 +36,7 @@ ua:
       multiple: "Результат: %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> из <b>%{total}</b>"
     any: "Любой"
     blank_slate:
-      content: "Пока нет %{resource_name}."
-      link: "Создать"
+      content: "Поки що немає %{resource_name}."
+      link: "Створити"
   formtastic:
     submit: 'Відправити'

@@ -1,0 +1,31 @@
+= form_for @product, :html => { :multipart => true }   do |f|
+  .column.border
+    -if @product.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@product.errors.count, "error")} prohibited this product from being saved:"
+        %ul
+          - @product.errors.full_messages.each do |msg|
+            %li= msg
+    .field
+      = f.label :name
+      = f.text_field :name
+    .field
+      = f.label :description
+      = f.text_area :description, :rows  => 3
+    .field
+      = f.label :available_on
+      = f.datepicker :available_on
+    .field
+      = f.label :count_on_hand
+      = f.number_field :count_on_hand, :min => 0
+    -#.field
+    -#  = f.label :category
+    -#  = f.text_field :category
+    .field
+      = f.label :image
+      = f.file_field :image
+    .actions
+      = f.submit 'Save'
+  .column.right
+    = f.label :product_type
+    = f.collection_select :product_type, ProductType.all, :name, :name, :prompt => true, :size => 15

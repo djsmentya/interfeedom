@@ -9,16 +9,32 @@
     <![endif]-->
     = csrf_meta_tags
   %body
-    #flash_area
-      - flash.each do |key, value|
+    - flash.each do |key, value|
+      #flash_area
         #flash{:style=> 'display:none'}
           = content_tag(:div,value,:class => key)
+        #flash_button{:style => 'height:10px; background: none repeat scroll 0% 0% pink; display:none;'}
           :javascript
-            $(document).ready(function() {
-              $("#flash").slidedown(2000);
-              settimeout(
-                  function(){$("#flash").slideup(1000);}
-              ,5000);
+            jQuery(document).ready(function() {
+              jQuery("#flash").slideDown(2000);
+              setTimeout(
+                function(){
+                      $('#flash_button').show();
+                      $("#flash").slideUp(1000);
+                    },5000);
+            });
+
+            $('#flash').mouseout(function (){
+            setTimeout(
+                   function(){
+                           $('#flash_button').show();
+                           $("#flash").slideUp(1000);
+                                                   },5000);
+              });
+
+            $('#flash_button').mouseover(function (){
+             $('#flash_button').hide(); 
+             jQuery("#flash").slideDown(2000);
             });
     #main.container
       = render :partial => 'shared/header'

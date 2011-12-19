@@ -15,6 +15,7 @@
           .span{:style => 'padding:5px;border: 1px solid #e1e1e1; text-align:center;'}
             = link_to_add_product(video, :class =>:button)
 .column.last.right
-  = paginate @videos, :window => 2
+  - unless @videos.nil?
+    = paginate @videos, :window => 2
 =content_for :sidebar do
   =render :partial => 'sidebar' 

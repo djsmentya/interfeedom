@@ -1,10 +1,7 @@
 class ProfileController < ApplicationController
   filter_access_to :all
   def index
-    #unless current_user.saler?
-      #render :controller => 'profile', :action => :info
-    #end
-
+      render :controller => 'profile', :action => :info
   end
 
   def info

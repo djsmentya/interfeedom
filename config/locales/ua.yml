@@ -1,8 +1,9 @@
- #encoding: utf-8 
+ #encoding: utf-8
 ua:
-  active_record:
-    model:
+  activerecord:
+    models:
       profile: 'Profile'
+      product: 'Товар'
   shared:
     cart_widget:
       cart: 'Кошик'
@@ -48,6 +49,7 @@ ua:
   videos:
     index:
       price: 'Ціна '
+
   ua: 'Українська'
   en: 'English'
   sign_in: 'Вхід'

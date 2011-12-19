@@ -1,11 +1,12 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
- #encoding: utf-8 
+ #encoding: utf-8
 en:
-  active_record:
-    model:
+  activerecord:
+    models:
       profile: 'Profile'
+      product: 'Product'
   shared:
     cart_widget:
       cart: 'Cart'
@@ -50,6 +51,7 @@ en:
   videos:
     index:
       price: 'Price '
+
   ua: 'Українська'
   en: 'English'
   sign_in: 'Sign In'

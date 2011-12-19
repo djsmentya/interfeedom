@@ -1,5 +1,5 @@
 ActiveAdmin.register Product do
-form :partial => "form"
+  form :partial => "form"
   index do
     column 'Product' do |product|
       image_tag(product.image.url(:thumb))
@@ -12,7 +12,8 @@ form :partial => "form"
     column :updated_at
     default_actions
   end
-  
+
+
   sidebar :product_types,:partial => 'sidebar', :only => :new
 
   collection_action :new_product do
@@ -23,6 +24,8 @@ form :partial => "form"
       render :partial => "#{params[:product_type]}", :locals => {:product => @product}
     end
   end
+
+
   #sidebar :fields do
   #  ul do
   #    li link_to('#')

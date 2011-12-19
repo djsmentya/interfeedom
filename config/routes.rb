@@ -28,8 +28,10 @@ Interfreedom::Application.routes.draw do
       post 'register'
     end
   end
-  resources :profile do
+  namespace :profile do
     resources :products
+  end
+  resources :profile do
     collection do
       get 'info'
     end

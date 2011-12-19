@@ -1,17 +1,20 @@
 class Product < ActiveRecord::Base
   include ExtensionInitializer
   paginates_per 9
-  before_validation :set_product_type_id
-  #belongs_to :properties, :dependent => :destroy, :polymorphic => true
-  #belongs_to :product_type    
-  #has_many :comments, :as => :commentable
+  #before_validation :set_product_type_id
+  
+  has_many :targets
+  has_one :users, :through => :targets
   has_many :order_items
-  validates_presence_of :name
+  validates_presence_of :name, :product_type
   acts_as_commentable
-  has_attached_file :image, :styles => {:large => "270x270>", :medium => '150x150', :thumb => "50x50"}, :default_url => '/system/images/:style/missing.png', :url  => "system/images/:id/:style/:basename.:extension", :path => ":rails_root/public/assets/system/images/:id/:style/:basename.:extension"
-attr_accessible :genre_id, :producer, :image, :name, :description,:product_type, :product_type_id, :image, :style, :group, :album, :count_on_hand, :price
+  has_attached_file :image, :styles => {:large => "270x270>", :medium => '150x150', 
+                    :thumb => "50x50"}, :default_url => '/system/images/:style/missing.png', 
+                    :url  => "system/images/:id/:style/:basename.:extension", 
+                    :path => ":rails_root/public/assets/system/images/:id/:style/:basename.:extension"
+attr_accessible :genre_id, :producer, :image, :name, :description,:product_type, 
+        :product_type_id, :image, :style, :group, :album, :count_on_hand, :price
   validates_attachment_content_type :image, :content_type => ['image/jpeg', 'image/png']
-  #,:url => '/system/:class/:attachment/:id/:style/:filename'
   attr_reader :video_product_type_id
 
   def available?
