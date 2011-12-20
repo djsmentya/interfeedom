@@ -1,9 +1,10 @@
-%h1 Profile
 - if @profile = current_user.profile
-  .span-5
-    = link_to t('.edit_profile'), edit_profile_path(@profile)
-    %hr
-    =link_to 'My Orders', orders_path
+  %h2
+    = @profile.name
+    (
+    =  link_to current_user.email, info_profile_index_path
+    )
+  %hr
   .span-7
     .row
       %label
@@ -20,13 +21,25 @@
     .row
     -if @profile.shipping_address.present?
       %label
-        Shipping Address:
+        =t('.shipping_address')
       = @profile.shipping_address.full_address
 - else
   .row
     %h5
       No information
   = link_to t('.edit_profile'), new_profile_path
-
-
-  
+%hr
+.column{:style=>'margin-bottom:25px;'}
+  .column.span-6.shadow{:style=>'margin-left:25px;'}
+    .title_line
+      = t('.my_orders')
+    %div{:style=>'padding:5px'}
+      %table
+        %thead
+          %th= t('.created_at')
+          %th= t('.state')
+        -#- Order.all(:conditions =>{:user_id => current_user.id}, :limit=>3).each do |order|
+        - current_user.orders.limit(3).order('created_at DESC').each do |order|  
+          %tbody
+            %td= l(order.created_at, :format => :short)
+            %td= t(order.state.to_sym)

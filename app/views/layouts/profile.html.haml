@@ -23,10 +23,13 @@
     #main.container
       = render :partial => 'shared/header'
       #content.container
-        .column.span-18.prepend-top
-          = yield
-        .column.span-5.last
+        .column.span-5.prepend-top
           = yield :sidebar
+          = render :partial => "profile/sidebar"
+        .column.span-18.prepend-top.last
+          .span-18
+            = yield :profile_nav
+          = yield
       #footer.container
         %hr
         %p{:style =>'color:#6b6b6b;'}

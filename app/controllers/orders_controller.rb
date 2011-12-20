@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+ layout 'profile', :only => :index
   def index
     @orders_and_products= {}
     orders = current_user.orders.all :include => :order_items

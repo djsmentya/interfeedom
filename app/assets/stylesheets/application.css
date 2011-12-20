@@ -12,160 +12,183 @@
 /*}*/
 
 #main {
-    background-color: #ffffff;
-    border: #ffffff solid 15px;
-    margin-top: 15px;
+  background-color: #ffffff;
+  border: #ffffff solid 15px;
+  margin-top: 15px;
 }
 
 #header a {
-    text-decoration: none;
-    font-weight: bold;
+  text-decoration: none;
+  font-weight: bold;
 
 }
 
 #nav {
-    background: url("bg_header.png") no-repeat;
-    width: 950px;
-    height: 89px;
+  background: url("bg_header.png") no-repeat;
+  width: 950px;
+  height: 89px;
 }
 
 #logo {
-    height: 46px;
+  height: 46px;
 }
 
 #logo .title {
-    padding-left: 10px;
-    padding-top: 2px;
+  padding-left: 10px;
+  padding-top: 2px;
 }
 
 #user_header {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 
 /*nav*/
 
 #menu ul {
-    list-style: none outside;
-    margin: 0 0 0 0;
+  list-style: none outside;
+  margin: 0 0 0 0;
 }
 
 #menu li {
-    border-left: 1px solid #3b6102;
-    float: right;
-    padding: 0 1px;
+  border-left: 1px solid #3b6102;
+  float: right;
+  padding: 0 1px;
 }
 
 #menu li a {
-    display: block;
-    padding: 14px;
-    text-decoration: none;
-    color: #ffff00;
-    text-transform: uppercase;
-    font: bold normal 'Arial';
+  display: block;
+  padding: 14px;
+  text-decoration: none;
+  color: #ffff00;
+  text-transform: uppercase;
+  font: bold normal 'Arial';
 }
 
 #menu li:hover {
-    background: #3b6102;
+  background: #3b6102;
 }
 
 #menu {
-    height: 47px;
+  height: 47px;
 }
 
 .product {
-    height: 150px;
-    border-top: 1px solid #F2F2F2;
-    padding-top: 10px;
+  height: 150px;
+  border-top: 1px solid #F2F2F2;
+  padding-top: 10px;
 
 }
 
 .product h4 {
-    text-transform: uppercase;
-    font: 'Arial';
+  text-transform: uppercase;
+  font: 'Arial';
 }
 
 #sider {
-    height: 100%
+  height: 100%
 }
 
 .state {
-    display: block;
-    margin: 0 10px 0 0;
-    background: none repeat scroll 0 0 #EEEEEE;
-    padding: 6px 10px 0;
-    float: left;
-    text-transform: uppercase;
-    font-weight: bold;
+  display: block;
+  margin: 0 10px 0 0;
+  background: none repeat scroll 0 0 #EEEEEE;
+  padding: 6px 10px 0;
+  float: left;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 #language ul {
-    list-style: none outside;
-    float: right;
+  list-style: none outside;
+  float: right;
 }
 
 #language ul li {
-    float: left;
+  float: left;
 }
 
 #language ul li a {
-    padding: 3px;
-    border: 1px solid #D9D9D9;
-    opacity: 0.4;
-    filter: alpha(opacity = 40); /* For IE8 and earlier */
+  padding: 3px;
+  border: 1px solid #D9D9D9;
+  opacity: 0.4;
+  filter: alpha(opacity = 40); /* For IE8 and earlier */
 }
 
 #language ul li a:hover {
-    opacity: 0.6;
-    filter: alpha(opacity = 40); /* For IE8 and earlier */
+  opacity: 0.6;
+  filter: alpha(opacity = 40); /* For IE8 and earlier */
 }
 
 #language .active {
-    opacity: 1;
-    filter: alpha(opacity = 100); /* For IE8 and earlier */
+  opacity: 1;
+  filter: alpha(opacity = 100); /* For IE8 and earlier */
 
 }
 
 #flash, #flash_button {
-    margin: 0 auto;
-    width: 270px;
-    text-align: center;
+  margin: 0 auto;
+  width: 270px;
+  text-align: center;
 }
 
 #flash_area {
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .row {
-    display: block;
+  display: block;
 }
 
 a.button {
-    background-color: #FAFAFA;
-    border: 1px solid #E1E1E1;
-    margin: 5px 0 0;
-    padding: 4px 36px;
-    font-weight: bold;
-    text-decoration: none;
+  background-color: #FAFAFA;
+  border: 1px solid #E1E1E1;
+  margin: 5px 0 0;
+  padding: 4px 36px;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 a:hover.button {
-    background-color: #E1E0D0;
-    color: #9acd32;
-    cursor: pointer;
+  background-color: #E1E0D0;
+  color: #9acd32;
+  cursor: pointer;
 
 }
 
 /*sidebar*/
+.sbar_head_left {
+  background: #6fad07;
+  height: 30px;
+  color: wheat;
+  float:right;
+  display:block;
+}
+.sbar_head_left a{
+  color:wheat;
+  text-decoration:none;
+}  
 
-.sbar_head{
+.sbar_head_left a:hover {
+  color:yellow;
+}
+
+.sbar_head_left #title {
+  padding-left:15px;
+  padding-top:3px;
+  font: bold normal 'Arial';
+  font-weight: bolder;
+  font-size: medium;
+  }
+
+  .sbar_head {
     background: url("/assets/site/sidebar_head.png") no-repeat #6fad07;
     height: 30px;
     color: wheat;
     text-align:right;
-  }
+}
 .sbar_head a{
   color:wheat;
   text-decoration:none;
@@ -176,20 +199,20 @@ a:hover.button {
 }
 
 .sbar_head #title {
-    padding-right:15px;
-    padding-top:3px;
-    font: bold normal 'Arial';
-    font-weight: bolder;
-    font-size: medium;
-  }
+  padding-right:15px;
+  padding-top:3px;
+  font: bold normal 'Arial';
+  font-weight: bolder;
+  font-size: medium;
+}
 .sbar_content{
-    border: 1px solid #DDDDDD;
-    margin-bottom: 25px;
-    padding: 00px 5px 5px 10px;
-  }
+  border: 1px solid #DDDDDD;
+  margin-bottom: 25px;
+  padding: 00px 5px 5px 10px;
+}
 #search-bar{
-padding-top: 8px;
-padding-left: 10px;
+  padding-top: 8px;
+  padding-left: 10px;
 }
 
 .title_line{
@@ -202,14 +225,14 @@ padding-left: 10px;
   font-size: medium;
   text-align:center;
 }
- .product img{
+.product img{
   margin-bottom:3px;
 }
 
- .column .span-6 .last_added_product {
-   height:50px;
-   padding:5px;
-   border-bottom: 1px solid #dddddd;
+.column .span-6 .last_added_product {
+  height:50px;
+  padding:5px;
+  border-bottom: 1px solid #dddddd;
 }
 
 .shadow {
@@ -217,10 +240,47 @@ padding-left: 10px;
 }
 
 .field label{
-display:block;
+  display:block;
 }
 
 .actions {
-padding-top: 10px;
+  padding-top: 10px;
+}
+
+
+/*vertical menu*/
+
+
+#vertmenu {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  width: 160px;
+  padding:  0 0 15px;
+  margin: 0px;
+}
+
+#vertmenu ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+#vertmenu ul li {
+  margin: 0px;
+  padding: 0px;
+}
+#vertmenu ul li a {
+  font-size: 80%;
+  display: block;
+  border-bottom: 1px dashed #C39C4E;
+  padding: 5px 0px 2px 4px;
+  text-decoration: none;
+  color: #666666;
+  width:160px;
+}
+
+#vertmenu ul li a:hover, #vertmenu ul li a:focus {
+  color: #000000;
+  background-color: #eeeeee;
 }
 

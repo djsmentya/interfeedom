@@ -16,8 +16,8 @@ class ProfileController < ApplicationController
     @profile = Profile.new(params[:profile])
     @profile.user = current_user
     respond_to do |format|
-      if @profile.save!
-        current_user = User.find(current_user.id)
+      if @profile.save
+     #   current_user = User.find(current_user.id)
         format.html { redirect_to :action => :index, :notice => 'Product was successfully created.' }
       else
         format.html { render :action => "new" }

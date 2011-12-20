@@ -32,11 +32,18 @@ ua:
       action: 'Дії'
   profile:
     info:
-       your_name: 'Ваше ім’я: '
-       your_email: 'Ваш Email: '
-       your_phone: 'Ваш телефон: '
-       shipping_address: 'Адреса доставки: '
-       edit_profile: 'Змінити данні профілю'
+      your_name: 'Ваше ім’я: '
+      your_email: 'Ваш Email: '
+      your_phone: 'Ваш телефон: '
+      shipping_address: 'Адреса доставки: '
+      my_orders: 'Мої замовлення'
+      created_at: 'Створено'
+      state: 'Стан'
+    sidebar:  
+      nav_title: 'Навігація'
+      my_profile: 'Мій профіль'
+      my_orders: 'Мої замовлення'
+      edit_profile: 'Змінити данні профілю'
   users:
     sessions:
       new:
@@ -46,6 +53,10 @@ ua:
     shared:
       links:
         forgot_your_password: "Забули свій пароль?"
+    registrations:
+      new:
+        password: 'Пароль'
+        password_confirmation: 'Повторити пароль'
   videos:
     index:
       price: 'Ціна '
@@ -56,3 +67,5 @@ ua:
   sign_up: 'Реєстрація'
   to_cart: 'В корзину'
   price: 'Ціна'
+  in_progress: 'Опрацьовується'
+  

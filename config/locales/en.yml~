@@ -12,7 +12,7 @@ en:
       cart: 'Cart'
     header:
       welcome: 'Welcome, '
-      sign_in: 'sign inНавігація'
+      sign_in: 'sign in'
       sign_out: 'sign out'
       profile_link: 'Profile'
       cart: 'Cart: '
@@ -34,13 +34,11 @@ en:
       action: 'Action'
   profile:
     info:
-      your_name: 'Your name: '
-      your_email: 'Your Email: '
-      your_phone: 'Your Phone: '
-      shipping_address: 'Shipping Address: '
-      edit_profile: 'Edit Profile'
-    sidebar:  
-      nav_title: 'Navigation'
+       your_name: 'Your name: '
+       your_email: 'Your Email: '
+       your_phone: 'Your Phone: '
+       shipping_address: 'Shipping Address: '
+       edit_profile: 'Edit Profile'
   users:
     sessions:
       new:

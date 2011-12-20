@@ -1,0 +1,13 @@
+.span-5.last
+  .span-5.last.sbar_head_left
+    #ffe.right
+      =image_tag 'site/title_header_right.png'
+    #title
+      = t('.nav_title')
+  .span-5.last
+    .sbar_content
+      #vertmenu
+        %ul
+          %li= link_to t(".my_profile"), info_profile_index_path
+          %li= link_to t('.my_orders'), orders_path
+          %li= link_to t('.edit_profile'), edit_profile_path(current_user.profile)
