@@ -19,3 +19,27 @@ $(document).ready(function() {
         $.get('/home/change_locale','language=' +lan);
     })
 });
+
+
+jQuery(document).ready(function() {
+  jQuery("#flash").slideDown(2000);
+  setTimeout(
+    function(){
+      $('#flash_button').show();
+      $("#flash").slideUp(1000);
+    },5000);
+});
+
+$('#flash').mouseout(function (){
+  setTimeout(
+    function(){
+      $('#flash_button').show();
+      $("#flash").slideUp(1000);
+    },5000);
+});
+
+$('#flash_button').mouseover(function (){
+  $('#flash_button').hide(); 
+  jQuery("#flash").slideDown(2000);
+});
+

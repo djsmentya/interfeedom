@@ -34,6 +34,7 @@ Interfreedom::Application.routes.draw do
   resources :profile do
     collection do
       get 'info'
+      get 'make_as_saler'
     end
   end
 

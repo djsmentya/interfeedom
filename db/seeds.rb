@@ -9,6 +9,10 @@
 
 # Product types
 puts 'working'
-Role.create(:title => 'customer')
-ProductType.create(:name=>'Video')
-ProductType.create(:name=>'Audio')
+puts 'Role creating...'
+  Role.create(:title => 'customer')
+  Role.create(:title => 'saler')
+  puts 'Product type creating...'  
+  ProductType.create(:name=>'Video')
+  ProductType.create(:name=>'Audio')
+puts 'finished'

@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessor :person
+  attr_accessor :person, :saler
 
   after_create :set_user_role
 
@@ -22,8 +22,9 @@ class User < ActiveRecord::Base
   def role_symbols
     (roles || []).map { |r| r.title.to_sym }
   end
-  def self.saler?
-    self.roles.exist?('title = Saler')
+
+  def saler?
+    self.saler ||= self.roles.exists?(:title => 'saler')
   end
   
   def self.authenticate(email, password)

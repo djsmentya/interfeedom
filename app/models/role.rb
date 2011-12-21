@@ -4,6 +4,10 @@ class Role < ActiveRecord::Base
 
 
   def self.customer
-    self.find_by_title 'customer'
+    Role.find_by_title 'customer'
+  end
+  
+  def self.saler
+    Role.find_by_title 'saler'
   end
 end

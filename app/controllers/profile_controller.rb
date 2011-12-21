@@ -38,5 +38,18 @@ class ProfileController < ApplicationController
       render :action => :edit
     end
   end
+  
+  def make_as_saler
+    unless current_user.saler?
+      if current_user.assignments.create(:role_id => Role.saler.id)
+        redirect_to profile_index_path, :notice => 'You can sale your products'
+      else
+        redirect_to profile_index_path, :notice => 'Somthing is wrong'
+      end
+    else
+        redirect_to profile_index_path, :notice => 'You already can sale products'
+    end
 
+  end
+  
 end

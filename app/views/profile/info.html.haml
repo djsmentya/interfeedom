@@ -1,9 +1,13 @@
 - if @profile = current_user.profile
-  %h2
-    = @profile.name
-    (
-    =  link_to current_user.email, info_profile_index_path
-    )
+  .column
+    %h2
+      = @profile.name
+      (
+      =  link_to current_user.email, info_profile_index_path
+      )
+  - unless current_user.saler?    
+    .column.right
+      =link_to 'Became a Saler', make_as_saler_profile_index_path, :class => :button
   %hr
   .span-7
     .row
@@ -38,7 +42,6 @@
         %thead
           %th= t('.created_at')
           %th= t('.state')
-        -#- Order.all(:conditions =>{:user_id => current_user.id}, :limit=>3).each do |order|
         - current_user.orders.limit(3).order('created_at DESC').each do |order|  
           %tbody
             %td= l(order.created_at, :format => :short)

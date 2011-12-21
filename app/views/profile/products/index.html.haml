@@ -21,7 +21,7 @@
         = link_to 'Destroy','#', :method => :delete
         = link_to 'Edit', edit_profile_product_path(product)
 
-= content_for :sidebar do  
+= content_for :profile_nav do
   %p
     Products 
   %ul#sidebar_nav
@@ -29,10 +29,3 @@
       %li.nav_item
         = link_to link.name, '#'
   %p
-    Orders
-  %ul#sidebar_nav
-    - ProductType.all.each do |link|
-      %li.nav_item
-        = link_to link.name, '#'
-
-

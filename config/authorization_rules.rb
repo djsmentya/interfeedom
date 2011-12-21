@@ -5,12 +5,13 @@ authorization do
 
   role :customer do
     includes :guest
-    has_permission_on :profile, :to =>[:index, :info, :new, :create, :update, :edit] do
+    has_permission_on :profile, :to =>[:index, :info, :new, :create, :update, :edit, :make_as_saler] do
       if_attribute :user_id => is {current_user.id}
     end
   end
 
   role :saler do
-    includes :guest
+    has_permission_on :profile_products, :to => [:index, :new, :create, :edit,:load_proudct_type]
+    
   end
 end
