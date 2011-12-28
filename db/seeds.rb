@@ -12,8 +12,8 @@ require 'active_record'
 puts 'working'
 puts 'Role creating...'
   puts 'Product type creating...'  
-  ProductType.create!(:name=>'Video')
-  ProductType.create!(:name=>'Audio')
-  Role.create!(:title => 'customer')
+  ActiveRecord::Base::ProductType.create!(:name=>'Video')
+  ActiveRecord::Base::ProductType.create!(:name=>'Audio')
+  ActiveRecord::Base::Role.create!(:title => 'customer')
   Role.create!(:title => 'saler')
 puts 'finished'
