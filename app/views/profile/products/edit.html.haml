@@ -1,1 +1,10 @@
-= render :partial => "profile/products/form"
+= form_for @product, :url =>{:action=>"update", :controller=>"profile/products"}, 
+                     :html => { :multipart => true }   do |f|
+  .column.border
+    -if @product.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@product.errors.count, "error")} prohibited this product from being saved:"
+        %ul
+          - @product.errors.full_messages.each do |msg|
+            %li= msg
+  = render :partial => "#{@product.product_type.downcase}", :locals => {:product => @product}

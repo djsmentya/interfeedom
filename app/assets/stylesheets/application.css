@@ -284,3 +284,34 @@ a:hover.button {
   background-color: #eeeeee;
 }
 
+/*WIDGET ELEMENTS*/
+
+#wg_right_corner {
+  float:right;
+  height:30px;
+  width:20px;
+  background:url("/assets/site/title_header_right.png") no-repeat scroll;
+}
+#wg_left_corner {
+  float:left;
+  height:30px;
+  width:20px;
+  background:url("/assets/site/sidebar_head.png") no-repeat scroll;
+}
+
+.wg_title {
+  background:none repeat scroll 0 0 #6FAD07;
+  font-weight: bold;
+  font-size: large;  
+  color:wheat;
+  height:30px;
+}
+
+.wg_title a{
+ text-decoration:none;
+ color:wheat;
+}
+.wg_title a:hover {
+  color:yellow;
+}
+/*WIDGET ELEMENTS*/

@@ -11,7 +11,8 @@ authorization do
   end
 
   role :saler do
-    has_permission_on :profile_products, :to => [:index, :new, :create, :edit,:load_proudct_type]
-    
+    has_permission_on :profile_products, :to => [:index, :new, :create,:update, :edit, 
+                                                 :load_product_type]
+
   end
 end

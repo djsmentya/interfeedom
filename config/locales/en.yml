@@ -41,6 +41,9 @@ en:
       edit_profile: 'Edit Profile'
     sidebar:  
       nav_title: 'Navigation'
+    products:
+      index:
+        new_product: "New Product"
   users:
     sessions:
       new:

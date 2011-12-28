@@ -1,4 +1,4 @@
-= form_for @product, :html => { :multipart => true }   do |f|
+= form_for @product, :url => profile_products_path, :html => { :multipart => true }   do |f|
   .column.border
     -if @product.errors.any?
       #error_explanation
@@ -6,26 +6,20 @@
         %ul
           - @product.errors.full_messages.each do |msg|
             %li= msg
-    .field
-      = f.label :name
-      = f.text_field :name
-    .field
-      = f.label :description
-      = f.text_area :description, :rows  => 3
-    .field
-      = f.label :available_on
-      = f.datepicker :available_on
-    .field
-      = f.label :count_on_hand
-      = f.number_field :count_on_hand, :min => 0
-    -#.field
-    -#  = f.label :category
-    -#  = f.text_field :category
-    .field
-      = f.label :image
-      = f.file_field :image
-    .actions
-      = f.submit 'Save'
-  .column.right
-    = f.label :product_type
-    = f.collection_select :product_type, ProductType.all, :name, :name, :prompt => true, :size => 15
+  = label_tag 'Select Product Type'
+  %br
+  = f.collection_select :product_type, ProductType.all, :name, :name, 
+                                                        :prompt => true, :size => 15
+  #prod  
+:javascript
+  $(document).ready(function() {
+    $('#product_product_type').change(loadProductEdit);
+  });
+
+  function loadProductEdit() {
+    var type = $('#product_product_type option:selected').val();
+    jQuery.get('load_product_type',{ product_type:  type.toLowerCase()},function(data){
+      $('#prod').replaceWith(data)
+    });
+  }    
+  

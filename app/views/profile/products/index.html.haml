@@ -2,7 +2,7 @@
   %thead
     %th= t('.product')
     %th= t('.description')
-    %th= t('.available')
+    %th= t('.available_on')
     %th= t('.quantity')
     %th= t(:price)
     %th= t('.action')
@@ -22,10 +22,35 @@
         = link_to 'Edit', edit_profile_product_path(product)
 
 = content_for :profile_nav do
-  %p
-    Products 
-  %ul#sidebar_nav
-    - ProductType.all.each do |link|
-      %li.nav_item
-        = link_to link.name, '#'
-  %p
+  #sidebar_nav
+    .wg_title.span-18{:style=> 'margin-bottom:5px;'}
+      #wg_left_corner
+      #wg_right_corner 
+      %ul.left
+        %li
+          = link_to image_tag( 'site/webicons/screen-add.gif', :class=> :menu_nav_img), new_profile_product_path
+          = link_to t('.new_product'), new_profile_product_path
+          
+  
+:css
+  .menu_nav_img {
+  padding-top: 9px;
+  padding-left: 3px;
+  display:block;
+  float:left;
+  }
+  
+  #sidebar_nav ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+  }
+  #sidebar_nav li {
+    padding:0 1px;
+    float:right;
+    padding-right:30px;
+  }
+  #sidebar_nav {
+    padding: 0 0 15px;
+    background:
+  }

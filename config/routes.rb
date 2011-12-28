@@ -29,7 +29,11 @@ Interfreedom::Application.routes.draw do
     end
   end
   namespace :profile do
-    resources :products
+    resources :products do
+      collection do
+        get 'load_product_type'
+      end
+    end
   end
   resources :profile do
     collection do

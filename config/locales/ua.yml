@@ -4,6 +4,16 @@ ua:
     models:
       profile: 'Profile'
       product: 'Товар'
+    attributes:  
+      product:
+        name: 'Ім’я'
+        description: 'Опис'
+        available_on: 'Доступно з'
+        count_on_hand: 'Кількість в янаявності'
+        price: 'Ціна'
+        image: 'Зображення'
+        genre: 'Жанр'
+        producer: 'Продюсер'
   shared:
     cart_widget:
       cart: 'Кошик'
@@ -44,6 +54,15 @@ ua:
       my_profile: 'Мій профіль'
       my_orders: 'Мої замовлення'
       edit_profile: 'Змінити данні профілю'
+    products:
+      index:
+        new_product: "Новий товар"
+        description: 'Опис'
+        available_on: 'Доступно з'
+        price: 'Ціна'
+        quantity: 'Кількість'
+        action: 'Дії'
+        product: 'Товар'
   users:
     sessions:
       new:
