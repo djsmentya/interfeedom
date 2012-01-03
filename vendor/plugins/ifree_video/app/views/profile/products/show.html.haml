@@ -1,0 +1,39 @@
+%table
+  %colgroup
+    %col{:width => '35%'}
+    %col{:width => '65%'}
+  %thead
+    %th{:colspan => 2} Product
+  %tbody
+    %tr
+      %td 
+        %label Name 
+      %td= @product.name 
+    %tr
+      %td 
+        %label :description
+      %td= @product.description 
+    %tr
+      %td 
+        %label :available_on
+      %td= @product.available_on
+    %tr
+      %td
+        %label :count_on_hand
+      %td= @product.count_on_hand
+    %tr
+      %td 
+        %label :price
+      %td= @product.price
+    %tr
+      %td 
+        %label :image
+      %td= image_tag @product.image.url
+    %tr
+      %td
+        %label :genre_id
+      %td= @product.genre_id
+    %tr
+      %td
+        %label :producer
+      %td= @product.producer

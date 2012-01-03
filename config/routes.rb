@@ -28,13 +28,18 @@ Interfreedom::Application.routes.draw do
       post 'register'
     end
   end
+  
   namespace :profile do
+    resources :orders
+
     resources :products do
       collection do
         get 'load_product_type'
       end
     end
+  
   end
+
   resources :profile do
     collection do
       get 'info'

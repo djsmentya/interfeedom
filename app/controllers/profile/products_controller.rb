@@ -5,6 +5,10 @@ class Profile::ProductsController < ApplicationController
     @products = current_user.products
   end
 
+  def show
+    @product  = current_user.products.find_by_id(params[:id])
+  end
+
   def edit
     @product = Product.find(params[:id])
   end

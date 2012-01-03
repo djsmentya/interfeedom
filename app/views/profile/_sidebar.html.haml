@@ -11,5 +11,16 @@
           %li= link_to t(".my_profile"), info_profile_index_path
           %li= link_to t('.my_orders'), orders_path
           %li= link_to t('.edit_profile'), edit_profile_path(current_user.profile)
-          - if current_user.saler? 
+  - if current_user.saler? 
+    .span-5.last.sbar_head_left
+      #wg_right_corner
+      #title
+        = t('.sales')
+    .span-5.last
+      .sbar_content
+        #vertmenu
+          %ul
             %li= link_to t('.my_products'), profile_products_path
+            %li= link_to t('.users_orders'), profile_orders_path
+
+

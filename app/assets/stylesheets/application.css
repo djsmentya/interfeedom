@@ -314,4 +314,50 @@ a:hover.button {
 .wg_title a:hover {
   color:yellow;
 }
+.wg_title .title {
+  float: right;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
 /*WIDGET ELEMENTS*/
+.menu_nav_img {
+  padding-top: 9px;
+  padding-left: 3px;
+  display:block;
+  float:left;
+}
+
+#sidebar_nav ul {
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+}
+#sidebar_nav li {
+  padding:0 1px;
+  float:right;
+  padding-right:30px;
+}
+#sidebar_nav {
+  padding: 0 0 15px;
+}
+
+/*Status*/
+.status {
+    background: none repeat scroll 0 0 #CACACA;
+    color: #FFFFFF;
+    font-size: 0.8em;
+    letter-spacing: 0.15em;
+    padding: 3px 5px 2px;
+    text-transform: uppercase;
+}
+.status.ok, .status.published, .status.complete, .status.completed, .status.green {
+    background: none repeat scroll 0 0 #8DAA92;
+}
+.status.warn, .status.warning, .status.orange {
+    background: none repeat scroll 0 0 #E29B20;
+}
+.status.error, .status.errored, .status.red {
+    background: none repeat scroll 0 0 #D45F53;
+}
+/*Status*/

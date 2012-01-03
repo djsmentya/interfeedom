@@ -1,0 +1,25 @@
+%table
+  %tr
+    %th State
+    %th Recipient
+    %th Phone
+    %th Created At
+
+  - @orders.each do |order|
+    %tr
+      %td
+        = label_tag order.state, nil, :class => "status #{order.state}"
+      %td= order.recipient
+      %td= order.phone
+      %td= l(order.created_at, :format => :short)
+      - unless order.state.eql?('completed')
+        %td= link_to 'Complete Order',  profile_order_path(order), :method =>:put, :class=> :button
+
+
+= content_for :profile_nav do
+  #sidebar_nav
+    .wg_title.span-18{:style=> 'margin-bottom:5px;'}
+      #wg_left_corner
+      #wg_right_corner 
+      .title
+        Orders

@@ -1,0 +1,36 @@
+#prod
+  = fields_for :product, product do |f|
+    %table
+      %colgroup
+        %col{:width => '35%'}
+        %col{:width => '65%'}
+      %thead
+        %th{:colspan => 2} Product
+      %tbody
+        %tr
+          %td= f.label :name 
+          %td= f.text_field :name 
+        %tr
+          %td= f.label :description
+          %td= f.text_area :description, :rows=> 3
+        %tr
+          %td= f. label :available_on
+          %td= f.datepicker :available_on
+        %tr
+          %td= f.label :count_on_hand
+          %td= f.text_field :count_on_hand
+        %tr
+          %td= f.label :price
+          %td= f.text_field :price
+        %tr
+          %td= f.label :image
+          %td= f.file_field :image
+        %tr
+          %td= f.label :style
+          %td= f.text_field :style
+        %tr
+          %td= f.label :group
+          %td= f.text_field :group
+        %tr
+          %td= f.label :album
+          %td= f.text_field :album
