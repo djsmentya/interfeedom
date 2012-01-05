@@ -3,27 +3,30 @@
 #comment
   %hr
   - comments.each do |comment|
-    %label
-      Author
-    %br
-    = comment.title
-    %br
-    %label
-      Content
-    %br
-    = comment.comment
-    %br
- 
+    .column.span-4
+      %label
+        = comment.author
+        .grey{:style=>'color:grey; font-size:xx-small;'}
+          =   Comment.human_attribute_name('created_at')
+          = l comment.created_at, :format => :short
+        %hr
+    .column.span-9.right
+      .box
+        = comment.comment
+  %hr
 = form_for [ Comment.new]  do |f|
-    
   .field
-    = f.label :title
-    %br
-    = f.text_field :title
+    = f.label :author
+    - unless current_user
+      = f.text_field :author
+    - else 
+      = current_user.profile.name
+      = f.hidden_field :author, :value => current_user.profile.name
+      = f.hidden_field :user_id, :value => current_user.id
   .field
     = f.label :comment
     %br
-    = f.text_area :comment, :rows=> 5
+    = f.text_area :comment, :rows=> 5, :cols => 44
     = hidden_field_tag :pr_id, params[:id]
   .actions
     = f.submit 'Save'

@@ -15,7 +15,7 @@ class Profile::OrdersController < ApplicationController
   # GET /profile/orders/1
   # GET /profile/orders/1.json
   def show
-    @profile_order = Profile::Order.find(params[:id])
+    @order = Order.includes(:order_items).find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

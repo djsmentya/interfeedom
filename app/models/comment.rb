@@ -6,7 +6,6 @@ class Comment < ActiveRecord::Base
 
   default_scope :order => 'created_at ASC'
 
-
   # NOTE: Comments belong to a user
   belongs_to :user
 end

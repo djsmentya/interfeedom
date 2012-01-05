@@ -12,8 +12,10 @@
       %td= order.recipient
       %td= order.phone
       %td= l(order.created_at, :format => :short)
-      - unless order.state.eql?('completed')
-        %td= link_to 'Complete Order',  profile_order_path(order), :method =>:put, :class=> :button
+      %td
+        = link_to 'Details',  profile_order_path(order), :class=> :button
+        - unless order.state.eql?('completed')
+          =link_to 'Complete',  profile_order_path(order), :method =>:put, :class=> :button
 
 
 = content_for :profile_nav do

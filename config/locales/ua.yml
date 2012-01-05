@@ -14,6 +14,10 @@ ua:
         image: 'Зображення'
         genre: 'Жанр'
         producer: 'Продюсер'
+      comment:
+        author: 'Автор'
+        comment: 'Коментар'
+        created_at: 'Створено'
   shared:
     cart_widget:
       cart: 'Кошик'
@@ -40,6 +44,9 @@ ua:
       quantity: 'Кількість'
       total: 'Загально'
       action: 'Дії'
+  comments:
+    index:
+      created_at: 'Створено'
   profile:
     info:
       your_name: 'Ваше ім’я: '

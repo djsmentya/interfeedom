@@ -10,7 +10,11 @@
         %ul
           %li= link_to t(".my_profile"), info_profile_index_path
           %li= link_to t('.my_orders'), orders_path
-          %li= link_to t('.edit_profile'), edit_profile_path(current_user.profile)
+          - if current_user.profile
+            %li= link_to t('.edit_profile'), edit_profile_path(current_user.profile)
+          - else
+            %li= link_to t('.edit_profile'), new_profile_path
+
   - if current_user.saler? 
     .span-5.last.sbar_head_left
       #wg_right_corner
