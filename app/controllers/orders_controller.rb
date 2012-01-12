@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
       @order = Order.new
       product_ids = cart_product_ids
       unless product_ids.nil?
-        @products = Product.find(product_ids)
+        @products = products_by_ids(product_ids)
       end
     else
       redirect_to :action => :authorization
@@ -24,6 +24,11 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(params[:order])
+    @products = products_by_ids(cart_product_ids)
+      @products.each do |p|
+        @order.total_price += p.price
+      end
+
     @order.user_id = current_user.id
     @order.state = 'in_progress'
     @order.save
@@ -60,5 +65,8 @@ class OrdersController < ApplicationController
                         :action => :index, :notice => 'Signed in'})   
     end
   end
-
+protected
+def products_by_ids(ids)
+  @products = Product.find(ids)
+end  
 end

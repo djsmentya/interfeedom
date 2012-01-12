@@ -10,6 +10,10 @@ gem 'pg'
 gem 'json'
 
 gem 'activeadmin'
+
+gem 'fastercsv' # Only required on Ruby 1.8 and below
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+
 gem "meta_search", '>= 1.1.0.pre'
 
 gem 'acts_as_commentable'
@@ -56,5 +60,5 @@ end
 
 
 # To use debugger
-# gem 'ruby-debug'
+ gem 'ruby-debug'
 

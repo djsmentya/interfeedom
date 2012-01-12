@@ -4,7 +4,7 @@ class Product < ActiveRecord::Base
   #before_validation :set_product_type_id
   
   has_many :targets
-  has_one :users, :through => :targets
+  has_one :user, :through => :target
   has_many :order_items
   validates_presence_of :name, :product_type
   acts_as_commentable

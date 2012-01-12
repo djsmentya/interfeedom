@@ -1,10 +1,12 @@
 Interfreedom::Application.routes.draw do
+
   get "locales/change_locale"
 
   filter :locale
 
+  # 
   #Devise
-  ActiveAdmin.routes(self)
+   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
   devise_for :users
   devise_for :users, :controllers => {:registrations => "registrations"}

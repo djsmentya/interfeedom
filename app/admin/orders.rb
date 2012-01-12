@@ -21,7 +21,7 @@ ActiveAdmin.register Order do
         t.column("Price")   {|item| number_to_currency item.product.price }
         tr  do
           td "Total:", :style => "text-align: right;"
-          #td number_to_currency(order.total_price)
+          td number_to_currency(order.total_price)
         end
       end
     end

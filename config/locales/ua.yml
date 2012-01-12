@@ -4,6 +4,7 @@ ua:
     models:
       profile: 'Profile'
       product: 'Товар'
+      user: 'Користувач'
     attributes:  
       product:
         name: 'Ім’я'
