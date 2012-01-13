@@ -5,7 +5,6 @@ class Profile::OrdersController < ApplicationController
   def index
     @orders ||=  Order.includes(:order_items).where('order_items.product_id in (?)',current_user.product_ids )
 
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @profile_orders }

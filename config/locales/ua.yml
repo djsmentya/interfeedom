@@ -5,6 +5,7 @@ ua:
       profile: 'Profile'
       product: 'Товар'
       user: 'Користувач'
+      order: "Замовлення"
     attributes:  
       product:
         name: 'Ім’я'
@@ -62,6 +63,9 @@ ua:
       my_profile: 'Мій профіль'
       my_orders: 'Мої замовлення'
       edit_profile: 'Змінити данні профілю'
+      sales: "Продажі"
+      my_products: 'Мої товари'
+      users_orders: 'Замовлення користувачів'
     products:
       index:
         new_product: "Новий товар"
@@ -71,6 +75,12 @@ ua:
         quantity: 'Кількість'
         action: 'Дії'
         product: 'Товар'
+  orders:
+    index:
+      state: 'Стан:'
+      created: 'Створено:'
+      quantity: 'Кількість:'
+      order_list: "Список замовлень"
   users:
     sessions:
       new:
@@ -95,4 +105,4 @@ ua:
   to_cart: 'В корзину'
   price: 'Ціна'
   in_progress: 'Опрацьовується'
-  
+  edit: "Внести зміни"

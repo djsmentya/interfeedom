@@ -18,8 +18,8 @@
       %td= product.count_on_hand
       %td= product.price
       %td
-        = link_to 'Destroy','#', :method => :delete
-        = link_to 'Edit', edit_profile_product_path(product)
+        -# = link_to 'Destroy','#', :method => :delete
+        = link_to t(:edit), edit_profile_product_path(product), :class=>:button
 
 = content_for :profile_nav do
   #sidebar_nav

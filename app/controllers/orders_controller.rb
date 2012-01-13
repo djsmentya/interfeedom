@@ -1,11 +1,11 @@
 class OrdersController < ApplicationController
- layout 'profile', :only => :index
   def index
     @orders_and_products= {}
     orders = current_user.orders.all :include => :order_items
     orders.each do |order|
       @orders_and_products[order] = order.order_items.all :include => :product
     end
+    render :layout => 'profile'
   end
 
 
@@ -25,7 +25,8 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(params[:order])
     @products = products_by_ids(cart_product_ids)
-      @products.each do |p|
+      
+    @products.each do |p|
         @order.total_price += p.price
       end
 

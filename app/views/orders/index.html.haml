@@ -1,23 +1,23 @@
 %h1
-  Order List
+  = t('.order_list')
 .column.span-6{:style =>'margin-bottom: 15px;'}
   %h3
-    Order
+    = Order.model_name.human
 .column.span-11
   %h3
-    Products
+    = Product.model_name.human
 - @orders_and_products.each do |key, value|
   -order = key
   -order_items = value
   .column{:style =>'border-right: 2px solid yellowGreen; border-bottom: 2px solid yellowGreen; margin: 5px; padding-bottom: 5px'}
     .column.span-6
       %label
-        Created:
+        = t('.created')
       = l( order.created_at, :format =>:long )
       %br
       %label
-        State
-      = order.state
+        = t('.state')
+      = label_tag t(order.state.to_sym), nil, :class => "status #{order.state}"
       -#%br
       -#%label
         -#Total price
@@ -34,10 +34,10 @@
           - quantity = item.quantity
           .column.span-2.right
             %label
-              Quantity:
+              = t('.quantity')
             = quantity
             %label
-              Price:
+              = t(:price)
             = product.price
 
 -#%table
