@@ -14,7 +14,7 @@
             =audio.price
           .span{:style => 'padding:5px;border: 1px solid #e1e1e1; text-align:center;'}
             = link_to_add_product(audio, :class =>:button)
-.column.span-3.last.right
+.column.last.right
   - unless @audios.nil?
     = paginate @audios, :window => 2
  

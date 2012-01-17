@@ -1,27 +1,35 @@
-%h1 Cart
+.span-18
+  %h1 Cart
 
-%table
-  %thead
-    %th= t('.product')
-    %th= t('.description')
-    %th= t('.available')
-    %th= t('.quantity')
-    %th= t(:price)
-    %th= t('.total')
-    %th= t('.action')
-  - @products.each do |product|
-    %tbody
-      %td= link_to image_tag(product.image.url(:thumb)), categoried_product_path(product)
-      %td= product.name
-      %td
-        -if product.available?
-          yes
-        -else
-          no
-      - quantity = current_cart.item_quantity(product.id)
-      %td= quantity
-      %td= product.price
-      %td= product.price * quantity
-      %td= link_to 'Destroy',cart_path(product), :method => :delete
-.column.right
-  = link_to t('order'), new_order_path, :class => 'button'
+  %table
+    %thead
+      %th= t('.product')
+      %th= t('.description')
+      %th= t('.available')
+      %th= t('.quantity')
+      %th= t(:price)
+      %th= t('.total')
+      %th= t('.action')
+    = form_tag 'cart/quantity', :method=> :put do
+      - @products.each do |product|
+        %tbody
+          %td= link_to image_tag(product.image.url(:thumb)), categoried_product_path(product)
+          %td= product.name
+          %td
+            -if product.available?
+              yes
+            -else
+              no
+          - quantity = current_cart.item_quantity(product.id)
+          %td
+            =text_field_tag "cart_items[#{product.id}]", quantity, :size=>3, :style=>'text-align:center;'
+          %td= product.price
+          %td= product.price * quantity
+          %td= link_to 'Destroy',cart_path(product), :method => :delete
+
+.span-18.right{:style=>'height:50px;'}
+  %hr
+  %span{:style=>'padding-left: 244px; '}
+    -if current_cart.items.count > 0
+      = link_to_function t("translate.submit"), "$('form').submit()" , :class => :button
+      = link_to t('order'), new_order_path, :class => 'button'

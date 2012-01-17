@@ -15,6 +15,13 @@ class CartController < ApplicationController
     redirect_to :back, :notice => 'Added to cart', :locals=>{:params => params}
   end
 
+  def quantity
+    params[:cart_items].each do |id, quantity|
+      current_cart.items[id.to_i] = quantity.to_i
+    end
+    redirect_to :back
+  end
+
   def destroy
     @cart.items.delete(params[:id].to_i)
     if request.xhr?

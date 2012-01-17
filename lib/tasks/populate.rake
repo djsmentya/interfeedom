@@ -6,7 +6,7 @@ namespace :db do
 
     [Product].each(&:delete_all)
     users = User.all
-    Product.populate 40 do |product|
+    Product.populate 400 do |product|
       product.name = Populator.words(2..5)
       product.description = Populator.sentences(5..8)
       product.available_on = Time.new
@@ -25,7 +25,7 @@ namespace :db do
     end
     idd = 0
     ids = ActiveRecord::Base.connection.select_values("select id from products")
-    Target.populate 40 do |t|
+    Target.populate 400 do |t|
       t.user_id = ActiveRecord::Base.connection.select_values("select id from users")
       t.product_id = ids[idd]
       idd +=1

@@ -1,4 +1,6 @@
 class Comment < ActiveRecord::Base
+scope :checked, where(:checked => true)
+scope :unchecked, where(:checked => false)
 
   include ActsAsCommentable::Comment
 

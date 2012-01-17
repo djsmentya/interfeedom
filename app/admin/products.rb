@@ -1,4 +1,8 @@
 ActiveAdmin.register Product do
+  #filter :price
+  #filter :genre
+  #filter :created_at
+
   form :partial => "form"
   index do
     column 'Product' do |product|

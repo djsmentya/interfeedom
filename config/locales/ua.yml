@@ -3,7 +3,9 @@ ua:
   activerecord:
     models:
       profile: 'Profile'
-      product: 'Товар'
+      product:
+        one: 'Товар'
+        other: 'Товари'
       user: 'Користувач'
       order: "Замовлення"
     attributes:  
@@ -11,15 +13,23 @@ ua:
         name: 'Ім’я'
         description: 'Опис'
         available_on: 'Доступно з'
-        count_on_hand: 'Кількість в янаявності'
+        count_on_hand: 'Кількість в наявності'
         price: 'Ціна'
         image: 'Зображення'
         genre: 'Жанр'
         producer: 'Продюсер'
+        created_at: 'Створено'
+        updated_at: 'Оновлено'
       comment:
         author: 'Автор'
         comment: 'Коментар'
         created_at: 'Створено'
+      order:
+        state: "Стан"
+        recipient: 'Отримувач'
+        phone: 'Телефон'
+        created_at: 'Створено'
+        updated_at: 'Оновлено'
   shared:
     cart_widget:
       cart: 'Кошик'
@@ -106,3 +116,8 @@ ua:
   price: 'Ціна'
   in_progress: 'Опрацьовується'
   edit: "Внести зміни"
+  destroy: 'Знищити'
+  checked: 'Перевірено'
+  unchecked: 'Не перевірено'
+  true: 'Так'
+  false: 'Ні'

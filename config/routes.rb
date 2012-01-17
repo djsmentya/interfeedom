@@ -16,6 +16,7 @@ Interfreedom::Application.routes.draw do
   resources :cart do
     collection do
       get 'add_item'
+      put 'quantity'
     end
   end
   
