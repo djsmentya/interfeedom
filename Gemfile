@@ -46,9 +46,9 @@ group :test, :development do
   gem 'webrat'
 end
 
-group :development do
   gem 'populator'
   gem 'faker'
+group :development do
   gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
   gem 'nifty-generators'
   gem 'ruby_parser'
