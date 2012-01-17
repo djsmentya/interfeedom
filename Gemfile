@@ -11,8 +11,7 @@ gem 'json'
 
 gem 'activeadmin'
 
-gem 'fastercsv' # Only required on Ruby 1.8 and below
-gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+#gem 'fastercsv' # Only required on Ruby 1.8 and below
 
 gem "meta_search", '>= 1.1.0.pre'
 
@@ -62,5 +61,5 @@ end
 
 
 # To use debugger
- gem 'ruby-debug'
+# gem 'ruby-debug'
 
