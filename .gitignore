@@ -4,8 +4,7 @@ log/*.log
 tmp/
 .sass-cache/
 .idea/*
-public/system/*
+public/assets/system/*
 config/database.yml
-
 *.swp
 config/database.yml
