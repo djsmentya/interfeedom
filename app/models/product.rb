@@ -28,4 +28,5 @@ attr_accessible :genre_id, :producer, :image, :name, :description,:product_type,
   def set_product_type_id
     self.product_type_id = ProductType.find_by_name(self.product_type).id
   end
+
 end

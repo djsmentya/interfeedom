@@ -1,3 +1,4 @@
+= paginate @products, :theme => :github
 %table
   %thead
     %th= t('.product')
@@ -20,7 +21,7 @@
       %td
         -# = link_to 'Destroy','#', :method => :delete
         = link_to t(:edit), edit_profile_product_path(product), :class=>:button
-
+= paginate @products, :theme => :github
 = content_for :profile_nav do
   #sidebar_nav
     .wg_title.span-18{:style=> 'margin-bottom:5px;'}
@@ -32,4 +33,5 @@
           = link_to t('.new_product'), new_profile_product_path
       .title
         Products
-:css
+= content_for :sidebar do
+  =  render :partial => "sidebar"

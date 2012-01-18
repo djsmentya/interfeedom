@@ -19,8 +19,8 @@
       = render :partial => 'shared/header'
       #content.container
         .column.span-5.prepend-top
-          = yield :sidebar
           = render :partial => "profile/sidebar"
+          = yield :sidebar
         .column.span-18.prepend-top.last
           .span-18
             = yield :profile_nav
@@ -37,6 +37,3 @@
       $.submit("#{locales_change_locale_path}",'language' + lan);
     })
   });
-
-
-

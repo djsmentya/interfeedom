@@ -1,27 +1,19 @@
--#  The container tag
--#  available local variables
--#    current_page:  a page object for the currently displayed page
--#    num_pages:     total number of pages
--#    per_page:      number of items to fetch per page
--#    remote:        data-remote
--#    paginator:     the paginator that renders the pagination tags inside
+:css
+  #nav a{display:block}
+  #nav td{padding:0;text-align:center}
+  .cur {font-weight:bold}
+  .csb {background:url(http://www.google.co.jp/images/srpr/nav_logo27.png) no-repeat;overflow:hidden;background-position:0 0;height:40px;display:block}
+  #nav {font-family: arial,sans-serif; font-size:small}
+  #nav a:link {text-decoration:none; color:#4496d3}
+  #nav a:hover {text-decoration:underline}
+  #nav a:active {color:#c11}
+  #nav a:visited {color:#2200C1}
+  .b {font-weight:bold}
 = paginator.render do
-  %nav
-    .pagination
-      .total_pages{:style=>'background: none repeat scroll 0 0 #EEEEEE;border: 1px solid;color: green;      font-weight: bold; text-align: center;'}
-        Total pages
-        .t{:style=>'font-size: 1.5em;'}
-          = num_pages
-      = first_page_tag unless current_page.first?
-      = prev_page_tag unless current_page.first?
-      -#- each_page do |page|
-        - if page.left_outer? || page.right_outer? || page.inside_window?
+  %table#nav{:style => 'border-collapse:collapse;text-align:left;direction:ltr;margin:17px auto 0'}<
+    %tbody><
+      %tr{:valign => 'top'}><
+        %td.b= prev_page_tag
+        - each_page.select(&:inside_window?).each do |page|
           = page_tag page
-        - elsif !page.was_truncated?
-          = gap_tag
-      = next_page_tag unless current_page.last?
-      = last_page_tag unless current_page.last?
-    .curren_page{:style=>'background: none repeat scroll 0 0 #EEEEEE;border: 1px solid;color: green;      font-weight: bold; text-align: center;font-size:small;'}
-      Current page  
-      .t{:style=>'font-size:3em'}
-        = current_page
+        %td.b= next_page_tag
