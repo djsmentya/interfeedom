@@ -41,7 +41,7 @@ class OrdersController < ApplicationController
     if @order.errors.present?
       render :new
     else
-      redirect_to root_path, :notice => 'Order in progress'
+      redirect_to @order.paypal_url(root_path, payment_notifications_url)
     end
   end
 

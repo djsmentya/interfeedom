@@ -28,10 +28,10 @@ class Profile::ProductsController < ApplicationController
     @updated_at = FilterDate.new
     @updated_at.set_date params[:updated_at]
       unless @updated_at.from.nil? || @updated_at.to.nil?
-        @products = products_list.where('products.updated_at between ? and ?', @updated_at.from, @updated_at.to)
+        @products = @products.where('products.updated_at between ? and ?', @updated_at.from, @updated_at.to)
       else
-        @products = products_list.where('products.updated_at < ?', @updated_at.to) unless @updated_at.to.nil?
-        @products = products_list.where('products.updated_at > ?', @updated_at.from) unless @updated_at.from.nil?
+        @products = @products.where('products.updated_at < ?', @updated_at.to) unless @updated_at.to.nil?
+        @products = @products.where('products.updated_at > ?', @updated_at.from) unless @updated_at.from.nil?
       end 
     @products
   end

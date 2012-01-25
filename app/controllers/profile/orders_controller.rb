@@ -3,7 +3,7 @@ class Profile::OrdersController < ApplicationController
   # GET /profile/orders
   # GET /profile/orders.json
   def index
-    @orders ||=  Order.includes(:order_items).where('order_items.product_id in (?)',current_user.product_ids )
+    @orders ||=  Order.includes(:order_items).where('order_items.product_id in (?)',current_user.product_ids ).page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120112225553) do
+ActiveRecord::Schema.define(:version => 20120125012828) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -87,11 +87,20 @@ ActiveRecord::Schema.define(:version => 20120112225553) do
     t.string   "payment_state"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "recipient"
     t.string   "email"
     t.string   "phone"
     t.text     "comment"
+    t.string   "recipient"
     t.float    "total_price",   :default => 0.0, :null => false
+  end
+
+  create_table "payment_notifications", :force => true do |t|
+    t.text     "params"
+    t.integer  "order_id"
+    t.string   "status"
+    t.string   "transaction_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "product_types", :force => true do |t|

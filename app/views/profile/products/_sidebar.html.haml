@@ -16,5 +16,8 @@
           = '-' 
           = datepicker_input :updated_at, :to, :size => 5
         %hr
+        %p{:style=>'text-align:center;'}
+          = link_to_function 'Submit', "$('form').submit()", :class=> :button
+        %p{:style=>'text-align:center;'}
+          = link_to 'Reset', profile_products_path, :class=> :button
 
-        = submit_tag

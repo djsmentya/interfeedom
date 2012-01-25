@@ -1,3 +1,4 @@
+I18n.locale = :ua
 ActiveAdmin.setup do |config|
 
   # == Site Title

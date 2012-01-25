@@ -17,6 +17,10 @@ gem "meta_search", '>= 1.1.0.pre'
 
 gem 'acts_as_commentable'
 gem 'paperclip'
+
+#Comerce
+gem 'activemerchant'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
