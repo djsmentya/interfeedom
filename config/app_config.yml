@@ -1,0 +1,12 @@
+development:
+  paypal_email: djsmen_1327002467_biz@gmail.com
+  paypal_url: "https://www.sandbox.paypal.com/cgi-bin/webscr"
+
+test:
+  paypal_email: test@example.com
+  paypal_url: testpaypalurl
+
+production:
+  paypal_email: foo@example.com
+  paypal_url: "https://www.paypal.com/cgi-bin/webscr"
+
