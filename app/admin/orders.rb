@@ -1,13 +1,16 @@
 ActiveAdmin.register Order do
-  actions :index, :show
+  actions :index, :show, :destroy
   index  do
     column :id
-    column('State'){|order| status_tag(order.state) }
+    column('State'){|order| status_tag(order.state)}
+    column('Payment State' ) do
+      div 'as'
+    end
     column :recipient
     column :phone
     #column 'Products' do |o|
     #if products = Product.find(o.order_item_ids)
-    #products.each do |p|
+    #products.each do |p
     #p.name
     #end
     #end

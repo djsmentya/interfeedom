@@ -121,3 +121,5 @@ ua:
   unchecked: 'Не перевірено'
   true: 'Так'
   false: 'Ні'
+  payed: 'Оплачено'
+  not_payed: 'Не оплачено'

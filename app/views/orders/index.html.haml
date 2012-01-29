@@ -15,9 +15,16 @@
         = t('.created')
       = l( order.created_at, :format =>:long )
       %br
-      %label
-        = t('.state')
-      = label_tag t(order.state.to_sym), nil, :class => "status #{order.state}"
+      .column
+        %label
+          = t('.state')
+      .clumn{:style => 'text-align:right;'}
+        = label_tag t(order.state.to_sym), nil, :class => "status #{order.state}"
+        %br
+        - if order.payment_state.eql?('payed')
+          = label_tag t(:payed), nil, :class => "status green"
+        -else
+          = label_tag t(:not_payed), nil, :class => "status red"
       -#%br
       -#%label
         -#Total price

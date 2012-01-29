@@ -63,3 +63,6 @@ en:
   sign_up: 'Sign Up'
   to_cart: 'To Cart'
   price: 'Price'
+  in_progress: 'In progress'
+  payed: 'Payed'
+  not_payed: 'Not Payed'

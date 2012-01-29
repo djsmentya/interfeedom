@@ -9,7 +9,13 @@
   - @orders.each do |order|
     %tr
       %td
-        = label_tag order.state, nil, :class => "status #{order.state}"
+        .clumn{:style => 'text-align:right;'}
+          = label_tag t(order.state.to_sym), nil, :class => "status #{order.state}"
+          %br
+          - if order.payment_state.eql?('payed')
+            = label_tag t(:payed), nil, :class => "status green"
+          -else
+            = label_tag t(:not_payed), nil, :class => "status red"
       %td= order.recipient
       %td= order.phone
       %td= l(order.created_at, :format => :short)

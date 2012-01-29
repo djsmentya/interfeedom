@@ -1,6 +1,12 @@
-I18n.locale = :ua
 ActiveAdmin.setup do |config|
 
+  
+  config.before_filter :set_locale
+  
+  def set_locale
+    I18n.locale = :ua
+  end
+  config.default_per_page = 10
   # == Site Title
   #
   # Set the title that is displayed on the main layout
@@ -88,6 +94,8 @@ ActiveAdmin.setup do |config|
   # Active Admin resources from here. 
   #
   # config.before_filter :do_something_awesome
+   
+  
 
 
   # == Register Stylesheets & Javascripts

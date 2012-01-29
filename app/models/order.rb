@@ -12,9 +12,17 @@ class Order < ActiveRecord::Base
   end
 
   def paypal_url(return_url, notify_url)
+  #values = {
+    #:business => APP_CONFIG[:paypal_email],
+    #:cmd => '_order',
+    #:upload => 1,
+    #:return => return_url,
+    #:invoice => id,
+    #:notify_url => notify_url
+  #}
   values = {
     :business => APP_CONFIG[:paypal_email],
-    :cmd => '_order',
+    :cmd => '_cart',
     :upload => 1,
     :return => return_url,
     :invoice => id,

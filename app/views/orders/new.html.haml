@@ -9,9 +9,9 @@
           - @product.errors.full_messages.each do |msg|
             %li= msg
 
-    -#.row
-      -#=f.label :recipient
-    -#=f.text_field :recipient, :value => profile.full_name
+    .row
+      =f.label :recipient
+    =f.text_field :recipient, :value => profile.full_name
     .row
       =f.label :phone
     = f.phone_field :phone, :value => profile.phone

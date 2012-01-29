@@ -3,7 +3,7 @@ en:
     resource:
       products:
         products: 'asdf'
-    dashboard: Dashboard
+    dashboard: "Dashboard"
     dashboard_welcome:
       welcome: "Welcome to Active Admin. This is the default dashboard page."
       call_to_action: "To add dashboard sections, checkout 'app/admin/dashboards.rb'"

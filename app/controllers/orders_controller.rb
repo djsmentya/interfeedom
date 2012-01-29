@@ -41,7 +41,7 @@ class OrdersController < ApplicationController
     if @order.errors.present?
       render :new
     else
-      redirect_to @order.paypal_url(root_path, payment_notifications_url)
+      redirect_to @order.paypal_url('ifree.herokuapp.com',payment_notifications_create_path)
     end
   end
 
