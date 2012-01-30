@@ -8,11 +8,29 @@
         %th{:colspan => 2} Product
       %tbody
         %tr
-          %td= f.label :name 
-          %td= f.text_field :name 
+          %td
+            = f.label :name 
+            .right
+              =image_tag "flags/en.png"
+          %td= f.text_field :name_en 
         %tr
-          %td= f.label :description
-          %td= f.text_area :description, :rows=> 3
+          %td
+            = f.label :name 
+            .right
+              =image_tag "flags/ua.png"
+          %td= f.text_field :name_ua
+        %tr
+          %td
+            = f.label :description
+            .right
+              =image_tag "flags/en.png"
+          %td= f.text_area :description_en, :rows=> 3
+        %tr
+          %td
+            = f.label :description
+            .right
+              =image_tag "flags/ua.png"
+          %td= f.text_area :description_ua, :rows=> 3
         %tr
           %td= f. label :available_on
           %td= f.datepicker :available_on

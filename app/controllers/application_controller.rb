@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_locale, :current_cart
 
-  helper_method :current_cart, :cart_products
+  helper_method :current_cart, :cart_products, :current_locale
   protected
 
   def cart_product_ids
@@ -26,7 +26,12 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    I18n.locale = session[:locale] || params[:locale] || I18n.default_locale
+    I18n.locale = current_locale
+  end
+
+  def current_locale
+   locale = session[:locale] || params[:locale] || I18n.default_locale
     session[:locale] = nil
+    locale
   end
 end

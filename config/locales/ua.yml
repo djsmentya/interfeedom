@@ -107,6 +107,9 @@ ua:
   videos:
     index:
       price: 'Ціна '
+  home:
+    index:
+      last_added: 'Найновіші товари'
 
   ua: 'Українська'
   en: 'English'

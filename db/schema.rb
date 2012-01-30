@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120125012828) do
+ActiveRecord::Schema.define(:version => 20120129232444) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -102,6 +102,17 @@ ActiveRecord::Schema.define(:version => 20120125012828) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "product_translations", :force => true do |t|
+    t.integer  "product_id"
+    t.string   "locale"
+    t.text     "description"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "product_translations", ["product_id"], :name => "index_product_translations_on_product_id"
 
   create_table "product_types", :force => true do |t|
     t.string   "name"

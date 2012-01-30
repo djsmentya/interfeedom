@@ -21,6 +21,8 @@ gem 'paperclip'
 #Comerce
 gem 'activemerchant'
 
+gem "globalize3"
+gem "easy_globalize3_accessors"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

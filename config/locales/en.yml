@@ -56,7 +56,9 @@ en:
   videos:
     index:
       price: 'Price '
-
+  home:
+    index:
+      last_added: 'Last added'
   ua: 'Українська'
   en: 'English'
   sign_in: 'Sign In'

@@ -1,8 +1,9 @@
 class Product < ActiveRecord::Base
+  translates :name, :description, :fallbacks_for_empty_translations => true
+  globalize_accessors :locales => [:en, :ua], :attributes => [:name, :description]
   include ExtensionInitializer
   paginates_per 9
   #before_validation :set_product_type_id
-  
   has_many :targets
   has_one :user, :through => :target
   has_many :order_items
@@ -12,8 +13,10 @@ class Product < ActiveRecord::Base
                     :thumb => "50x50"}, :default_url => '/system/images/:style/missing.png', 
                     :url  => "system/images/:id/:style/:basename.:extension", 
                     :path => ":rails_root/public/assets/system/images/:id/:style/:basename.:extension"
+  
 attr_accessible :genre_id, :producer, :image, :name, :description,:product_type, 
-        :product_type_id, :image, :style, :group, :album, :count_on_hand, :price, :available_on
+        :product_type_id, :image, :style, :group, :album, :count_on_hand, :price, :available_on,
+        :name_en, :name_ua, :description_en, :description_ua
   validates_attachment_content_type :image, :content_type => ['image/jpeg', 'image/png']
   attr_reader :video_product_type_id
 
