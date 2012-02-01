@@ -18,6 +18,8 @@ gem "meta_search", '>= 1.1.0.pre'
 gem 'acts_as_commentable'
 gem 'paperclip'
 
+gem "seed-fu"
+
 #Comerce
 gem 'activemerchant'
 
