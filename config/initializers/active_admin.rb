@@ -4,7 +4,7 @@ ActiveAdmin.setup do |config|
   config.before_filter :set_locale
   
   def set_locale
-    I18n.locale = :ua
+    config.I18n.locale = :ua
   end
   config.default_per_page = 10
   # == Site Title

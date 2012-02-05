@@ -3,21 +3,25 @@
     #ffe.right
       =image_tag 'site/title_header_right.png'
     #title
-      = t('.nav_title')
+      = t('profile.sidebar.filters')
   .span-5.last
     .sbar_content
       = form_tag profile_products_path, :method => :get do
         .column
-          %label From
+          %label=t('profile.sidebar.from')
         .column.right
-          %label To
+          %label= t('profile.sidebar.to')
         .span-5
-          = datepicker_input :updated_at, :from, :size => 5
+          = datepicker_input :filter_box, :date_from, :size => 5
           = '-' 
-          = datepicker_input :updated_at, :to, :size => 5
+          = datepicker_input :filter_box, :date_to, :size => 5
+        .column
+          %label= t('profile.sidebar.product_type')
+          -#= select_tag "filter_box[product_type]", options_from_collection_for_select(ProductType.all, "name", "name", @filter_box.product_type), :prompt => 'all'
+          = select 'filter_box', 'product_type', ProductType.all.collect {|p| [p.name, p.name]}, {:include_blank => t(:all)}
         %hr
         %p{:style=>'text-align:center;'}
-          = link_to_function 'Submit', "$('form').submit()", :class=> :button
+          = link_to_function t('profile.sidebar.submit'), "$('form').submit()", :class=> :button
         %p{:style=>'text-align:center;'}
-          = link_to 'Reset', profile_products_path, :class=> :button
+          = link_to t('profile.sidebar.reset') , profile_products_path, :class=> :button
 

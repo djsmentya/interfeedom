@@ -1,4 +1,7 @@
 class Product < ActiveRecord::Base
+  scope :video, where(:product_type => 'Video')
+  scope :audio, where(:product_type => 'Audio')
+
   translates :name, :description, :fallbacks_for_empty_translations => true
   globalize_accessors :locales => [:en, :ua], :attributes => [:name, :description]
   include ExtensionInitializer

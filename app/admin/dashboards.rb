@@ -1,4 +1,5 @@
 ActiveAdmin::Dashboards.build do
+
   # Define your dashboard sections here. Each block will be
   # rendered on the dashboard in the context of the view. So just
   # return the content which you would like to display.
@@ -32,17 +33,17 @@ ActiveAdmin::Dashboards.build do
   #   section "Recent User", :priority => 1
   #
   # Will render the "Recent Users" then the "Recent Posts" sections on the dashboard.
-  section "Recent Users", :priority => 2 do
+  section I18n.t('active_admin.section.recent_users'), :priority => 2 do
     table_for User.all(:order => 'id DESC', :limit => 10) do
-      column("User") {|user| link_to(user.email, admin_user_path(user)) }
-      column :created_at #("Created At") {|user| content_tag(:div, user.created_at) }
+      column(User.model_name.human) {|user| link_to(user.email, admin_user_path(user)) }
+      column(User.human_attribute_name :created_at) {|user| content_tag(:div, I18n.l(user.created_at, :format => :short)) }
     end
   end
   
-  section "Recent Orders", :priority => 1 do
+  section I18n.t('active_admin.section.recent_orders'), :priority => 1 do
     table_for Order.all(:limit => 10) do
-      column("State") {|order| status_tag(order.state) }
-      column("Customer") {|order| link_to(order.user.email, admin_user_path(order.user)) }
+      column(Order.human_attribute_name :state) {|order| status_tag(order.state) }
+      column(User.model_name.human) {|order| link_to(order.user.email, admin_user_path(order.user)) }
       #column("Total") {|order| number_to_currency order.total_price }
     end
   end

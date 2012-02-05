@@ -2,13 +2,38 @@
 ua:
   activerecord:
     models:
-      profile: 'Profile'
+      profile: 'Профіль'
+      support:
+        one: 'Зв’язок'
+        other: 'Зв’язок'
+      comment:
+        one: 'Коментарі користувача'
+        other: 'Коментарі користувачів'
+      admin_user:
+        one: 'Адміністратор'
+        other: 'Адміністратори'
       product:
         one: 'Товар'
         other: 'Товари'
-      user: 'Користувач'
-      order: "Замовлення"
+      user: 
+        one: 'Користувач'
+        other: 'Користувачі'
+      order:
+        one: "Замовлення"
+        other: "Замовлення"
     attributes:  
+      support:
+        subject: "Тема"
+        message: 'Повідомлення'
+        created_at: 'Створено'
+        updated_at: 'Оновлено'
+      admin_user:
+        last_sign_in_at: 'Останній вхід'
+        current_sign_in_at: 'Поточний сеанс'
+        password_confirmation: 'Повторити пароль'
+        password: 'Пароль'
+        created_at: 'Створено'
+        updated_at: 'Оновлено'
       product:
         name: 'Ім’я'
         description: 'Опис'
@@ -17,17 +42,26 @@ ua:
         price: 'Ціна'
         image: 'Зображення'
         genre: 'Жанр'
+        style: 'Музичний стиль'
+        album: 'Альбом'
+        group: 'Група'
         producer: 'Продюсер'
         created_at: 'Створено'
         updated_at: 'Оновлено'
       comment:
         author: 'Автор'
-        comment: 'Коментар'
+        comment: 
+          one: 'Коментар'
+          few: 'Коментарі'
         created_at: 'Створено'
+        updated_at: 'Оновлено'
       order:
         state: "Стан"
         recipient: 'Отримувач'
         phone: 'Телефон'
+        created_at: 'Створено'
+        updated_at: 'Оновлено'
+      user:
         created_at: 'Створено'
         updated_at: 'Оновлено'
   shared:
@@ -69,6 +103,11 @@ ua:
       created_at: 'Створено'
       state: 'Стан'
     sidebar:  
+      filters: "Фільтри"
+      from: 'від'
+      to: 'до'
+      submit: 'Застосувати'
+      reset: 'Зкинути'
       nav_title: 'Навігація'
       my_profile: 'Мій профіль'
       my_orders: 'Мої замовлення'
@@ -76,6 +115,7 @@ ua:
       sales: "Продажі"
       my_products: 'Мої товари'
       users_orders: 'Замовлення користувачів'
+      product_type: 'Тип продукту:'
     products:
       index:
         new_product: "Новий товар"
@@ -110,7 +150,16 @@ ua:
   home:
     index:
       last_added: 'Найновіші товари'
-
+  active_admin:
+    section:
+      recent_users: 'Нові користувачі'
+      recent_orders: 'Нові замовленя'
+    scopes:
+      audio: 'Аудіо'
+      video: 'Відео'
+    order:
+      sidebar:
+        customer_info: 'Інформація покупся'
   ua: 'Українська'
   en: 'English'
   sign_in: 'Вхід'
@@ -126,3 +175,4 @@ ua:
   false: 'Ні'
   payed: 'Оплачено'
   not_payed: 'Не оплачено'
+  all: 'Всі'

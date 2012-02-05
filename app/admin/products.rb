@@ -1,8 +1,18 @@
 ActiveAdmin.register Product do
-  #filter :price
-  #filter :genre
-  #filter :created_at
+  filter :price
+  filter :genre
+  filter :created_at
+  filter :updated_at
+  filter :count_on_hand
+  filter :producer
+  filter :style
+  filter :group
+  filter :album
 
+  scope I18n.t(:all), :all
+  scope I18n.t('active_admin.scopes.audio'), :audio
+  scope I18n.t('active_admin.scopes.video'), :video
+  
   form :partial => "form"
   index do
     column 'Product' do |product|

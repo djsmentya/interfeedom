@@ -3,6 +3,10 @@
 
  #encoding: utf-8
 en:
+  active_admin:
+    order:
+      sidebar:
+        customer_info: 'Customer Info'
   activerecord:
     models:
       profile: 'Profile'
@@ -41,9 +45,27 @@ en:
       edit_profile: 'Edit Profile'
     sidebar:  
       nav_title: 'Navigation'
+      filters: "Filters"
+      from: 'From'
+      to: 'to'
+      submit: 'Submit'
+      reset: 'Reset'
+      my_profile: 'My Profile'
+      my_orders: 'My Orders'
+      edit_profile: 'Edit Profile'
+      sales: "Sales"
+      my_products: 'My Products'
+      users_orders: 'Users Orders'
+      product_type: 'Product Type:'
     products:
       index:
         new_product: "New Product"
+        description: 'Description'
+        available_on: 'Available On'
+        price: 'Price'
+        quantity: 'Quantity'
+        action: 'Action'
+        product: 'Product'
   users:
     sessions:
       new:
@@ -66,5 +88,12 @@ en:
   to_cart: 'To Cart'
   price: 'Price'
   in_progress: 'In progress'
+  edit: "Edit"
+  destroy: 'Destroy'
+  checked: 'Checked'
+  unchecked: 'Unchecked'
+  true: 'Yes'
+  false: 'No'
   payed: 'Payed'
   not_payed: 'Not Payed'
+  all: 'All'

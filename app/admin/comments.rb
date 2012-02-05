@@ -1,7 +1,9 @@
-ActiveAdmin.register Comment, :as => 'UserComments' do
-  scope :all
-  scope :checked
-  scope :unchecked
+ActiveAdmin.register Comment, :as => 'UserComment' do
+
+  menu :label => Comment.model_name.human
+  scope I18n.t(:all), :all
+  scope I18n.t(:checked), :checked
+  scope I18n.t(:unchecked), :unchecked
 
   index  do
     column :id

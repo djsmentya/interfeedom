@@ -31,6 +31,7 @@ class SearchesController < ApplicationController
     end
 
     scope = [condition] + values
-    @searches = Product.find(:all,:conditions => scope)
+    product_translations =  ProductTranslation.find(:all,:conditions => scope)
+    @searches = product_translations
   end
 end

@@ -29,6 +29,20 @@ module Interfreedom
     config.gem "paperclip"
     config.session_store = :active_record_store
 
+    config.before_configuration do
+      I18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
+      I18n.locale = :ua
+      I18n.default_locale = :ua
+      config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
+      config.i18n.locale = :ua
+      # bypasses rails bug with i18n in production\
+      I18n.reload!
+      config.i18n.reload!
+    end
+
+    config.i18n.locale = :ua
+    config.i18n.default_locale = :ua
+
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
 
@@ -45,8 +59,7 @@ module Interfreedom
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     #config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    config.i18n.default_locale = :en
-    I18n.locale = config.i18n.locale
+    config.i18n.default_locale = :ua
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
     

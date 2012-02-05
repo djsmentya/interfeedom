@@ -21,7 +21,7 @@ ua:
     has_many_delete: "Видалити"
     filter: "Фільтрувати"
     clear_filters: "Очистити"
-    search_field: "Шукати за %{field}"
+    search_field: " %{field}"
     equal_to: "="
     greater_than: ">"
     less_than: "<"

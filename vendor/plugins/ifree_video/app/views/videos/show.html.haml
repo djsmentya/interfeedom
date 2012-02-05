@@ -11,14 +11,14 @@
       =link_to_add_product(@video, :class =>'button')
   .span-10.prepend-top
     %label
-      Genre:
+      = Product.human_attribute_name(:genre )+ ':'
     = @video.try(:genre).try(:name)
     %br
     %label
-      Producer:
+      = Product.human_attribute_name( :producer )+ ':'
     = @video.producer
     %br
     %label
-      Description:
+      = Product.human_attribute_name( :description ) + ":"
     = @video.description
   = render :template => 'comments/index', :locals=>{:comments => @video.comments}   
