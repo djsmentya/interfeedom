@@ -11,6 +11,7 @@
       to
     = text_field_tag 'search[price_to]',@search[:price_to], :size => 5
 #search_content.span-18{:style => 'padding-bottom:30px;'}
+  = paginate @searches, :theme => :github
   - @searches.each do |product|
     .product.column
       .span-4{:style=>'text-align:center;'}
@@ -27,4 +28,5 @@
           .span-9.last
             = truncate product.description, :length=> 150
         %div
-          -#= link_to t(:to_cart),add_item_cart_index_path(:product_id => product), :class => :button
+  = paginate @searches, :theme => :github
+  -#= link_to t(:to_cart),add_item_cart_index_path(:product_id => product), :class => :button

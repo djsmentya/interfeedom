@@ -9,10 +9,12 @@ class SearchesController < ApplicationController
   end
 
   private #TODO Use some engines for search!!!!
-  def search(search = params[:search][:value])
+  def search(search_param = params[:search][:value])
 
-    condition = '(name LIKE ? or description LIKE ?)'
-    values = ["%#{search}%", "%#{search}%"] 
+    condition_t = ['name LIKE ? or description LIKE ?']
+    values_t = ["%#{search_param}%", "%#{search_param}%"] 
+    condition = ''
+    values = []
 
     unless params[:search][:product_type].blank?
       condition << ' and product_type = ? ' 
@@ -30,8 +32,10 @@ class SearchesController < ApplicationController
       end
     end
 
-    scope = [condition] + values
-    product_translations =  ProductTranslation.find(:all,:conditions => scope)
-    @searches = product_translations
+    scope = [condition.sub('and', '')] + values
+
+    product_translations =  ProductTranslation.all(:select => :product_id ,:conditions => condition_t + values_t).collect{|translation| translation.product_id}
+      @searches = Product.where('id in (?)', product_translations.uniq)
+      @searches = @searches.where(scope).page(params[:page])
   end
 end
