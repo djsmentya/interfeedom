@@ -159,7 +159,10 @@ ua:
       video: 'Відео'
     order:
       sidebar:
-        customer_info: 'Інформація покупся'
+        customer_info: 'Інформація покупця'
+  supports:
+    new:
+      new_support: 'Зв’язок з Адміністрацією'
   ua: 'Українська'
   en: 'English'
   sign_in: 'Вхід'
@@ -174,5 +177,9 @@ ua:
   true: 'Так'
   false: 'Ні'
   payed: 'Оплачено'
+  pay: 'Оплатити'
   not_payed: 'Не оплачено'
   all: 'Всі'
+  completed: 'Доставлено'
+  submit: 'Відправити'
+  order: 'Замовити'

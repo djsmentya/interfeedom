@@ -1,20 +1,26 @@
 %h1
-  Order List
+  = t('orders.index.order_list')
 .column.span-6{:style =>'margin-bottom: 15px;'}
   %h3
-    Order
+    = Order.model_name.human
 .column.span-11
   %h3
-    Products
+    = Product.model_name.human
 .column{:style =>'border-right: 2px solid yellowGreen; border-bottom: 2px solid yellowGreen; margin: 5px; padding-bottom: 5px'}
   .column.span-6
     %label
-      Created:
+      =Order.human_attribute_name('created_at') + ':'
     = l( @order.created_at, :format =>:long )
     %br
     %label
-      State
-    = @order.state
+      =Order.human_attribute_name('state') + ':'
+    .clumn{:style => 'text-align:right;'}
+      = label_tag t(@order.state.to_sym), nil, :class => "status #{@order.state}"
+      %br
+      - if @order.payment_state.eql?('payed')
+        = label_tag t(:payed), nil, :class => "status green"
+      -else
+        = label_tag t(:not_payed), nil, :class => "status red"
     -#%br
     -#%label
       -#Total price
@@ -31,8 +37,8 @@
         - quantity = item.quantity
         .column.span-2.right
           %label
-            Quantity:
+            =t('cart.index.quantity') + ':'
           = quantity
           %label
-            Price:
+            =t(:price) + ':'
           = product.price

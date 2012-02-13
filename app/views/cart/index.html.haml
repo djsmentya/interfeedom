@@ -25,11 +25,11 @@
             =text_field_tag "cart_items[#{product.id}]", quantity, :size=>3, :style=>'text-align:center;'
           %td= product.price
           %td= product.price * quantity
-          %td= link_to 'Destroy',cart_path(product), :method => :delete
+          %td= link_to t('active_admin.delete') ,cart_path(product), :method => :delete
 
 .span-18.right{:style=>'height:50px;'}
   %hr
   %span{:style=>'padding-left: 244px; '}
     -if current_cart.items.count > 0
-      = link_to_function t("translate.submit"), "$('form').submit()" , :class => :button
-      = link_to t('order'), new_order_path, :class => 'button'
+      = link_to_function t(:submit), "$('form').submit()" , :class => :button
+      = link_to t(:order), new_order_path, :class => 'button'

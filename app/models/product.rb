@@ -7,8 +7,7 @@ class Product < ActiveRecord::Base
   include ExtensionInitializer
   paginates_per 9
   #before_validation :set_product_type_id
-  has_many :targets
-  has_one :user, :through => :target
+  belongs_to :user
   has_many :order_items
   validates_presence_of :name, :product_type
   acts_as_commentable

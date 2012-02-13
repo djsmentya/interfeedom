@@ -1,4 +1,5 @@
 ActiveAdmin.register Product do
+  actions :index, :edit, :destroy, :show
   filter :price
   filter :genre
   filter :created_at

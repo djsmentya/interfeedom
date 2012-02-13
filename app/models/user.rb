@@ -10,9 +10,7 @@ class User < ActiveRecord::Base
 
   after_create :set_user_role
 
-  has_many :targets
-
-  has_many :products, :through => :targets
+  has_many :products
   has_many :assignments
   has_many :roles, :through => :assignments
   has_one :profile

@@ -17,6 +17,7 @@ gem "meta_search", '>= 1.1.0.pre'
 
 gem 'acts_as_commentable'
 gem 'paperclip'
+gem 'ajaxful_rating', :git => 'git://github.com/edgarjs/ajaxful-rating.git', :branch => "rails3"
 
 gem "seed-fu"
 
