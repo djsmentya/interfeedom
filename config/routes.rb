@@ -15,6 +15,11 @@ Interfreedom::Application.routes.draw do
 
   #match '/user' => 'orders#new', :as => :user_root
 
+  resources :products do
+    post :rate, :on => :member
+  end
+
+
   resources :cart do
     collection do
       get 'add_item'

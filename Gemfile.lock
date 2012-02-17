@@ -1,11 +1,4 @@
 GIT
-  remote: git://github.com/edgarjs/ajaxful-rating.git
-  revision: 8a80ae76be2dd304f2e7ec991af7daca205bc501
-  branch: rails3
-  specs:
-    ajaxful_rating (3.0.0.beta8)
-
-GIT
   remote: git://github.com/thedarkone/rails-dev-boost.git
   revision: c648d229fa981c5f9bcbd8ac6baa520582c248c6
   specs:
@@ -66,6 +59,7 @@ GEM
     activesupport (3.1.0)
       multi_json (~> 1.0)
     acts_as_commentable (3.0.1)
+    ajaxful_rating_jquery (2.2.9)
     arel (2.2.1)
     bcrypt-ruby (3.0.1)
     bcrypt-ruby (3.0.1-java)
@@ -293,7 +287,7 @@ DEPENDENCIES
   activeadmin
   activemerchant
   acts_as_commentable
-  ajaxful_rating!
+  ajaxful_rating_jquery
   capistrano
   coffee-rails (~> 3.1.0)
   cucumber-rails

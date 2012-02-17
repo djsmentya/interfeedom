@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessor :person, :saler
+  
+  ajaxful_rater
 
   after_create :set_user_role
 

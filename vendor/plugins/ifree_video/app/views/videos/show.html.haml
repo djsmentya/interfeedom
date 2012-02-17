@@ -1,5 +1,8 @@
 .span-7{:style => 'text-align:center;'}
   =image_tag @video.image.url(:large)
+  .span{:style=> 'width:125px;'}
+    Raiting:
+    = ratings_for @video, :dimension => :speed 
 %h1= @video.name
 .span-11.last
   = product_states(@video)
