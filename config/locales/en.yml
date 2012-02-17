@@ -27,6 +27,7 @@ en:
       home: 'Home'
       video: 'Video'
       support: 'Support'
+      guest_book: 'Guest Book'
       audio: 'Audio'
   cart:
     index:
@@ -81,6 +82,10 @@ en:
   home:
     index:
       last_added: 'Last added'
+  guest_books:
+    index:
+      guest_book: 'Guest Book'
+      user: 'Users'
   ua: 'Українська'
   en: 'English'
   sign_in: 'Sign In'

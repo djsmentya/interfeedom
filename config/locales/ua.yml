@@ -3,6 +3,7 @@ ua:
   activerecord:
     models:
       profile: 'Профіль'
+      guest_book: 'Гостьова книга'
       support:
         one: 'Зв’язок'
         other: 'Зв’язок'
@@ -22,6 +23,10 @@ ua:
         one: "Замовлення"
         other: "Замовлення"
     attributes:  
+      guest_book:
+        name: 'Ім’я'
+        text: 'Текст повідомлення'
+        created_at: 'Створено'
       support:
         subject: "Тема"
         message: 'Повідомлення'
@@ -81,6 +86,7 @@ ua:
       home: 'Головна'
       video: 'Відео'
       support: 'Зв’язок'
+      guest_book: 'Гостьова книга'
       audio: 'Аудіо'
   cart:
     index:
@@ -163,6 +169,10 @@ ua:
   supports:
     new:
       new_support: 'Зв’язок з Адміністрацією'
+  guest_books:
+    index:
+      guest_book: 'Гостьова книга'
+      user: 'Користувач'
   ua: 'Українська'
   en: 'English'
   sign_in: 'Вхід'

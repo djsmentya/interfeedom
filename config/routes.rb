@@ -1,5 +1,7 @@
 Interfreedom::Application.routes.draw do
 
+  resources :guest_books
+
   get "payment_notifications/create"
 
   get "locales/change_locale"

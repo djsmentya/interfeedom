@@ -29,7 +29,7 @@
                 -active_locale = :active
               = link_to image_tag("flags/#{locale}.png"), locales_change_locale_path(:locale => locale), :class => active_locale, :title => t(locale)
     #nav.span-24
-      #logo.span-12
+      #logo.span-8
         %h1.title
           = link_to image_tag('logo.png'), root_path
       = render :partial => 'shared/menu'

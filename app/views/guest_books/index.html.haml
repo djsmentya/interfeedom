@@ -1,0 +1,18 @@
+%h1= t('.guest_book')
+- @guest_books.each do |guest_book|
+  .column
+    .span-5
+      %h3.box
+        %label{:style=>'color:grey; font-size:small;'}
+          = t('.user')
+          %hr
+        = guest_book.name
+    .span-12.last
+      %label{:style=>'color:grey; font-size:xx-small;'}
+        = l guest_book.created_at, :format => :long
+        %hr  
+      = guest_book.text
+= paginate @guest_books, :theme => :github
+%hr
+.column.prepend-5
+  =render 'form'  

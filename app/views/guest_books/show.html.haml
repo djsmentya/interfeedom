@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @guest_book.name
+%p
+  %b Email:
+  = @guest_book.email
+%p
+  %b Text:
+  = @guest_book.text
+
+= link_to 'Edit', edit_guest_book_path(@guest_book)
+\|
+= link_to 'Back', guest_books_path
