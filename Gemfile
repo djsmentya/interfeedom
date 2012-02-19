@@ -17,7 +17,8 @@ gem "meta_search", '>= 1.1.0.pre'
 
 gem 'acts_as_commentable'
 gem 'paperclip'
-gem 'ajaxful_rating_jquery' #, :git => 'git://github.com/edgarjs/ajaxful-rating.git', :branch => "rails3"
+gem 'ajaxful_rating', '3.0.0.beta6',:branch => "rails3" #, :git => 'git://github.com/edgarjs/ajaxful-rating.git', :branch => "rails3"
+
 
 gem "seed-fu"
 
@@ -50,7 +51,7 @@ gem 'devise'
 group :test, :development do
   gem 'cucumber-rails'
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  #gem 'factory_girl_rails', '~> 1.5.0'
   gem 'database_cleaner'
   gem 'webrat'
 end
