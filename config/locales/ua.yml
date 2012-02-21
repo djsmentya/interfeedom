@@ -156,6 +156,7 @@ ua:
   home:
     index:
       last_added: 'Найновіші товари'
+      most_popular: "Найпопулярніші"
   active_admin:
     section:
       recent_users: 'Нові користувачі'
@@ -193,3 +194,4 @@ ua:
   completed: 'Доставлено'
   submit: 'Відправити'
   order: 'Замовити'
+  rating: 'Рейтинг:'

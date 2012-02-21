@@ -280,7 +280,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activeadmin
+  activeadmin (~> 0.4.0)
   activemerchant
   acts_as_commentable
   ajaxful_rating (= 3.0.0.beta6)

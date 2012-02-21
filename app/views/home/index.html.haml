@@ -18,10 +18,11 @@
   .span-6.last
     .span-6.last.sbar_head
       #title
-        Most popular
+        = t('.most_popular')
     .span-6.last
       .sbar_content
-        - @last_added_products.each do |product|   
+        - @rates.each do |rate|
+          - product = rate.rateable
           .last_added_product
             .column
               =link_to truncate(product.name, :length =>17 ) , categoried_product_path(product), :title => product.name

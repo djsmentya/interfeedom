@@ -21,6 +21,9 @@ Interfreedom::Application.routes.draw do
     post :rate, :on => :member
   end
 
+  resources :users do
+    post :rate, :on => :member
+  end
 
   resources :cart do
     collection do

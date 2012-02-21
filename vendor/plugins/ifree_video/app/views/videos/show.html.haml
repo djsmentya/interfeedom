@@ -1,8 +1,20 @@
 .span-7{:style => 'text-align:center;'}
   =image_tag @video.image.url(:large)
-  .span{:style=> 'width:125px;'}
-    Raiting:
-    = ratings_for @video, :dimension => :speed 
+  .column.span-7.prepend-top
+    .column
+      %label
+        =t :rating
+    .column
+      =ratings_for(@video, :dimension => :speed)
+  %hr
+  .column.span-7
+    %h4
+      Власник:
+      = @video.user.profile.name
+    .column
+      Рейтинг продавця:
+    .column
+      =ratings_for(@video.user)
 %h1= @video.name
 .span-11.last
   = product_states(@video)

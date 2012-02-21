@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   
   ajaxful_rater
 
+  ajaxful_rateable :stars => 5, :allow_update => false
   after_create :set_user_role
 
   has_many :products

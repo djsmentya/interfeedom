@@ -1,6 +1,13 @@
 .span-7
   %span{:style => 'text-align:center;'}
-    =image_tag @audio.image.url(:large)
+    =image_tag( @audio.image.url(:large))
+    .column.span-7
+      .column
+        %label
+          =t :rating
+      .column
+        -#{:style=> 'width:125px;'}
+        =ratings_for(@audio, :dimension => :speed)
   .span-6
     %hr
     %h5

@@ -14,7 +14,7 @@ class VideosController < ApplicationController
       #scope_keys << 'product_type = ?'
       #scope_values << 'Video'
     #@videos = Product.try(:where, scope_keys + scope_values).try(:order, 'created_at DESC').try(:page, params[:page])
-  @videos = Product.video.page(params[:page])
+  @videos = Product.video.order('created_at DESC').page(params[:page])
   unless params[:video_genre_id].blank?
     @videos = @videos.where( :genre_id => params[:video_genre_id])
   end

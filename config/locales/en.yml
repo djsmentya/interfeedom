@@ -82,6 +82,7 @@ en:
   home:
     index:
       last_added: 'Last added'
+      most_popular: "Most Popular"
   guest_books:
     index:
       guest_book: 'Guest Book'
