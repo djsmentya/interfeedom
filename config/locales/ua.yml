@@ -99,6 +99,7 @@ ua:
   comments:
     index:
       created_at: 'Створено'
+      listing_comments: 'Список коментарів'
   profile:
     info:
       your_name: 'Ваше ім’я: '
@@ -153,6 +154,9 @@ ua:
   videos:
     index:
       price: 'Ціна '
+    show:
+      owner: 'Власник:'
+      saler_rate: 'Рейтинг продавця:'
   home:
     index:
       last_added: 'Найновіші товари'

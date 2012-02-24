@@ -67,6 +67,10 @@ en:
         quantity: 'Quantity'
         action: 'Action'
         product: 'Product'
+  comments:
+    index:
+      listing_comments: 'Listing Comments'
+      
   users:
     sessions:
       new:

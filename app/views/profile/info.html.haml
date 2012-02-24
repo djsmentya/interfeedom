@@ -46,3 +46,22 @@
           %tbody
             %td= l(order.created_at, :format => :short)
             %td= t(order.state.to_sym)
+.column{:style=>'margin-bottom:25px;'}
+  .column.span-6.shadow{:style=>'margin-left:25px;'}
+    .title_line
+      = t('.sales')
+    %div{:style=>'padding:5px'}
+      %table
+        %tr
+          %td= t('.balance')
+          %td= current_user.money
+        %tr
+          %td= t('.total_products')
+          %td= link_to current_user.products.count, profile_products_path
+        %tr
+          %td= t('.sold_proudcts_count')
+          - item = 0
+          - order_items ||= OrderItem.joins(:order).where("orders.payment_state = 'payed' and order_items.product_id in (?)", current_user.product_ids)
+          - order_items.each do |o_it| 
+            - item += o_it.quantity
+          %td= item

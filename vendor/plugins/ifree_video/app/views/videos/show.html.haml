@@ -9,10 +9,10 @@
   %hr
   .column.span-7
     %h4
-      Власник:
+      =t('.owner')
       = @video.user.profile.name
     .column
-      Рейтинг продавця:
+      =t('.saler_rate')
     .column
       =ratings_for(@video.user)
 %h1= @video.name
