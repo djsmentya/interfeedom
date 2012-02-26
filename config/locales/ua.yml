@@ -3,7 +3,9 @@ ua:
   activerecord:
     models:
       profile: 'Профіль'
-      guest_book: 'Гостьова книга'
+      guest_book: 
+        one: 'Гостьова книга'
+        other: 'Гостьові книги'
       support:
         one: 'Зв’язок'
         other: 'Зв’язок'
@@ -109,6 +111,10 @@ ua:
       my_orders: 'Мої замовлення'
       created_at: 'Створено'
       state: 'Стан'
+      sales: 'Продажі'
+      balance: 'Баланс'
+      total_products: 'Всього товарів'
+      sold_products_count: 'Кількість проданих'
     sidebar:  
       filters: "Фільтри"
       from: 'від'
@@ -171,6 +177,7 @@ ua:
     order:
       sidebar:
         customer_info: 'Інформація покупця'
+        gueset_book_messages : 'Відповіді'
   supports:
     new:
       new_support: 'Зв’язок з Адміністрацією'

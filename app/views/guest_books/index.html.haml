@@ -2,7 +2,7 @@
 - @guest_books.each do |guest_book|
   .column
     .span-5
-      %h3.box
+      %h3.box-1
         %label{:style=>'color:grey; font-size:small;'}
           = t('.user')
           %hr
@@ -12,7 +12,23 @@
         = l guest_book.created_at, :format => :long
         %hr  
       = guest_book.text
+  .column.prepend-6
+    .span-10{:style => 'padding-left:15px; border-left: 1px solid #eee;'}
+      - guest_book.comments.each do |comment|
+        %label{:style=>'color:grey; font-size:xx-small;'}
+          Administration:
+          = l comment.created_at, :format => :long
+          %hr  
+        = comment.comment
+        %div{:style => 'margin: 5px; width:5px;'}
+      %div{:style => 'margin: 15px; width:5px;'}
 = paginate @guest_books, :theme => :github
 %hr
 .column.prepend-5
-  =render 'form'  
+  =render 'form' 
+
+:css
+  .box-1{
+    background: none repeat scroll 0 0 #E5ECF9;
+    padding: 1.5em;
+  }

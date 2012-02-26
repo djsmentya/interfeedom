@@ -1,0 +1,4 @@
+=semantic_form_for( @guest_book.comments.new, :url => reply_admin_guest_book_path(@guest_book)) do |f|
+  =f.inputs GuestBook.model_name.human do
+    =f.input :comment, :as => :text, :input_html =>{:rows => 3}
+    = f.submit
