@@ -62,6 +62,7 @@ class Profile::ProductsController < ApplicationController
 
   def create
     @product = Product.new(params[:product])
+    @product.user = current_user
     if @product.save
       Target.create(:user_id => current_user.id, :product_id => @product.id)
       redirect_to profile_products_path, :notice => 'Product was successfuly created.'
