@@ -1,4 +1,5 @@
 ActiveAdmin.register AdminUser do
+  menu :parent => 'Адміністрування'
 filter :email
 filter :created_at
   index do

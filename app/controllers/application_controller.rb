@@ -6,8 +6,13 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_locale, :current_cart
 
-  helper_method :current_cart, :cart_products, :current_locale
+  helper_method :current_cart, :cart_products, :current_locale, :global_settings
   protected
+
+  def global_settings
+    Setting.preferences
+  end
+
 
   def cart_product_ids
     product_ids =[]

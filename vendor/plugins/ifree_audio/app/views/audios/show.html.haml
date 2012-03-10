@@ -30,7 +30,7 @@
   .right
     %label
       = t('videos.index.price')
-    = @audio.price
+    =additional_price_for @audio
     %span.prepend-1
       =link_to_add_product(@audio, :class =>'button')
   .span-10.prepend-top

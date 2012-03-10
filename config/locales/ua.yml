@@ -113,6 +113,7 @@ ua:
       state: 'Стан'
       sales: 'Продажі'
       balance: 'Баланс'
+      price_ratio: 'Додаткова ставка'
       total_products: 'Всього товарів'
       sold_products_count: 'Кількість проданих'
     sidebar:  

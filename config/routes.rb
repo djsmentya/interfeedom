@@ -8,7 +8,7 @@ Interfreedom::Application.routes.draw do
 
   filter :locale
 
-  # 
+  #
   #Devise
    ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -16,6 +16,7 @@ Interfreedom::Application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
 
   #match '/user' => 'orders#new', :as => :user_root
+  resources :settings
 
   resources :products do
     post :rate, :on => :member
@@ -31,7 +32,7 @@ Interfreedom::Application.routes.draw do
       put 'quantity'
     end
   end
-  
+
   resources :products do
     resources :comments
   end
@@ -43,7 +44,7 @@ Interfreedom::Application.routes.draw do
       post 'register'
     end
   end
-  
+
   namespace :profile do
     resources :orders
 
@@ -52,7 +53,7 @@ Interfreedom::Application.routes.draw do
         get 'load_product_type'
       end
     end
-  
+
   end
 
   resources :profile do

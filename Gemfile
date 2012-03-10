@@ -9,7 +9,7 @@ gem 'pg'
 
 gem 'json'
 
-gem 'activeadmin', '~> 0.4.0'
+gem 'activeadmin'#, '~> 0.4.0'
 
 #gem 'fastercsv' # Only required on Ruby 1.8 and below
 

@@ -21,7 +21,7 @@
   .right
     %label
       = t('videos.index.price')
-    = @video.price
+    = additional_price_for @video
     %span.prepend-1
       =link_to_add_product(@video, :class =>'button')
   .span-10.prepend-top

@@ -11,9 +11,10 @@ require 'active_record'
 # Product types
 puts 'working'
 puts 'Role creating...'
-  puts 'Product type creating...'  
+  puts 'Product type creating...'
   ActiveRecord::Base::ProductType.create!(:name=>'Video')
   ActiveRecord::Base::ProductType.create!(:name=>'Audio')
   ActiveRecord::Base::Role.create!(:title => 'customer')
   Role.create!(:title => 'saler')
+  Setting.create!(:name => 'price_ratio')
 puts 'finished'

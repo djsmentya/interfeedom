@@ -38,4 +38,8 @@ module ApplicationHelper
     });
   </script>}
   end
+
+  def additional_price_for(product)
+    Setting.preferences[:price_ratio].to_f * product.price + product.price
+  end
 end

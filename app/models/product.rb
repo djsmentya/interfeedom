@@ -21,7 +21,7 @@ class Product < ActiveRecord::Base
                     :path => ":rails_root/public/assets/system/images/:id/:style/:basename.:extension"
 
 attr_accessible :genre_id, :producer, :image, :name, :description,:product_type,
-        :product_type_id, :image, :style, :group, :album, :count_on_hand, :price, :available_on,
+        :product_type_id, :image, :style, :group, :album, :count_on_hand, :available_on,
         :name_en, :name_ua, :description_en, :description_ua
   validates_attachment_content_type :image, :content_type => ['image/jpeg', 'image/png']
   attr_reader :video_product_type_id

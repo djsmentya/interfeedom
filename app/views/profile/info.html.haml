@@ -54,6 +54,12 @@
       %div{:style=>'padding:5px'}
         %table
           %tr
+            %td= t('.price_ratio')
+            %td
+              = Setting.preferences[:price_ratio].to_f * 100
+              = '%'
+            
+          %tr
             %td= t('.balance')
             %td= current_user.money
           %tr
