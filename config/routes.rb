@@ -1,5 +1,7 @@
 Interfreedom::Application.routes.draw do
 
+  resources :messages
+
   resources :guest_books
 
   get "payment_notifications/create"
