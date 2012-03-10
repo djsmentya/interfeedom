@@ -2,24 +2,13 @@
 
 %table
   %tr
-    %th User
-    %th To user
+    %th From
     %th Title
-    %th Body
-    %th
-    %th
     %th
 
   - @messages.each do |message|
     %tr
-      %td= message.user_id
-      %td= message.to_user_id
+      %td= message.user.profile.name
       %td= message.title
-      %td= message.body
       %td= link_to 'Show', message
-      %td= link_to 'Edit', edit_message_path(message)
       %td= link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete
-
-%br
-
-= link_to 'New Message', new_message_path

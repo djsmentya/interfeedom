@@ -1,18 +1,15 @@
 %p#notice= notice
-
-%p
-  %b User:
-  = @message.user_id
-%p
-  %b To user:
-  = @message.to_user_id
-%p
-  %b Title:
-  = @message.title
-%p
-  %b Body:
-  = @message.body
-
-= link_to 'Edit', edit_message_path(@message)
-\|
-= link_to 'Back', messages_path
+.column.span-10
+  %p
+    %b From:
+    = @message.user.profile.name
+  %p
+    %b Title:
+    = @message.title
+  .box
+    %b Body:
+    = @message.body
+.column
+  %ul
+    %li= link_to 'Destroy', @message, :confirm => 'Are you sure?', :method => :delete
+    %li= link_to 'Back', messages_path

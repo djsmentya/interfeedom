@@ -8,6 +8,7 @@
     .sbar_content
       #vertmenu
         %ul
+          %li= link_to t('.messages'), messages_path
           %li= link_to t(".my_profile"), info_profile_index_path
           %li= link_to t('.my_orders'), orders_path
           - if current_user.profile
@@ -15,7 +16,7 @@
           - else
             %li= link_to t('.edit_profile'), new_profile_path
 
-  - if current_user.saler? 
+  - if current_user.saler?
     .span-5.last.sbar_head_left
       #wg_right_corner
       #title
