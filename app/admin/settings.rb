@@ -10,7 +10,7 @@ ActiveAdmin.register_page 'settings' do
     semantic_form_for Setting.new do |p|
       p.inputs 'set' do
         page = p.input(:value,
-                       :label => "price_ratio",
+                       :label => I18n.t(".price_ratio"),
                        :input_html => {:value => pref[:price_ratio], :name => 'setting[price_ratio]'})
         page << p.buttons
         page

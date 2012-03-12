@@ -334,9 +334,9 @@ a:hover.button {
   padding: 0;
 }
 #sidebar_nav li {
-  padding:0 1px;
+  /*padding:0 1px;*/
   float:right;
-  padding-right:30px;
+  /*padding-right:30px;*/
 }
 #sidebar_nav {
   padding: 0 0 15px;

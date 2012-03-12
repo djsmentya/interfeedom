@@ -3,7 +3,7 @@ ua:
   activerecord:
     models:
       profile: 'Профіль'
-      guest_book: 
+      guest_book:
         one: 'Гостьова книга'
         other: 'Гостьові книги'
       support:
@@ -18,13 +18,17 @@ ua:
       product:
         one: 'Товар'
         other: 'Товари'
-      user: 
+      user:
         one: 'Користувач'
         other: 'Користувачі'
       order:
         one: "Замовлення"
         other: "Замовлення"
-    attributes:  
+    attributes:
+      message:
+        title: 'Тема'
+        body: 'Повідомлення'
+        to_user_id: 'Кому:'
       guest_book:
         name: 'Ім’я'
         text: 'Текст повідомлення'
@@ -57,7 +61,7 @@ ua:
         updated_at: 'Оновлено'
       comment:
         author: 'Автор'
-        comment: 
+        comment:
           one: 'Коментар'
           few: 'Коментарі'
         created_at: 'Створено'
@@ -102,6 +106,14 @@ ua:
     index:
       created_at: 'Створено'
       listing_comments: 'Список коментарів'
+  messages:
+    index:
+      inbox: 'Отримані'
+      outbox: 'Відправлені'
+      messages: 'Повідомлення'
+      from: 'Від'
+    form:
+      to_user: 'Кому:'   
   profile:
     info:
       your_name: 'Ваше ім’я: '
@@ -116,13 +128,14 @@ ua:
       price_ratio: 'Додаткова ставка'
       total_products: 'Всього товарів'
       sold_products_count: 'Кількість проданих'
-    sidebar:  
+    sidebar:
       filters: "Фільтри"
       from: 'від'
       to: 'до'
       submit: 'Застосувати'
       reset: 'Зкинути'
       nav_title: 'Навігація'
+      messages: 'Повідомлення'
       my_profile: 'Мій профіль'
       my_orders: 'Мої замовлення'
       edit_profile: 'Змінити данні профілю'
@@ -207,3 +220,4 @@ ua:
   submit: 'Відправити'
   order: 'Замовити'
   rating: 'Рейтинг:'
+  price_ratio: 'Коефіцієнт відсоткової ставки:'

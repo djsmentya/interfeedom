@@ -1,12 +1,13 @@
 = form_for @message do |f|
   -if @message.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@message.errors.count, "error")} prohibited this message from being saved:"
       %ul
         - @message.errors.full_messages.each do |msg|
           %li= msg
-  - @message.to_user_id = params[:to_user_id]
-  - @message.user_id = current_user.id
+  - unless @message.errors.any?
+    - @message.to_user_id = params[:to_user_id]
+    - @message.user_id = current_user.id
+    - @message.title = params[:title]
   .field
     = f.hidden_field :user_id
     = f.label :to_user_id

@@ -1,9 +1,9 @@
-%h1 Listing messages
+%h1= t('.messages')
 
 %table
   %tr
-    %th From
-    %th Title
+    %th= t('.from') 
+    %th= Message.human_attribute_name "title"
     %th
 
   - @messages.each do |message|
@@ -11,4 +11,30 @@
       %td= message.user.profile.name
       %td= message.title
       %td= link_to 'Show', message
-      %td= link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete
+      - unless message.user_id == current_user.id
+        %td= link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete
+
+= content_for :profile_nav do
+  #sidebar_nav
+    .wg_title.span-18{:style=> 'margin-bottom:5px;'}
+      #wg_left_corner
+      #wg_right_corner
+      %ul.left
+        - if params[:place].eql?('outbox')
+          %li.active
+            = link_to t('.outbox'), messages_path(:place => "outbox")
+        - else
+          %li= link_to t('.outbox'), messages_path(:place => "outbox")
+        - unless params[:place].eql?('outbox')
+          %li.active
+            = link_to t('.inbox'), messages_path(:place => "inbox")
+        - else
+          %li= link_to t('.inbox'), messages_path(:place => "inbox")
+:css
+  .wg_title .active {
+    background: none repeat scroll 0 0 #3B6102;
+  }
+  .wg_title li {
+    padding: 1px 20px;
+    text-align: center;
+  }

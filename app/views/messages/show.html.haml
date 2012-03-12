@@ -11,5 +11,7 @@
     = @message.body
 .column
   %ul
-    %li= link_to 'Destroy', @message, :confirm => 'Are you sure?', :method => :delete
+    - unless @message.user_id == current_user.id
+      %li= link_to 'Replay', new_message_path(:to_user_id =>@message.user.id, :title=> 'RE> '+@message.title)
+      %li= link_to 'Destroy', @message, :confirm => 'Are you sure?', :method => :delete
     %li= link_to 'Back', messages_path

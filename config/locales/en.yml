@@ -11,6 +11,11 @@ en:
     models:
       profile: 'Profile'
       product: 'Product'
+    attributes:
+      message:
+        title: 'Title:'
+        body: 'Message:'
+        to_user_id: 'To:'
   shared:
     cart_widget:
       cart: 'Cart'
@@ -37,6 +42,12 @@ en:
       quantity: 'Quantity'
       total: 'Total'
       action: 'Action'
+  messages:
+    index:
+      inbox: 'Inbox'
+      outbox: 'Outbox'
+      messages: 'Messages'
+      from: 'From'
   profile:
     info:
       your_name: 'Your name: '
@@ -51,6 +62,7 @@ en:
       to: 'to'
       submit: 'Submit'
       reset: 'Reset'
+      messages: 'Messages'
       my_profile: 'My Profile'
       my_orders: 'My Orders'
       edit_profile: 'Edit Profile'

@@ -11,9 +11,9 @@
     %h4
       =t('.owner')
       = @video.user.profile.name
-      - if  user_signed_in?
+      - if  user_signed_in? &&( current_user.id != @video.user.id)
         .prepend-top
-        = link_to 'Send Message to Saler', new_message_path(:to_user_id=>@video.user.id), :class=>:button
+        = link_to 'Send Message to Saler', new_message_path(:to_user_id=>@video.user.id, :title=> 'RE:Video> '+@video.name), :class=>:button
       .prepend-top
     .column
       =t('.saler_rate')
