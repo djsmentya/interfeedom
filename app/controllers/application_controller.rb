@@ -6,7 +6,8 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_locale, :current_cart
 
-  helper_method :current_cart, :cart_products, :current_locale, :global_settings
+  helper_method :current_cart, :cart_products, :current_locale,
+                                              :global_settings
   protected
 
   def global_settings

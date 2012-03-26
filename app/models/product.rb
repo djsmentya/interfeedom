@@ -22,7 +22,7 @@ class Product < ActiveRecord::Base
 
 attr_accessible :genre_id, :producer, :image, :name, :description,:product_type,
         :product_type_id, :image, :style, :group, :album, :count_on_hand, :available_on,
-        :name_en, :name_ua, :description_en, :description_ua
+        :name_en, :name_ua, :description_en, :description_ua, :price
   validates_attachment_content_type :image, :content_type => ['image/jpeg', 'image/png']
   attr_reader :video_product_type_id
 
