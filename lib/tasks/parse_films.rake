@@ -10,7 +10,7 @@ namespace :ifree do
     for i in [1..9]
 
       fil = open('http://afisha-if.com/filmu/dramu?start=' + pagination.to_s)
-        doc = Nokogiri::HTML(fil)  
+        doc = Nokogiri::HTML(fil)
         doc.css('br').each {|nd| nd.remove}
         puts 'page downloaded ...'
         doc.search('.news_item_c').each do |news|
@@ -22,7 +22,7 @@ namespace :ifree do
             title = news.search('.contentpagetitle').first.content
 
             @video.name_ua = title[0..title.index('/')-1]
-            @video.name_en =  title[(title.index('/')+1)..title.length].sub /\s\(\d\d\d\d\) дивитись онлайн/, ''
+            @video.name_en =  title[(title.index('/')+1)..title.length].sub /\s\(\d\d\d\d\) дивитись онлайo/, ''
 
 
             news.search('strong').each do |el|
@@ -37,7 +37,7 @@ namespace :ifree do
             @video.price = rand(50)
             @video.user = @user
             puts 'saving video'
-            puts @video.inspect  
+            puts @video.inspect
             puts @video.save.inspect
           end
           @video = Product.new
@@ -45,7 +45,7 @@ namespace :ifree do
           pagination += 10
         end
       end
-    
+
   end
 end
 

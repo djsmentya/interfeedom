@@ -1,3 +1,4 @@
+# encoding: utf-8
 ActiveAdmin.register Comment, :as => 'UserComment' do
 
   menu :label => Comment.model_name.human, :parent => 'Зв’язок'
