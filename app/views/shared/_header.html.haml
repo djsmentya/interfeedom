@@ -3,7 +3,7 @@
   .span-24
     #user_header
       .span-10
-        = t('shared.header.welcome')
+        -#= t('shared.header.welcome')
         .right
           (
           - if current_user
@@ -36,5 +36,5 @@
       #search-bar.span-10
         -#- @search ||= Search.new
         = form_for :search , :url => search_url do |f|
-          = text_field_tag 'search[value]' 
+          = text_field_tag 'search[value]'
           = f.submit 'Search'

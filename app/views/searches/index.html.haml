@@ -1,32 +1,45 @@
 .span-18{:style=>'text-align:center;'}
   = form_tag search_url :locale => params[:locale]
-  = text_field_tag 'search[value]', @search[:value], :style => 'width:500px;'
+  - if @search
+    = text_field_tag 'search[value]', @search[:value], :style => 'width:500px;'
+  -else
+    = text_field_tag 'search[value]',nil, :style => 'width:500px;'
   = submit_tag 'search', :method =>:get
   .row
-    = select_tag 'search[product_type]', options_from_collection_for_select(ProductType.all, 'name', 'name', @search[:product_type]), :include_blank=>true
-    %b
-      Price from
-    = text_field_tag 'search[price_from]',@search[:price_from], :size => 5
-    %b
-      to
-    = text_field_tag 'search[price_to]',@search[:price_to], :size => 5
+    - if @search
+      = select_tag 'search[product_type]', options_from_collection_for_select(ProductType.all, 'name', 'name', @search[:product_type]), :include_blank=>true
+      %b
+        Price from
+      = text_field_tag 'search[price_from]',@search[:price_from], :size => 5
+      %b
+        to
+      = text_field_tag 'search[price_to]',@search[:price_to], :size => 5
+    -else
+      = select_tag 'search[product_type]', options_from_collection_for_select(ProductType.all, 'name', 'name' ), :include_blank=>true
+      %b
+        Price from
+      = text_field_tag 'search[price_from]',nil, :size => 5
+      %b
+        to
+      = text_field_tag 'search[price_to]',nil, :size => 5
 #search_content.span-18{:style => 'padding-bottom:30px;'}
-  = paginate @searches, :theme => :github
-  - @searches.each do |product|
-    .product.column
-      .span-4{:style=>'text-align:center;'}
-        = link_to image_tag(product.image.url(:medium)), product_path(product)
-      .span-13
-        .span-9
-          #states.span-9
-            = product_states(product)
-            .row
-              =product.price
-          .span-9.prepend-top
-            %h4
-              = link_to product.name, categoried_product_path(product)
-          .span-9.last
-            = truncate product.description, :length=> 150
-        %div
-  = paginate @searches, :theme => :github
-  -#= link_to t(:to_cart),add_item_cart_index_path(:product_id => product), :class => :button
+  - if @searches
+    = paginate @searches, :theme => :github
+    - @searches.each do |product|
+      .product.column
+        .span-4{:style=>'text-align:center;'}
+          = link_to image_tag(product.image.url(:medium)), product_path(product)
+        .span-13
+          .span-9
+            #states.span-9
+              = product_states(product)
+              .row
+                =product.price
+            .span-9.prepend-top
+              %h4
+                = link_to product.name, categoried_product_path(product)
+            .span-9.last
+              = truncate product.description, :length=> 150
+          %div
+    = paginate @searches, :theme => :github
+    -#= link_to t(:to_cart),add_item_cart_index_path(:product_id => product), :class => :button
