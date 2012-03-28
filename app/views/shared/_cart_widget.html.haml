@@ -5,7 +5,7 @@
       = link_to t('.cart'), cart_index_path
   .span-6.last
     .sbar_content
-      - total_quantity = 0.0 
+      - total_quantity = 0.0
       - cart_products.each do |product|
         - total_quantity = product.price * current_cart.item_quantity(product.id) + total_quantity
         .row.cart_item{:id=> product.id}
@@ -16,7 +16,7 @@
             = product.price
             = link_to image_tag('site/webicons/x-red.gif'), '#'
       .row{:style=>'border-top: 1px solid #DDDDDD;text-align:right;'}
-        Total: 
+        = t('.total')
         = total_quantity
 :css
   .cart_item{
@@ -29,7 +29,7 @@
     var product_id = $('div.sbar_content div[id]').attr('id');
    $(this).parents('.cart_item').hide('slow', function(){
       $(this).remove();
-   });   
+   });
    $.post("#{cart_index_url}/" + product_id, {_method:'delete'},null,'script');
     });
-   
+

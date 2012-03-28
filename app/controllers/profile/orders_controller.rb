@@ -3,13 +3,18 @@ class Profile::OrdersController < ApplicationController
   # GET /profile/orders
   # GET /profile/orders.json
   def index
-    @orders ||=  Order.includes(:order_items).where('order_items.product_id in (?)',current_user.product_ids ).page(params[:page])
-
+    orders_arr ||=  Order.includes(:order_items).where('order_items.product_id in (?)',current_user.product_ids ).page(params[:page])
+    if params[:search].blank?
+      @orders = orders_arr
+    else
+      @orders = orders_arr.where('recipient LIKE ?', "#{params[:search]}%")
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @profile_orders }
     end
   end
+
 
   # GET /profile/orders/1
   # GET /profile/orders/1.json

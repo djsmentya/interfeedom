@@ -2,7 +2,7 @@
 
 %table
   %tr
-    %th= t('.from') 
+    %th= t('.from')
     %th= Message.human_attribute_name "title"
     %th
 
@@ -10,9 +10,9 @@
     %tr
       %td= message.user.profile.name
       %td= message.title
-      %td= link_to 'Show', message
+      %td= link_to t(:show), message
       - unless message.user_id == current_user.id
-        %td= link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete
+        %td= link_to t(:destroy), message, :confirm => 'Are you sure?', :method => :delete
 
 = content_for :profile_nav do
   #sidebar_nav

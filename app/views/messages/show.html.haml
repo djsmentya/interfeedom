@@ -12,6 +12,6 @@
 .column
   %ul
     - unless @message.user_id == current_user.id
-      %li= link_to 'Replay', new_message_path(:to_user_id =>@message.user.id, :title=> 'RE> '+@message.title)
-      %li= link_to 'Destroy', @message, :confirm => 'Are you sure?', :method => :delete
-    %li= link_to 'Back', messages_path
+      %li= link_to t(:reply), new_message_path(:to_user_id =>@message.user.id, :title=> 'RE> '+@message.title)
+      %li= link_to t(:destroy), @message, :confirm => 'Are you sure?', :method => :delete
+    %li= link_to t(:back), messages_path

@@ -78,6 +78,7 @@ ua:
   shared:
     cart_widget:
       cart: 'Кошик'
+      total: 'Всього:'
     header:
       welcome: 'Вітаємо, '
       sign_in: 'вхід'
@@ -113,7 +114,7 @@ ua:
       messages: 'Повідомлення'
       from: 'Від'
     form:
-      to_user: 'Кому:'   
+      to_user: 'Кому:'
   profile:
     info:
       your_name: 'Ваше ім’я: '
@@ -147,7 +148,7 @@ ua:
       index:
         new_product: "Новий товар"
         description: 'Опис'
-        available_on: 'Доступно з'
+        available_on: 'Доступно'
         price: 'Ціна'
         quantity: 'Кількість'
         action: 'Дії'
@@ -207,7 +208,10 @@ ua:
   price: 'Ціна'
   in_progress: 'Опрацьовується'
   edit: "Внести зміни"
+  show: 'Детальніше'
   destroy: 'Знищити'
+  reply: 'Відповісти'
+  back: 'Повернутись'
   checked: 'Перевірено'
   unchecked: 'Не перевірено'
   true: 'Так'

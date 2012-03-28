@@ -19,9 +19,10 @@ en:
   shared:
     cart_widget:
       cart: 'Cart'
+      total: 'Total:'
     header:
       welcome: 'Welcome, '
-      sign_in: 'sign inНавігація'
+      sign_in: 'sign in'
       sign_out: 'sign out'
       profile_link: 'Profile'
       cart: 'Cart: '
@@ -55,7 +56,7 @@ en:
       your_phone: 'Your Phone: '
       shipping_address: 'Shipping Address: '
       edit_profile: 'Edit Profile'
-    sidebar:  
+    sidebar:
       nav_title: 'Navigation'
       filters: "Filters"
       from: 'From'
@@ -82,7 +83,7 @@ en:
   comments:
     index:
       listing_comments: 'Listing Comments'
-      
+
   users:
     sessions:
       new:

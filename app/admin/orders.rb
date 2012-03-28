@@ -9,7 +9,7 @@ ActiveAdmin.register Order do
   index  do
     column :id
     column :state do |order|
-      if order.payment_state.eql?('payed') 
+      if order.payment_state.eql?('payed')
         title = I18n.t(:payed)
         state = :green
       else
@@ -47,8 +47,13 @@ ActiveAdmin.register Order do
   end
 
   sidebar I18n.t('active_admin.order.sidebar.customer_info'), :only => :show do
-    attributes_table_for order.user do 
-      row("User") { link_to  order.user.profile.full_name, admin_user_path(order.user) }
+    attributes_table_for order.user do
+      if order.user.profile
+      row("User") { link_to  order.user.try(:profile).try(:full_name), admin_user_path(order.user) }
+      else
+
+      row("User") { link_to  "User" , admin_user_path(order.user) }
+      end
       row :email
     end
   end
@@ -63,7 +68,7 @@ ActiveAdmin.register Order do
       us.save
       pr.save
     end
-    order.transaction_id = 'AdminUser:' + current_admin_user.id.to_s 
+    order.transaction_id = 'AdminUser:' + current_admin_user.id.to_s
     order.state = 'completed'
     order.payment_state = 'payed'
     order.save

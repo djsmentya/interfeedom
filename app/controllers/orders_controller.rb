@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(params[:order])
     @products = products_by_ids(cart_product_ids)
-      
+
     @products.each do |p|
         @order.total_price += p.price
       end
@@ -37,7 +37,7 @@ class OrdersController < ApplicationController
       @order.order_items.create!(:product_id => product_id, :quantity => current_cart.item_quantity(product_id))
     end
     session[:cart] = nil
-    
+
     if @order.errors.present?
       render :new
     else
@@ -50,7 +50,7 @@ class OrdersController < ApplicationController
   end
 
   def login
-    user = User.authenticate(params[:user][:email], 
+    user = User.authenticate(params[:user][:email],
                               params[:user][:password])
     if user.present?
       sign_in :user, user
@@ -59,15 +59,23 @@ class OrdersController < ApplicationController
   end
 
   def register #TODO not work yet
-    user = User.authorization(:email =>params[:user][:email], 
-                              :password => params[:user][:password])
+    #user = User.authenticate(params[:user][:email], params[:user][:password])
+    user = User.find_by_email(params[:user][:email])
     if user.present?
-      sign_in_and_redirect(user,{:controller => :orders, 
-                        :action => :index, :notice => 'Signed in'})   
+      redirect_to :back, :notice => 'This user already registered'
+    else
+      user = User.create(params[:user])
+      if user.save
+        sign_in :user, user
+        redirect_to :action=> :new
+      else
+        redirect_to :back
+      end
     end
   end
+
 protected
 def products_by_ids(ids)
   @products = Product.find(ids)
-end  
+end
 end

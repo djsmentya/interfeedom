@@ -1,10 +1,10 @@
 = paginate @orders, :theme => :github
 %table
   %tr
-    %th State
-    %th Recipient
-    %th Phone
-    %th Created At
+    %th= Order.human_attribute_name(:state)
+    %th= Order.human_attribute_name(:recipient)
+    %th= Order.human_attribute_name(:phone)
+    %th= Order.human_attribute_name(:created_at)
 
   - @orders.each do |order|
     %tr
@@ -24,11 +24,12 @@
         - unless order.state.eql?('completed')
           =link_to 'Complete',  profile_order_path(order), :method =>:put, :class=> :button
 
-
+= content_for :sidebar do
+  =  render :partial => "sidebar"
 = content_for :profile_nav do
   #sidebar_nav
     .wg_title.span-18{:style=> 'margin-bottom:5px;'}
       #wg_left_corner
-      #wg_right_corner 
+      #wg_right_corner
       .title
-        Orders
+        = t('profile.sidebar.users_orders')
