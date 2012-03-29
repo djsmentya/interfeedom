@@ -43,7 +43,7 @@ gem 'therubyracer'
 gem 'sass-rails', "  ~> 3.1.0"
 
 #for Jruby
-#gem 'therubyrhino' 
+#gem 'therubyrhino'
 #gem 'jruby-openssl'
 
 gem 'declarative_authorization'
@@ -73,3 +73,6 @@ end
 # To use debugger
 # gem 'ruby-debug'
 
+group :profile do
+    gem 'ruby-prof'
+end

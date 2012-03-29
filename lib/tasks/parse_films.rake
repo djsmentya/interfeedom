@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 namespace :ifree do
   desc "Erase and fill database"
   task :parse_films => :environment do
