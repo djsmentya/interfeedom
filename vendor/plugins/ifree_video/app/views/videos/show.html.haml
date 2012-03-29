@@ -31,7 +31,7 @@
   .span-10.prepend-top
     %label
       = Product.human_attribute_name(:genre )+ ':'
-    = @video.try(:genre).try(:name)
+    = @video.try(:genre)
     %br
     %label
       = Product.human_attribute_name( :producer )+ ':'
