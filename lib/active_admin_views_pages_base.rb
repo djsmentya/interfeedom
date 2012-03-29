@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ActiveAdmin::Views::Pages::Base < Arbre::HTML::Document
 
   private

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateSupports < ActiveRecord::Migration
   def change
     create_table :supports do |t|

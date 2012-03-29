@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'spec_helper'
 
 describe "profile_orders/new.html.haml" do

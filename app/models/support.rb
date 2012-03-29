@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Support < ActiveRecord::Base
   validates :email,   
             :presence => true,   

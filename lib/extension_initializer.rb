@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module ExtensionInitializer
 
   def self.included(klass)

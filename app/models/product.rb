@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Product < ActiveRecord::Base
   scope :video, where(:product_type => 'Video')
   scope :audio, where(:product_type => 'Audio')

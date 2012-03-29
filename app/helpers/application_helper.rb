@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module ApplicationHelper
   def ajaxful_rating_script
     if protect_against_forgery?

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Search
   def self.value(value)
     value

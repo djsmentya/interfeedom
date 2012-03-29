@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddAudioPropertyesColumnsToProduct < ActiveRecord::Migration
   def change
     add_column :products, :style, :string

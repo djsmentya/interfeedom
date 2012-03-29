@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 require 'spec_helper'
 
 describe "supports/index.html.haml" do

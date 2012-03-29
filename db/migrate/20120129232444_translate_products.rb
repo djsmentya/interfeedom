@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class TranslateProducts < ActiveRecord::Migration
   def up
     Product.create_translation_table!({

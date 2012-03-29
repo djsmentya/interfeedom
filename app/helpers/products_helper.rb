@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module ProductsHelper
   def product_states(product)
     new = ''

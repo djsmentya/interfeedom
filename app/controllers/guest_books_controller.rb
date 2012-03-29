@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class GuestBooksController < ApplicationController
   before_filter :list_guest_books
   def index

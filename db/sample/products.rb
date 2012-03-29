@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Product.seed do |s|
   s.id = 1
   s.name_ua = "В пошуках Немо"

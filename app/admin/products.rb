@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 ActiveAdmin.register Product do
   actions :index, :edit, :destroy, :show
   filter :price

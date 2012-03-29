@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class PaymentNotification < ActiveRecord::Base
   belongs_to :order
   serialize :params

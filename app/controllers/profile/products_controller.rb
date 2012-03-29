@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class FilterBox
   def initialize(keys = {})
    unless keys.nil?

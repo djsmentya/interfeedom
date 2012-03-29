@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ActiveAdmin::Views::HeaderRenderer < ::ActiveAdmin::Renderer
   protected
 

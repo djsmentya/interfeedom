@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateShippingAddresses < ActiveRecord::Migration
   def change
     create_table :shipping_addresses do |t|

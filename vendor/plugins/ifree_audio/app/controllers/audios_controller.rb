@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AudiosController < ApplicationController
   layout 'audio'
   def index

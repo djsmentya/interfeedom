@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ProductType < ActiveRecord::Base
   has_many :products
   validates_uniqueness_of :name

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 ActiveAdmin.register_page 'settings' do
   menu :label => "Налаштування", :parent => 'Адміністрування'
 

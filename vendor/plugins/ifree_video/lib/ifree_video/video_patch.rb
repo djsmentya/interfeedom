@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module VideoPatch
   def self.included(klass)
     klass.extend ClassMethods

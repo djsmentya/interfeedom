@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ShippingAddress < ActiveRecord::Base
    belongs_to :profile
 

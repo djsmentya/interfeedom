@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 ActiveAdmin.register GuestBook do
 menu :parent => 'Зв’язок'
   actions :index, :show, :destroy

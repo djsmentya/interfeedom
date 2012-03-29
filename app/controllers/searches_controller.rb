@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class SearchesController < ApplicationController
   before_filter :search, :only => :index
   def index

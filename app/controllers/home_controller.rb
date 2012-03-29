@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class HomeController < ApplicationController
   filter_resource_access
 

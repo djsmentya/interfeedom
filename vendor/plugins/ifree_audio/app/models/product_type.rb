@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ProductType < ActiveRecord::Base
 
   def self.audio

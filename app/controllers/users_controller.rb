@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class UsersController < ApplicationController
   def rate
     @user = User.find(params[:id])
