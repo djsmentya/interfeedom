@@ -5,7 +5,7 @@
       (
       =  link_to current_user.email, info_profile_index_path
       )
-  - unless current_user.saler?    
+  - unless current_user.saler?
     .column.right
       =link_to 'Became a Saler', make_as_saler_profile_index_path, :class => :button
   %hr
@@ -42,11 +42,11 @@
         %thead
           %th= t('.created_at')
           %th= t('.state')
-        - current_user.orders.limit(3).order('created_at DESC').each do |order|  
+        - current_user.orders.limit(3).order('created_at DESC').each do |order|
           %tbody
             %td= l(order.created_at, :format => :short)
             %td= t(order.state.to_sym)
-- if current_user.saler?             
+- if current_user.saler?
   .column{:style=>'margin-bottom:25px;'}
     .column.span-6.shadow{:style=>'margin-left:25px;'}
       .title_line
@@ -58,7 +58,7 @@
             %td
               = Setting.preferences[:price_ratio].to_f * 100
               = '%'
-            
+
           %tr
             %td= t('.balance')
             %td= current_user.money
@@ -69,6 +69,12 @@
             %td= t('.sold_products_count')
             - item = 0
             - order_items ||= OrderItem.joins(:order).where("orders.payment_state = 'payed' and order_items.product_id in (?)", current_user.product_ids)
-            - order_items.each do |o_it| 
+            - order_items.each do |o_it|
               - item += o_it.quantity
             %td= item
+        - withdraw = current_user.withdraws.where(:state => 'in_progress').first
+        - if withdraw
+          = t('.withdrawal')
+          = label_tag t(withdraw.state.to_sym), nil, :class => withdraw.state + ' prepend-1'
+        -else
+          = link_to t('.withdrawal'), new_withdraw_path

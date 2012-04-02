@@ -1,0 +1,23 @@
+%table
+  %tr
+    %th= Withdraw.human_attribute_name(:amount)
+    %th= Withdraw.human_attribute_name(:payment_type)
+    %th= Withdraw.human_attribute_name(:state)
+    %th
+
+  - @withdraws.each do |withdraw|
+    %tr
+      %td= withdraw.amount
+      %td= withdraw.payment_type
+      %td
+        = label_tag t(withdraw.state), nil, :class => withdraw.state
+      -if withdraw.state.eql?('in_progress')
+        %td= link_to t(:destroy), withdraw, :confirm => 'Are you sure?', :method => :delete
+
+= content_for :profile_nav do
+  #sidebar_nav
+    .wg_title.span-18{:style=> 'margin-bottom:5px;'}
+      #wg_left_corner
+      #wg_right_corner
+      .title
+        = t('.listing_withdraws')

@@ -16,6 +16,10 @@ en:
         title: 'Title:'
         body: 'Message:'
         to_user_id: 'To:'
+      withdraw:
+        state: 'State'
+        amount: 'Amount'
+        payment_type: 'Payment Type'
   shared:
     cart_widget:
       cart: 'Cart'
@@ -56,6 +60,7 @@ en:
       your_phone: 'Your Phone: '
       shipping_address: 'Shipping Address: '
       edit_profile: 'Edit Profile'
+      withdrawal: 'Withdrawal'
     sidebar:
       nav_title: 'Navigation'
       filters: "Filters"
@@ -104,6 +109,9 @@ en:
     index:
       guest_book: 'Guest Book'
       user: 'Users'
+  withdraws:
+    index:
+      listing_withdraws: 'Payment History'
   ua: 'Українська'
   en: 'English'
   sign_in: 'Sign In'

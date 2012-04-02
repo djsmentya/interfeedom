@@ -35,7 +35,7 @@ production:
   encoding: utf8
   reconnect: false
   database: interfreedom_development
-  pool: 10
+  pool: 600
   username: postgres
   password: 123456789
   host: localhost

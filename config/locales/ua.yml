@@ -24,11 +24,18 @@ ua:
       order:
         one: "Замовлення"
         other: "Замовлення"
+      withdraw:
+        one: 'Платіж'
+        other: 'Платежі'
     attributes:
       message:
         title: 'Тема'
         body: 'Повідомлення'
         to_user_id: 'Кому:'
+      withdraw:
+        state: 'Стан'
+        amount: 'Сума'
+        payment_type: 'Тип платежу'
       guest_book:
         name: 'Ім’я'
         text: 'Текст повідомлення'
@@ -129,6 +136,7 @@ ua:
       price_ratio: 'Додаткова ставка'
       total_products: 'Всього товарів'
       sold_products_count: 'Кількість проданих'
+      withdrawal: 'Вивід коштів'
     sidebar:
       filters: "Фільтри"
       from: 'від'
@@ -200,7 +208,10 @@ ua:
     index:
       guest_book: 'Гостьова книга'
       user: 'Користувач'
-  ua: 'Українська'
+  withdraws:
+    index:
+      listing_withdraws: 'Історія платежів'
+  a: 'Українська'
   en: 'English'
   sign_in: 'Вхід'
   sign_up: 'Реєстрація'

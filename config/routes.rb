@@ -1,6 +1,8 @@
 # -*- encoding : utf-8 -*-
 Interfreedom::Application.routes.draw do
 
+  resources :withdraws
+
   resources :messages
 
   resources :guest_books

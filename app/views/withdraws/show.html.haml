@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Amount:
+  = @withdraw.amount
+%p
+  %b Payment type:
+  = @withdraw.payment_type
+
+= link_to 'Edit', edit_withdraw_path(@withdraw)
+\|
+= link_to 'Back', withdraws_path

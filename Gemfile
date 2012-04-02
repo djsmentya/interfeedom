@@ -49,11 +49,14 @@ gem 'sass-rails', "  ~> 3.1.0"
 gem 'declarative_authorization'
 gem 'devise'
 group :test, :development do
-  gem 'cucumber-rails'
   gem 'rspec-rails'
   #gem 'factory_girl_rails', '~> 1.5.0'
   gem 'database_cleaner'
   gem 'webrat'
+end
+
+group :test do
+  gem 'cucumber-rails'
 end
 
   gem 'populator'
