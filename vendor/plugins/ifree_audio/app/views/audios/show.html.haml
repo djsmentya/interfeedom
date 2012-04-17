@@ -38,5 +38,5 @@
     %h4
       Play List:
       %br
-    = @audio.description
-  = render :template => 'comments/index', :locals=>{:comments => @audio.comments}   
+    = raw @audio.description
+  = render :template => 'comments/index', :locals=>{:comments => @audio.comments}

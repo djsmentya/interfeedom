@@ -24,13 +24,15 @@
             = f.label :description
             .right
               =image_tag "flags/en.png"
-          %td= f.text_area :description_en, :rows=> 3
+          %td= f.cktext_area :description_en,:toolbar => 'Basic'
+          -#%td= f.text_area :description_en, :rows=> 3
         %tr
           %td
             = f.label :description
             .right
               =image_tag "flags/ua.png"
-          %td= f.text_area :description_ua, :rows=> 3
+          -#%td= f.text_area :description_ua, :rows=> 3
+          %td= f.cktext_area :description_ua,:toolbar => 'Basic'
         %tr
           %td= f. label :available_on
           %td= f.datepicker :available_on

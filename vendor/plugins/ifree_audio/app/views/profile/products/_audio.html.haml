@@ -9,13 +9,13 @@
       %tbody
         %tr
           %td
-            = f.label :name 
+            = f.label :name
             .right
               =image_tag "flags/en.png"
-          %td= f.text_field :name_en 
+          %td= f.text_field :name_en
         %tr
           %td
-            = f.label :name 
+            = f.label :name
             .right
               =image_tag "flags/ua.png"
           %td= f.text_field :name_ua
@@ -24,13 +24,15 @@
             = f.label :description
             .right
               =image_tag "flags/en.png"
-          %td= f.text_area :description_en, :rows=> 3
+          -#%td= f.text_area :description_en, :rows=> 3
+          %td= f.cktext_area :description_en, :toolbar => 'Basic'
         %tr
           %td
             = f.label :description
             .right
               =image_tag "flags/ua.png"
-          %td= f.text_area :description_ua, :rows=> 3
+          -#%td= f.text_area :description_ua, :rows=> 3
+          %td= f.cktext_area :description_ua, :toolbar => 'Basic'
         %tr
           %td= f. label :available_on
           %td= f.datepicker :available_on
@@ -53,5 +55,5 @@
           %td= f.label :album
           %td= f.text_field :album
 
-    = f.submit      
-          
+    = f.submit
+

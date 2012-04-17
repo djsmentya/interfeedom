@@ -112,6 +112,9 @@ en:
   withdraws:
     index:
       listing_withdraws: 'Payment History'
+  errors:
+    withdraw:
+      less: "can't be more than "
   ua: 'Українська'
   en: 'English'
   sign_in: 'Sign In'

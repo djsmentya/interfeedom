@@ -211,7 +211,10 @@ ua:
   withdraws:
     index:
       listing_withdraws: 'Історія платежів'
-  a: 'Українська'
+  errors:
+    withdraw:
+      less: "не може бути більше ніж "
+  ua: 'Українська'
   en: 'English'
   sign_in: 'Вхід'
   sign_up: 'Реєстрація'

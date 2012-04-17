@@ -22,6 +22,9 @@ gem 'ajaxful_rating', '3.0.0.beta6',:branch => "rails3" #, :git => 'git://github
 
 gem "seed-fu"
 
+#editor
+gem "ckeditor", "3.7.0.rc3"
+
 #Comerce
 gem 'activemerchant'
 

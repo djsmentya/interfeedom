@@ -7,4 +7,5 @@ tmp/
 public/assets/system/*
 config/database.yml
 *.swp
+*.swo
 config/database.yml

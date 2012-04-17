@@ -7,6 +7,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require ckeditor/init
 
 $(function() {
     $("#product_avalible_on").datepicker();
@@ -39,7 +40,7 @@ $('#flash').mouseout(function (){
 });
 
 $('#flash_button').mouseover(function (){
-  $('#flash_button').hide(); 
+  $('#flash_button').hide();
   jQuery("#flash").slideDown(2000);
 });
 

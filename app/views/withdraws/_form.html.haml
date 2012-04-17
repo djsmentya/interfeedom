@@ -9,6 +9,8 @@
   .field
     = f.label :amount
     = f.text_field :amount
+    = label_tag  current_user.money
+
   .field
     = f.label :payment_type
     = f.select :payment_type, %w(PayPal WebMoney)
