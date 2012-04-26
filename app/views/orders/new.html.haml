@@ -1,4 +1,4 @@
-%h1 Order
+%h1=t('.order')
 .column.span-10.border
   =form_for @order do |f|
     - profile = current_user.profile
@@ -34,9 +34,9 @@
       - quantity = current_cart.item_quantity(product.id)
       .column.span-2.right
         %label
-          Quantity:
+          = t('cart.index.quantity')
         = quantity
         %label
-          Price:
+          =t(:price)
         = product.price
-        = link_to 'Destroy',cart_path(product), :method => :delete
+        = link_to t(:destroy),cart_path(product), :method => :delete

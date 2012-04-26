@@ -35,8 +35,7 @@
       =link_to_add_product(@audio, :class =>'button')
   .span-10.prepend-top
     %br
-    %h4
-      Play List:
-      %br
+    %h4= t('.play_list')
+    %br
     = raw @audio.description
   = render :template => 'comments/index', :locals=>{:comments => @audio.comments}

@@ -20,6 +20,13 @@ en:
         state: 'State'
         amount: 'Amount'
         payment_type: 'Payment Type'
+      order:
+        state: "State"
+        recipient: 'Recipient'
+        phone: 'Phone'
+        created_at: 'Created at'
+        updated_at: 'Updated at'
+        comment: 'Comment'
   shared:
     cart_widget:
       cart: 'Cart'
@@ -39,8 +46,12 @@ en:
       support: 'Support'
       guest_book: 'Guest Book'
       audio: 'Audio'
+  audios:
+    show:
+      play_list: 'Play List:'
   cart:
     index:
+      cart: 'Cart'
       product: 'Product'
       description: 'Description'
       available: 'Available'
@@ -85,10 +96,22 @@ en:
         quantity: 'Quantity'
         action: 'Action'
         product: 'Product'
+      new:
+        new_product: 'New product'
+      form:
+        select_product_type: 'Select Product Type'
+  orders:
+    index:
+      state: 'State:'
+      created: 'Created:'
+      quantity: 'Quantity:'
+      order_list: "Order list"
+    new:
+      order: 'Order'
   comments:
     index:
+      created_at: 'Created at'
       listing_comments: 'Listing Comments'
-
   users:
     sessions:
       new:
@@ -101,6 +124,12 @@ en:
   videos:
     index:
       price: 'Price '
+    show:
+      owner: 'Owner:'
+      saler_rate: 'Saler rate:'
+    sidebar:
+      filter: "Filter"
+      params: "Parameters"
   home:
     index:
       last_added: 'Last added'

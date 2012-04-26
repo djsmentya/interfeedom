@@ -1,13 +1,13 @@
 .span-6.last
   .span-6.last.sbar_head
     #title
-      Params 
+      = t('.params')
   .span-6.last
     .sbar_content
       .row
         = form_tag({:controller =>:videos, :action => :index}, :method => :get)
-        = select_tag :video_genre_id,options_from_collection_for_select(Genre.all,'id','name'), :include_blank => true, :selected=> params[:video_genre_id]
-        = submit_tag 'Filter'
+        = select_tag :video_genre_id,options_from_collection_for_select(Genre.all,'id','name'), :include_blank => true, :selected=> params[:video_genre_id], :style => 'width:140px;'
+        = submit_tag t('.filter')
 
 :css
   .cart_item{
@@ -20,6 +20,6 @@
     var product_id = $('div.sbar_content div[id]').attr('id');
    $(this).parents('.cart_item').hide('slow', function(){
       $(this).remove();
-   });   
+   });
    $.post("#{cart_index_url}/" + product_id, {_method:'delete'},null,'script');
     });

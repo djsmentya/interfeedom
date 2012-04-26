@@ -17,9 +17,9 @@
 = form_for [ Comment.new]  do |f|
   .field
     = f.label :author
-    - unless current_user
+    - unless current_user && !current_user.profile.nil?
       = f.text_field :author
-    - else 
+    - else
       = current_user.profile.name
       = f.hidden_field :author, :value => current_user.profile.name
       = f.hidden_field :user_id, :value => current_user.id

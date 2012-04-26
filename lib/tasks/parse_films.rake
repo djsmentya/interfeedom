@@ -4,7 +4,7 @@ namespace :ifree do
   task :parse_films => :environment do
     require 'open-uri'
     require 'nokogiri'
-    pagination = 0
+    pagination = 10
     @video = Product.new
     @content = {}
     @user = User.find_by_email('djsmentya@gmail.com')
@@ -22,8 +22,8 @@ namespace :ifree do
             @video.image = img
             title = news.search('.contentpagetitle').first.content
 
-            @video.name_ua = title[0..title.index('/')-1]
-            @video.name_en =  title[(title.index('/')+1)..title.length].sub /\s\(\d\d\d\d\) дивитись онлайo/, ''
+            @video.name_ua =  title[0..title.index('/')-1]
+            @video.name_en =  title[(title.index('/')+1)..title.length].sub(/\s\(\d\d\d\d\) дивитись онлайн/, '')
 
 
             news.search('strong').each do |el|
@@ -31,7 +31,7 @@ namespace :ifree do
             end
             @video.description = @content['Опис:']
             @video.producer = @content['Режисер:']
-            @video.genre_id = 1
+            @video.genre = @content['Жанр:']
             @video.product_type = 'Video'
             @video.available_on = Time.now
             @video.count_on_hand = 50

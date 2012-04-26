@@ -6,11 +6,11 @@
         %ul
           - @product.errors.full_messages.each do |msg|
             %li= msg
-  = label_tag 'Select Product Type'
+  = label_tag t('.select_product_type')
   %br
-  = f.collection_select :product_type, ProductType.all, :name, :name, 
+  = f.collection_select :product_type, ProductType.all, :name, :name,
                                                         :prompt => true, :size => 15
-  #prod  
+  #prod
 :javascript
   $(document).ready(function() {
     $('#product_product_type').change(loadProductEdit);
@@ -21,5 +21,5 @@
     jQuery.get('load_product_type',{ product_type:  type.toLowerCase()},function(data){
       $('#prod').replaceWith(data)
     });
-  }    
-  
+  }
+

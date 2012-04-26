@@ -1,6 +1,7 @@
 ActiveAdmin.register Withdraw do
   index do
     column :id
+    column :user
     column :amount
     column :payment_type
     column :state do |withdraw|

@@ -27,6 +27,9 @@ ua:
       withdraw:
         one: 'Платіж'
         other: 'Платежі'
+      setting:
+        one: 'Налаштування'
+        other: 'Налаштування'
     attributes:
       message:
         title: 'Тема'
@@ -79,6 +82,7 @@ ua:
         phone: 'Телефон'
         created_at: 'Створено'
         updated_at: 'Оновлено'
+        comment: 'Коментар'
       user:
         created_at: 'Створено'
         updated_at: 'Оновлено'
@@ -102,8 +106,12 @@ ua:
       support: 'Зв’язок'
       guest_book: 'Гостьова книга'
       audio: 'Аудіо'
+  audios:
+    show:
+      play_list: 'Список відтворення:'
   cart:
     index:
+      cart: "Кошик"
       product: 'Товар'
       description: 'Опис'
       available: 'Доступно'
@@ -161,12 +169,18 @@ ua:
         quantity: 'Кількість'
         action: 'Дії'
         product: 'Товар'
+      new:
+        new_product: 'Створення нового товару'
+      form:
+        select_product_type: 'Оберіть тип товару'
   orders:
     index:
       state: 'Стан:'
       created: 'Створено:'
       quantity: 'Кількість:'
       order_list: "Список замовлень"
+    new:
+      order: 'Замовлення'
   users:
     sessions:
       new:
@@ -186,6 +200,9 @@ ua:
     show:
       owner: 'Власник:'
       saler_rate: 'Рейтинг продавця:'
+    sidebar:
+      filter: "Фільтр"
+      params: "Параметри"
   home:
     index:
       last_added: 'Найновіші товари'
@@ -201,6 +218,8 @@ ua:
       sidebar:
         customer_info: 'Інформація покупця'
         gueset_book_messages : 'Відповіді'
+    settings:
+      settings: 'Налаштування'
   supports:
     new:
       new_support: 'Зв’язок з Адміністрацією'
