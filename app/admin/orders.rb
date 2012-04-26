@@ -34,11 +34,13 @@ ActiveAdmin.register Order do
   end
 
   show do
-    panel 'Order' do
+    panel Order.model_name.human do
       table_for(order.order_items) do |t|
         t.column(I18n.t('cart.index.product')) {|item| auto_link item.product                }
-       er
+        t.column(I18n.t('cart.index.quantity')){|item| item.quantity}
+        t.column(I18n.t(:price)) {|item| item.product.price}
         tr  do
+          td ''
           td I18n.t('shared.cart_widget.total'), :style => "text-align: right;"
           td number_to_currency(order.total_price)
         end

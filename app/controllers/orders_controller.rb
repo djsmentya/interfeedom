@@ -25,20 +25,27 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(params[:order])
-    @products = products_by_ids(cart_product_ids)
+    #if cart_product_ids.empty?
+      #@order.errors.add(:order_items, 'must be more then 0')
+    #else
+      @products = products_by_ids(cart_product_ids)
 
-    @products.each do |p|
+      @products.each do |p|
         @order.total_price += p.price
       end
 
-    @order.user_id = current_user.id
-    @order.state = 'in_progress'
-    @order.save
-    cart_product_ids.each do |product_id| #TODO make saving with one request
-      @order.order_items.create!(:product_id => product_id, :quantity => current_cart.item_quantity(product_id))
-    end
-    session[:cart] = nil
-
+      @order.user_id = current_user.id
+      @order.state = 'in_progress'
+      @order.save
+      unless @order.errors.present?
+        product_items_array = []
+        cart_product_ids.each do |product_id| #TODO make saving with one request
+          product_items_array << {:order_id => @order.id, :product_id => product_id, :quantity => current_cart.item_quantity(product_id)}
+        end
+        OrderItem.create!(product_items_array)
+        session[:cart] = nil
+      end
+    #end
     if @order.errors.present?
       render :new
     else
