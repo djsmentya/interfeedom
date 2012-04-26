@@ -181,6 +181,10 @@ ua:
       order_list: "Список замовлень"
     new:
       order: 'Замовлення'
+  searches:
+    index:
+      price_from: 'Ціна від'
+      to: 'до'
   users:
     sessions:
       new:
@@ -258,3 +262,4 @@ ua:
   order: 'Замовити'
   rating: 'Рейтинг:'
   price_ratio: 'Коефіцієнт відсоткової ставки:'
+  search: 'Пошук'

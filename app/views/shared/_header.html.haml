@@ -37,4 +37,4 @@
         -#- @search ||= Search.new
         = form_for :search , :url => search_url do |f|
           = text_field_tag 'search[value]'
-          = f.submit 'Search'
+          = f.submit t(:search)

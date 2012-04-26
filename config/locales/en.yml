@@ -70,6 +70,14 @@ en:
       your_email: 'Your Email: '
       your_phone: 'Your Phone: '
       shipping_address: 'Shipping Address: '
+      my_orders: 'My orders'
+      created_at: 'Created at'
+      state: 'State'
+      sales: 'Sales'
+      balance: 'Balance'
+      price_ratio: 'Price ratio'
+      total_products: 'Total products'
+      sold_products_count: 'Saled count'
       edit_profile: 'Edit Profile'
       withdrawal: 'Withdrawal'
     sidebar:
@@ -112,6 +120,10 @@ en:
     index:
       created_at: 'Created at'
       listing_comments: 'Listing Comments'
+  searches:
+    index:
+      price_from: 'Price from'
+      to: 'to'
   users:
     sessions:
       new:
@@ -160,3 +172,5 @@ en:
   payed: 'Payed'
   not_payed: 'Not Payed'
   all: 'All'
+  completed: 'Completed'
+  search: 'Search'

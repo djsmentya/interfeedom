@@ -39,5 +39,5 @@
     %br
     %label
       = Product.human_attribute_name( :description ) + ":"
-    = @video.description
+    =raw @video.description
   = render :template => 'comments/index', :locals=>{:comments => @video.comments}

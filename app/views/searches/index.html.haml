@@ -4,15 +4,15 @@
     = text_field_tag 'search[value]', @search[:value], :style => 'width:500px;'
   -else
     = text_field_tag 'search[value]',nil, :style => 'width:500px;'
-  = submit_tag 'search', :method =>:get
+  = submit_tag t(:search), :method =>:get
   .row
     - if @search
       = select_tag 'search[product_type]', options_from_collection_for_select(ProductType.all, 'name', 'name', @search[:product_type]), :include_blank=>true
       %b
-        Price from
+        =t('.price_from')
       = text_field_tag 'search[price_from]',@search[:price_from], :size => 5
       %b
-        to
+        =t('.to')
       = text_field_tag 'search[price_to]',@search[:price_to], :size => 5
     -else
       = select_tag 'search[product_type]', options_from_collection_for_select(ProductType.all, 'name', 'name' ), :include_blank=>true
