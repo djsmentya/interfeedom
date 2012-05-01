@@ -11,17 +11,17 @@
   .span-6
     %hr
     %h5
-      Short info
+      =t('.short_info')
     %label
-      Style:
+      = Product.human_attribute_name(:style)
     =@audio.style
     %br
     %label
-      Group:
+      = Product.human_attribute_name(:group)
     =@audio.group
     %br
     %label
-      Album:
+      = Product.human_attribute_name(:album)
     =@audio.album
 
 %h1= @audio.name

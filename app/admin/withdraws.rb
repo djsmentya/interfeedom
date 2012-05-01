@@ -1,4 +1,8 @@
 ActiveAdmin.register Withdraw do
+  filter :amount
+  filter :payment_type, :as => :check_boxes, :collection => ['PayPal','WebMoney']
+  filter :state, :as => :select, :collection => [:in_progress, :completed]
+  filter :created_at
   index do
     column :id
     column :user

@@ -109,6 +109,9 @@ ua:
   audios:
     show:
       play_list: 'Список відтворення:'
+      short_info: 'Додаткова інформація'
+    index:
+      no_proudcts: 'Немає Товару'
   cart:
     index:
       cart: "Кошик"

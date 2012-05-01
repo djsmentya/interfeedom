@@ -10,11 +10,11 @@
         =link_to image_tag(audio.image.url(:medium)), audio_path(audio)
         .span-5.last
           %label
-            = t('.price')
+            = t(:price)
             = additional_price_for audio
           .span{:style => 'padding:5px;border: 1px solid #e1e1e1; text-align:center;'}
             = link_to_add_product(audio, :class =>:button)
 .column.last.right
   - unless @audios.nil?
     = paginate @audios, :window => 2, :theme=>:prod
- 
+

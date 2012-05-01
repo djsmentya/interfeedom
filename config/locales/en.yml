@@ -27,6 +27,20 @@ en:
         created_at: 'Created at'
         updated_at: 'Updated at'
         comment: 'Comment'
+      product:
+        name: 'Name'
+        description: 'Description'
+        available_on: 'Available on'
+        count_on_hand: 'Count on hand'
+        price: 'Price'
+        image: 'Image'
+        genre: 'Genre'
+        style: 'Style'
+        album: 'Album'
+        group: 'Group'
+        producer: 'Producer'
+        created_at: 'Created at'
+        updated_at: 'Updated at'
   shared:
     cart_widget:
       cart: 'Cart'
@@ -49,6 +63,9 @@ en:
   audios:
     show:
       play_list: 'Play List:'
+      short_info: 'Short info:'
+    index:
+      no_proudcts: 'No Products'
   cart:
     index:
       cart: 'Cart'
@@ -173,4 +190,5 @@ en:
   not_payed: 'Not Payed'
   all: 'All'
   completed: 'Completed'
+  rating: 'Rating:'
   search: 'Search'

@@ -39,7 +39,8 @@
               %h4
                 = link_to product.name, categoried_product_path(product)
             .span-9.last
-              = truncate product.description, :length=> 150
+              = strip_tags(truncate(product.description, :length=> 150))
           %div
-    = paginate @searches, :theme => :github
+    .prepend-top
+      = paginate @searches, :theme => :github
     -#= link_to t(:to_cart),add_item_cart_index_path(:product_id => product), :class => :button
