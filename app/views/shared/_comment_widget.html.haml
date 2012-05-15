@@ -6,7 +6,7 @@
   .span-6.last
     .sbar_content
       - Comment.where(:commentable_type => 'Product').limit(5).each do |comment|
-        - if comment
+        - if comment.commentable
           .box
             %label{:style=>'color:grey; font-size:xx-small;'}
               =comment.author
