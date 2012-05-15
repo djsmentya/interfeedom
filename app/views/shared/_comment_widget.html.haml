@@ -10,7 +10,8 @@
           %label{:style=>'color:grey; font-size:xx-small;'}
             =comment.author
             .right
-              = comment.commentable.try(:product_type) + ':'
+              = comment.commentable.try(:product_type)
+              = ':'
               = link_to comment.commentable.name,  categoried_product_path(comment.commentable)
             %hr
           = comment.text
