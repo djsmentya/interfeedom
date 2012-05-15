@@ -31,6 +31,10 @@ ua:
         one: 'Налаштування'
         other: 'Налаштування'
     attributes:
+      profile:
+        first_name: "Прізвище"
+        last_name: "Ім’я"
+        phone: "Телефон"
       message:
         title: 'Тема'
         body: 'Повідомлення'
@@ -90,6 +94,8 @@ ua:
     cart_widget:
       cart: 'Кошик'
       total: 'Всього:'
+    comment_widget:
+      recent_comments: 'Останні коментарі'
     header:
       welcome: 'Вітаємо, '
       sign_in: 'вхід'
@@ -148,6 +154,7 @@ ua:
       total_products: 'Всього товарів'
       sold_products_count: 'Кількість проданих'
       withdrawal: 'Вивід коштів'
+      become_a_saler: "Стати продавцем"
     sidebar:
       filters: "Фільтри"
       from: 'від'
@@ -207,6 +214,7 @@ ua:
     show:
       owner: 'Власник:'
       saler_rate: 'Рейтинг продавця:'
+      send_message_to_saler: 'Написати власнику'
     sidebar:
       filter: "Фільтр"
       params: "Параметри"

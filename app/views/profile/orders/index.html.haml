@@ -20,9 +20,9 @@
       %td= order.phone
       %td= l(order.created_at, :format => :short)
       %td
-        = link_to 'Details',  profile_order_path(order), :class=> :button
+        = link_to t(:show),  profile_order_path(order), :class=> :button
         - unless order.state.eql?('completed')
-          =link_to 'Complete',  profile_order_path(order), :method =>:put, :class=> :button
+          =link_to t(:pay),  profile_order_path(order), :method =>:put, :class=> :button
 
 = content_for :sidebar do
   =  render :partial => "sidebar"

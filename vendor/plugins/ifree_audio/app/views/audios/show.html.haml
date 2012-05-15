@@ -8,6 +8,19 @@
       .column
         -#{:style=> 'width:125px;'}
         =ratings_for(@audio, :dimension => :speed)
+  %hr
+  .column.span-7
+    %h4
+      =t('videos.show.owner')
+      = @audio.user.profile.name
+      - if  user_signed_in? &&( current_user.id != @audio.user.id)
+        .prepend-top
+        = link_to t('videos.show.send_message_to_saler'), new_message_path(:to_user_id=>@audio.user.id, :title=> 'RE:Video> '+@audio.name), :class=>:button
+      .prepend-top
+    .column
+      =t('videos.show.saler_rate')
+    .column
+      =ratings_for(@audio.user)
   .span-6
     %hr
     %h5

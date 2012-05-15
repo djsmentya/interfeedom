@@ -42,11 +42,13 @@ class SearchesController < ApplicationController
       end
       scope = [condition.sub('and', '')] + values
 
-      product_translations =  ProductTranslation.all(:select => :product_id ,:conditions => condition_t + values_t).collect{|translation| translation.product_id}
+      product_translations =  ProductTranslation.all(:select => :product_id ,
+                                                     :conditions => condition_t + values_t).collect{|translation| translation.product_id}
       @searches = Product.where('id in (?)', product_translations.uniq)
       @searches = @searches.where(scope).page(params[:page])
     end
   end
+
   def valid_integer?(value)
     converted = value.to_i.to_s
     converted.eql?(value)

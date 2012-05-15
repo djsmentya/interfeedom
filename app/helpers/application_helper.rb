@@ -43,4 +43,26 @@ module ApplicationHelper
   def additional_price_for(product)
     Setting.preferences[:price_ratio].to_f * product.price + product.price
   end
+
+
+  def completed_orders
+   Order.completed.group('date(created_at)').select("date(created_at) as created_at, sum(total_price) as total_price").order(:created_at)
+  end
+
+  def in_progress_orders
+   Order.in_progress.group('date(created_at)').select("date(created_at) as created_at, sum(total_price) as total_price").order(:created_at)
+  end
+
+  def orders_by_date(type = :completed)
+    mas = []
+    if type.eql?(:completed)
+      orders = completed_orders
+    elsif type.eql?(:in_progress)
+     orders = in_progress_orders
+    end
+    orders.each do |order|
+      mas << [order.created_at.to_i * 1000, order.total_price.to_i]
+    end
+    return mas
+  end
 end

@@ -1,0 +1,16 @@
+-#encoding: utf-8
+.span-6.last
+  .span-6.last.sbar_head
+    #title
+      =  t('.recent_comments')
+  .span-6.last
+    .sbar_content
+      - Comment.where(:commentable_type => 'Product').limit(5).each do |comment|
+        .box
+          %label{:style=>'color:grey; font-size:xx-small;'}
+            =comment.author
+            .right
+              = comment.commentable.product_type + ':'
+              = link_to comment.commentable.name,  categoried_product_path(comment.commentable)
+            %hr
+          = comment.text

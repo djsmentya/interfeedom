@@ -1,0 +1,28 @@
+-##orders_chart{:style => "width: 460px; height: 300px;"}a
+:javascript
+  $(function () {
+    new Highcharts.Chart({
+      chart: { renderTo: 'orders_chart', width: 460 },
+      title: { text: 'Замовлення по дням'},
+      xAxis: { type: 'datetime' },
+      yAxis:{
+        title: { text: 'Гроші'}
+      },
+      series: [{
+      name: "Продані Товари",
+        pointInterval: "#{ 1.day * 1000}",
+        pointStart: "#{ 3.weeks.ago.at_midnight.to_i * 1000}",
+        data: #{orders_by_date(:completed).inspect}
+        },
+        {
+      name: "Не продані Товари",
+        pointInterval: "#{ 1.day * 1000}",
+        pointStart: "#{ 3.weeks.ago.at_midnight.to_i * 1000}",
+        data: #{orders_by_date(:in_progress).inspect}
+        }
+        ],
+      });
+    });
+    Highcharts.setOptions({
+      lang: { shortMonths: ['Січ','Лют','Бер','Квіт','Трав','Черв','Лип','Серп','Вер','Жов','Лист','Груд'] },
+    });

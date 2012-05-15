@@ -39,7 +39,7 @@ class OrdersController < ApplicationController
       @order.save
       unless @order.errors.present?
         product_items_array = []
-        cart_product_ids.each do |product_id| #TODO make saving with one request
+        cart_product_ids.each do |product_id|
           product_items_array << {:order_id => @order.id, :product_id => product_id, :quantity => current_cart.item_quantity(product_id)}
         end
         OrderItem.create!(product_items_array)

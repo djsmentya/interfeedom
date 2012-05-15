@@ -45,6 +45,8 @@ en:
     cart_widget:
       cart: 'Cart'
       total: 'Total:'
+    comment_widget:
+      recent_comments: 'Recent Comments'
     header:
       welcome: 'Welcome, '
       sign_in: 'sign in'
@@ -97,6 +99,7 @@ en:
       sold_products_count: 'Saled count'
       edit_profile: 'Edit Profile'
       withdrawal: 'Withdrawal'
+      become_a_saler: "Become a Saler"
     sidebar:
       nav_title: 'Navigation'
       filters: "Filters"
@@ -156,6 +159,7 @@ en:
     show:
       owner: 'Owner:'
       saler_rate: 'Saler rate:'
+      send_message_to_saler: 'Send Message to Saler'
     sidebar:
       filter: "Filter"
       params: "Parameters"

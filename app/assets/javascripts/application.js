@@ -8,6 +8,7 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require ckeditor/init
+//= require highcharts
 
 $(function() {
     $("#product_avalible_on").datepicker();

@@ -1,5 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Order < ActiveRecord::Base
+  scope :in_progress, where(:state => 'in_progress')
+  scope :completed, where(:state => 'completed')
   has_many :order_items, :dependent =>:destroy
   has_many :products , :through => :order_items
   belongs_to :user
