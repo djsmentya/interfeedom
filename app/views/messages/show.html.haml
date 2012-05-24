@@ -1,13 +1,15 @@
 %p#notice= notice
 .column.span-10
   %p
-    %b From:
+    %b=t('messages.index.from')
     = @message.user.profile.name
   %p
-    %b Title:
+    %b=Message.human_attribute_name(:title)
+
     = @message.title
   .box
-    %b Body:
+    %b= Message.human_attribute_name(:body)
+
     = @message.body
 .column
   %ul

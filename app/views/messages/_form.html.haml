@@ -15,9 +15,9 @@
     = f.hidden_field :to_user_id
   .field
     = f.label :title
-    = f.text_field :title
+    = f.text_field :title, :rows => 3, :cols=> 40
   .field
     = f.label :body
     = f.text_area :body
   .actions
-    = f.submit 'Save'
+    = f.submit t(:submit)

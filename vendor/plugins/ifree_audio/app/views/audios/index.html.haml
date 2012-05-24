@@ -1,4 +1,4 @@
-.column.last.border{:style =>'width:600px;'}
+.column.last.border#audio{:style =>'width:600px;'}
   - if @audios.nil?
     %h1
       No products
@@ -17,4 +17,7 @@
 .column.last.right
   - unless @audios.nil?
     = paginate @audios, :window => 2, :theme=>:prod
-
+:css
+  #audio a img {
+    height:150px;
+  }

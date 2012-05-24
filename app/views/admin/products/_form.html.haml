@@ -5,7 +5,7 @@
     =f.input :price
     =f.input :available_on
     =f.input :count_on_hand
-    =f.input :description
+    =f.input :description, :as=> :text
     =f.input :product_type, :as=> :hidden
   #prod.hidden.optional
     - unless controller.action_name == 'new'
@@ -28,4 +28,4 @@
     var type = $('#product_type option:selected').val();
     document.getElementById('product_product_type').setAttribute('value', type);
     $('#prod').load('new_product?product_type=' + type.toLowerCase());
-  }    
+  }
