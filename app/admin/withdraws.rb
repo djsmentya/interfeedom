@@ -15,7 +15,7 @@ ActiveAdmin.register Withdraw do
     column :actions do |withdraw|
       link = link_to( I18n.t(:destroy ), admin_withdraw_path(withdraw), :method=> :delete)+ " "
       if withdraw.state == 'in_progress'
-      link << link_to('Payed', pay_admin_withdraw_path(withdraw) )
+      link << link_to(I18n.t(:payed), pay_admin_withdraw_path(withdraw) )
       end
       link
     end

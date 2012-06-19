@@ -10,7 +10,7 @@ class GuestBooksController < ApplicationController
     @guest_book = GuestBook.new(params[:guest_book])
     respond_to do |format|
       if @guest_book.save
-        format.html { redirect_to guest_books_path, :notice => 'Product was successfully created.' }
+        format.html { redirect_to guest_books_path, :notice => I18n.t('product_created') }
       else
         format.html { render :action => "index", :locals => {:guest_books => @guest_books, :guest_book => @guest_book} }
       end
@@ -18,7 +18,7 @@ class GuestBooksController < ApplicationController
   end
 
   private
-    def list_guest_books
-      @guest_books ||= GuestBook.order('created_at DESC').page(params[:page])
-    end
+  def list_guest_books
+    @guest_books ||= GuestBook.order('created_at DESC').page(params[:page])
+  end
 end

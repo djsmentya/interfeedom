@@ -30,7 +30,7 @@
 - else
   .row
     %h5
-      No information
+      = t('.no_info')
   = link_to t('.edit_profile'), new_profile_path
 %hr
 .column{:style=>'margin-bottom:25px;'}
@@ -58,7 +58,6 @@
             %td
               = Setting.preferences[:price_ratio].to_f * 100
               = '%'
-
           %tr
             %td= t('.balance')
             %td= current_user.money

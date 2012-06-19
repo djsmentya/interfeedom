@@ -1,7 +1,7 @@
 development:
   paypal_email: djsmen_1327002467_biz@gmail.com
-  paypal_url: https://www.sandbox.paypal.com/cgi-bin/webscr?
-
+  #paypal_url: https://www.sandbox.paypal.com/cgi-bin/webscr?
+  paypal_url: http://localhost:3000/payment_notifications/pay_pal_payment?
 test:
   paypal_email: test@example.com
   paypal_url: testpaypalurl

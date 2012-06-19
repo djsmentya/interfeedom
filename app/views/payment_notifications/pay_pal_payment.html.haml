@@ -1,0 +1,22 @@
+%h1
+  PAY PAL
+.column
+  -total_p = 0
+  -@products.each do |key,p|
+    .span-4
+      -total_p += p[:price].to_f
+      =label_tag "Product Name:"
+      =p[:name]
+      %br
+      =label_tag "Quantity:"
+      =p[:quantity]
+      %br
+      =label_tag "Price:"
+      =p[:price]
+      %hr
+%hr
+=label_tag 'Total Price:'
+= total_p
+%br
+.column{:style=> 'margin-left: 45%;'}
+  =link_to 'Pay For Order', '/', :class => :button

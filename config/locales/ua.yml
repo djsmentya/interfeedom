@@ -39,10 +39,13 @@ ua:
         title: 'Тема'
         body: 'Повідомлення'
         to_user_id: 'Кому:'
+        actions: 'Дії'
       withdraw:
         state: 'Стан'
         amount: 'Сума'
         payment_type: 'Тип платежу'
+        created_at: 'Створено'
+        user: 'Користувач'
       guest_book:
         name: 'Ім’я'
         text: 'Текст повідомлення'
@@ -90,6 +93,7 @@ ua:
       user:
         created_at: 'Створено'
         updated_at: 'Оновлено'
+        last_sign_in_at: 'Час останнього входу'
   shared:
     cart_widget:
       cart: 'Кошик'
@@ -127,6 +131,7 @@ ua:
       quantity: 'Кількість'
       total: 'Загально'
       action: 'Дії'
+      added_to_cart: 'Товар додано в корзину'
   comments:
     index:
       created_at: 'Створено'
@@ -155,6 +160,8 @@ ua:
       sold_products_count: 'Кількість проданих'
       withdrawal: 'Вивід коштів'
       become_a_saler: "Стати продавцем"
+      no_info: "Немає інформації! Будьласка введіть свої данні."
+      edit_profile: 'Змінити дані профілю'
     sidebar:
       filters: "Фільтри"
       from: 'від'
@@ -238,10 +245,13 @@ ua:
   supports:
     new:
       new_support: 'Зв’язок з Адміністрацією'
+      will_read: "Ваше повідомлення скоро буде прочитано"
   guest_books:
     index:
       guest_book: 'Гостьова книга'
       user: 'Користувач'
+    create:
+      product_created:  'Ваш відгук додано.'
   withdraws:
     index:
       listing_withdraws: 'Історія платежів'
@@ -274,3 +284,5 @@ ua:
   rating: 'Рейтинг:'
   price_ratio: 'Коефіцієнт відсоткової ставки:'
   search: 'Пошук'
+  newer: "Попередні"
+  older: 'Наступні'

@@ -2,9 +2,6 @@
 ActiveAdmin.register_page 'settings' do
   menu :label => "Налаштування", :parent => 'Адміністрування'
 
-  action_item do
-      link_to "View Site", "/"
-  end
 
   content do
     pref = Setting.preferences
@@ -13,7 +10,7 @@ ActiveAdmin.register_page 'settings' do
         page = p.input(:value,
                        :label => I18n.t(".price_ratio"),
                        :input_html => {:value => pref[:price_ratio], :name => 'setting[price_ratio]'})
-        page << p.buttons
+        page << p.submit(I18n.t(:submit))
         page
       end
     end

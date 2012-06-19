@@ -11,6 +11,7 @@ ua:
     new_model: "Створити"
     edit_model: "Внести зміни"
     delete_model: "Видалити"
+    update_model: "Оновити"
     details: "Детальніше"
     cancel: "Відміна"
     empty: "Пусто"

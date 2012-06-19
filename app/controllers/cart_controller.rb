@@ -13,7 +13,7 @@ class CartController < ApplicationController
 
   def add_item
     @cart << params[:product_id].to_i
-    redirect_to :back, :notice => 'Added to cart', :locals=>{:params => params}
+    redirect_to :back, :notice => I18n.t('cart.index.added_to_cart'), :locals=>{:params => params}
   end
 
   def quantity

@@ -11,6 +11,11 @@ Interfreedom::Application.routes.draw do
 
   get "locales/change_locale"
 
+  resources :payment_notifications  do
+    collection do
+      get 'pay_pal_payment'
+    end
+  end
   filter :locale
 
   #

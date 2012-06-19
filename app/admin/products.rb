@@ -11,10 +11,10 @@ ActiveAdmin.register Product do
   filter :group
   filter :album
 
-  scope I18n.t(:all), :all
+  scope :all
   scope I18n.t('active_admin.scopes.audio'), :audio
   scope I18n.t('active_admin.scopes.video'), :video
-  
+
   form :partial => "form"
   index do
     column 'Product' do |product|
@@ -35,7 +35,7 @@ ActiveAdmin.register Product do
   collection_action :new_product do
     @product = Product.new(params[:product])
     if params[:product_type].empty?
-      render :nothing      
+      render :nothing
     else
       render :partial => "#{params[:product_type]}", :locals => {:product => @product}
     end

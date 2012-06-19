@@ -9,8 +9,8 @@ filter :created_at
     default_actions
   end
   form do |f|
-    f.inputs :email, :password, :password_confirmation
-    f.buttons
+    f.inputs(:email, :password, :password_confirmation) +
+    f.submit
   end
 
   show do |admin_user|

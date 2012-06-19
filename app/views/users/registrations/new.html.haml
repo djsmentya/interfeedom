@@ -10,8 +10,8 @@
     %br/
     = f.password_field :password
   %div
-    = f.label t('.password_confirmation')    
+    = f.label t('.password_confirmation')
     %br/
     = f.password_field :password_confirmation
-  %div= f.submit "Sign up"
+  %div= f.submit
 = render :partial => "users/shared/links"

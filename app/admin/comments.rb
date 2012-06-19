@@ -2,9 +2,13 @@
 ActiveAdmin.register Comment, :as => 'UserComment' do
 
   menu :label => Comment.model_name.human, :parent => 'Зв’язок'
-  scope I18n.t(:all), :all
+  scope :all
   scope I18n.t(:checked), :checked
   scope I18n.t(:unchecked), :unchecked
+
+  filter :author
+  filter :commment
+  filter :created_at
 
   index  do
     column :id

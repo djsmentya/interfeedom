@@ -39,7 +39,7 @@
               %h4
                 = link_to product.name, categoried_product_path(product)
             .span-9.last
-              = strip_tags(truncate(product.description, :length=> 150))
+              = strip_tags(truncate(product.description, :length=> 140))
           %div
     .prepend-top
       = paginate @searches, :theme => :github

@@ -77,6 +77,7 @@ en:
       quantity: 'Quantity'
       total: 'Total'
       action: 'Action'
+      added_to_cart: 'Added to Cart'
   messages:
     index:
       inbox: 'Inbox'
@@ -100,6 +101,7 @@ en:
       edit_profile: 'Edit Profile'
       withdrawal: 'Withdrawal'
       become_a_saler: "Become a Saler"
+      no_info: "No Info! Please, Edit  your Profile."
     sidebar:
       nav_title: 'Navigation'
       filters: "Filters"
@@ -171,12 +173,18 @@ en:
     index:
       guest_book: 'Guest Book'
       user: 'Users'
+    create:
+      product_created:  'Message was successfully created.'
   withdraws:
     index:
       listing_withdraws: 'Payment History'
   errors:
     withdraw:
       less: "can't be more than "
+  supports:
+    new:
+      new_support: 'Suppport'
+      will_read: 'Your message will be read'
   ua: 'Українська'
   en: 'English'
   sign_in: 'Sign In'
@@ -196,3 +204,5 @@ en:
   completed: 'Completed'
   rating: 'Rating:'
   search: 'Search'
+  newer: "Newer"
+  older: 'Older'

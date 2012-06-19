@@ -12,9 +12,9 @@
         .column.right
           %label= t('profile.sidebar.to')
         .span-5
-          = datepicker_input :filter_box, :date_from, :size => 5
+          = datepicker_input :filter_box, :date_from, :size => 3
           = '-'
-          = datepicker_input :filter_box, :date_to, :size => 5
+          = datepicker_input :filter_box, :date_to, :size => 3
         .column
           %label= t('profile.sidebar.product_type')
           -#= select_tag "filter_box[product_type]", options_from_collection_for_select(ProductType.all, "name", "name", @filter_box.product_type), :prompt => 'all'

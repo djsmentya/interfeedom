@@ -11,7 +11,7 @@ class SupportsController < ApplicationController
   def create
     support = Support.new(params[:support])
     if support.save
-      redirect_to root_path, :notice =>'Your message will be read', :locales =>{:locale => params[:locale] }
+      redirect_to root_path, :notice => t('.will_read'), :locales =>{:locale => params[:locale] }
     end
   end
 end
